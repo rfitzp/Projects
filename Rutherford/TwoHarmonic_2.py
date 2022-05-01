@@ -7,7 +7,6 @@ warnings.filterwarnings('ignore')
 
 import scipy.integrate as integrate
 import scipy.special as special
-from scipy.optimize import root
 import numpy as np
 import numpy.linalg as lin
 import math
@@ -141,7 +140,7 @@ def FindRoot0(x1):
     while True:
         x = (f1*x2 - f2*x1) /(f1 - f2)
         f = I12(x)
-        print ("x = %11.4e f = %11.4e" % (x, f))
+        #print ("x = %11.4e f = %11.4e" % (x, f))
 
         if abs(f) < tol:
             break
@@ -240,7 +239,7 @@ for k1 in np.linspace(k1_start, k1_end, Nk1):
 # ###########
 # Output data
 # ###########
-with open("TwoHarmonic_1.txt", "w") as file:
+with open("TwoHarmonic_2.txt", "w") as file:
     for n in range(len(kk1)):
         file.write("%11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e\n" % (kk1[n], ddd[n], ep2[n], fpl[n], i12[n], lpl[n], lc1[n], lc2[n]))
     

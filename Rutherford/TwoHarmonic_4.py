@@ -7,6 +7,7 @@ warnings.filterwarnings('ignore')
 
 import scipy.integrate as integrate
 import scipy.special as special
+from scipy.optimize import root
 import numpy as np
 import numpy.linalg as lin
 import math
@@ -20,9 +21,9 @@ kmax = 20.        # Maximum k value in k integrals
 tol = 1.e-10      # Root finding accuracy
 step = 1.e-3      # Initial step in root finding
 
-k1_start = 1.0    # Lowest wavenumber scan start value
-k1_end   = 0.20   # Lowest wavenumber scan end value
-Nk1      = 101    # Number of points in lowest wavenumber scan
+k1_start = 0.15   # Lowest wavenumber scan start value
+k1_end   = 0.25   # Lowest wavenumber scan end value
+Nk1      = 101    # Number of points in lowest wavenumber
 
 # ################
 # Define functions
@@ -111,7 +112,7 @@ def I_Matrix(eps2):
                 I[m,mp] = I_Element(M[m], M[mp], eps2)
                 I[mp,m] = I[m,mp]
              
-def lambda_plus(eps2):
+def lambda_minus(eps2):
     I_Matrix(eps2)
     
     I11 = I[0,0]
@@ -123,11 +124,11 @@ def lambda_plus(eps2):
     fac2 = I11*D2 - I22*D1
     fac3 = 4.*I11*I22*I12*I12
 
-    return (fac1 + math.sqrt(fac2*fac2 + fac3)) /2./I11/I22
+    return (fac1 - math.sqrt(fac2*fac2 + fac3)) /2./I11/I22
 
-def f_plus(eps2):
-    Lambda_plus = lambda_plus(eps2)
-    return Lambda_plus * I[0,0] - Delta[0] + I[0,1]*eps2, Lambda_plus
+def f_minus(eps2):
+    Lambda_minus = lambda_minus(eps2)
+    return Lambda_minus * I[0,0] - Delta[0] + I[0,1]*eps2, Lambda_minus
 
 def I12(x):
     return I_Element(1, 2, x)
@@ -156,13 +157,15 @@ def FindRoot0(x1):
 
 def FindRoot(x1):
     x2 = x1 + step
-    f1, l1 = f_plus(x1)
-    f2, l2 = f_plus(x2)
+    f1, l1 = f_minus(x1)
+    print ("x = %11.4e f = %11.4e" % (x1, f1))
+    f2, l2 = f_minus(x2)
+    print ("x = %11.4e f = %11.4e" % (x2, f2))
 
     while True:
         x = (f1*x2 - f2*x1) /(f1 - f2)
-        f, l = f_plus(x)
-        #print ("x = %11.4e f = %11.4e" % (x, f))
+        f, l = f_minus(x)
+        print ("x = %11.4e f = %11.4e" % (x, f))
 
         if abs(f) < tol:
             break
@@ -189,7 +192,7 @@ for m in range(2):
 # Calculate critical Eps2
 # #######################
 I = np.zeros((2,2))
-Eps2_crit = 0.157
+Eps2_crit = 0.1557
 Eps2_crit, I12_crit = FindRoot0(Eps2_crit)
 I11_crit = I_Element(M[0], M[0], Eps2_crit)
 I22_crit = I_Element(M[1], M[1], Eps2_crit)
@@ -207,7 +210,7 @@ i12 = []
 lpl = []
 lc1 = []
 lc2 = []
-Eps2_old = 2.e-2
+Eps2_old = 0.16
 for k1 in np.linspace(k1_start, k1_end, Nk1):
 
     # ############################
@@ -222,24 +225,24 @@ for k1 in np.linspace(k1_start, k1_end, Nk1):
     # #########    
     # Find root
     # #########
-    Eps2, F_plus, Lambda_plus = FindRoot(Eps2_old)
+    Eps2, F_minus, Lambda_minus = FindRoot(Eps2_old)
     Eps2_old = Eps2
 
     kk1.append(k1)
     ddd.append(Delta[0])
     ep2.append(Eps2)
-    fpl.append(F_plus)
+    fpl.append(F_minus)
     i12.append(-I[0,1])
-    lpl.append(Lambda_plus)
+    lpl.append(Lambda_minus)
     lc1.append(Delta[0]/I11_crit)
     lc2.append(Delta[1]/I22_crit)
     print ("k_1 = %11.4e Del_1 = %11.4e eps_2 = %11.4e F_+ = %11.4e I_12 = %11.4e lam = %11.4e lam_1 = %11.4e lam_2 = %11.4e" \
-           % (k1, Delta[0], Eps2, F_plus, I[0,1], Lambda_plus, Delta[0]/I11_crit, Delta[1]/I22_crit))
+           % (k1, Delta[0], Eps2, F_minus, I[0,1], Lambda_minus, Delta[0]/I11_crit, Delta[1]/I22_crit))
 
 # ###########
 # Output data
 # ###########
-with open("TwoHarmonic_1.txt", "w") as file:
+with open("TwoHarmonic_4.txt", "w") as file:
     for n in range(len(kk1)):
         file.write("%11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e\n" % (kk1[n], ddd[n], ep2[n], fpl[n], i12[n], lpl[n], lc1[n], lc2[n]))
     
