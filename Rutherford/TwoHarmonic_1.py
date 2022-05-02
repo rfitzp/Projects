@@ -20,8 +20,8 @@ kmax = 20.        # Maximum k value in k integrals
 tol = 1.e-10      # Root finding accuracy
 step = 1.e-3      # Initial step in root finding
 
-k1_start = 1.0    # Lowest wavenumber scan start value
-k1_end   = 0.20   # Lowest wavenumber scan end value
+k1_start = 0.999    # Lowest wavenumber scan start value
+k1_end   = 0.151   # Lowest wavenumber scan end value
 Nk1      = 101    # Number of points in lowest wavenumber scan
 
 # ################
@@ -121,13 +121,13 @@ def lambda_plus(eps2):
     D2 = Delta[1]
     fac1 = I11*D2 + I22*D1
     fac2 = I11*D2 - I22*D1
-    fac3 = 4.*I11*I22*I12*I12
+    fac3 = 4.*D1*D2*I12*I12
 
-    return (fac1 + math.sqrt(fac2*fac2 + fac3)) /2./I11/I22
+    return (fac1 + math.sqrt(fac2*fac2 + fac3)) /2./(I11*I22 - I12*I12)
 
 def f_plus(eps2):
     Lambda_plus = lambda_plus(eps2)
-    return Lambda_plus * I[0,0] - Delta[0] + I[0,1]*eps2, Lambda_plus
+    return I[0,0] + I[0,1] * eps2 - Delta[0] /Lambda_plus, Lambda_plus
 
 def I12(x):
     return I_Element(1, 2, x)
@@ -157,9 +157,12 @@ def FindRoot0(x1):
 def FindRoot(x1):
     x2 = x1 + step
     f1, l1 = f_plus(x1)
+    #print ("x = %11.4e f = %11.4e" % (x1, f1))
     f2, l2 = f_plus(x2)
+    #print ("x = %11.4e f = %11.4e" % (x2, f2))
 
-    while True:
+    feval = 2
+    while True and feval < 15:
         x = (f1*x2 - f2*x1) /(f1 - f2)
         f, l = f_plus(x)
         #print ("x = %11.4e f = %11.4e" % (x, f))
@@ -174,7 +177,9 @@ def FindRoot(x1):
             x1 = x
             f1 = f
 
-    return x, f, l       
+        feval += 1   
+
+    return x, f, l, feval       
                    
 print ("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\nTwo-Harmonic Rutherford Island Calculation\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
 
@@ -222,7 +227,7 @@ for k1 in np.linspace(k1_start, k1_end, Nk1):
     # #########    
     # Find root
     # #########
-    Eps2, F_plus, Lambda_plus = FindRoot(Eps2_old)
+    Eps2, F_plus, Lambda_plus, feval = FindRoot(Eps2_old)
     Eps2_old = Eps2
 
     kk1.append(k1)
@@ -233,8 +238,8 @@ for k1 in np.linspace(k1_start, k1_end, Nk1):
     lpl.append(Lambda_plus)
     lc1.append(Delta[0]/I11_crit)
     lc2.append(Delta[1]/I22_crit)
-    print ("k_1 = %11.4e Del_1 = %11.4e eps_2 = %11.4e F_+ = %11.4e I_12 = %11.4e lam = %11.4e lam_1 = %11.4e lam_2 = %11.4e" \
-           % (k1, Delta[0], Eps2, F_plus, I[0,1], Lambda_plus, Delta[0]/I11_crit, Delta[1]/I22_crit))
+    print ("k_1 = %11.4e feval = %2d Del_1 = %11.4e eps_2 = %11.4e F_+ = %11.4e I_12 = %11.4e lam = %11.4e lam_1 = %11.4e lam_2 = %11.4e" \
+           % (k1, feval, Delta[0], Eps2, F_plus, I[0,1], Lambda_plus, Delta[0]/I11_crit, Delta[1]/I22_crit))
 
 # ###########
 # Output data
