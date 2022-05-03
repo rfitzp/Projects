@@ -12,24 +12,30 @@ import numpy.linalg as lin
 import math
 import matplotlib.pyplot as plt
 
+# ###########
+# Get Delta_2
+# ###########
+print ("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\nTwo-Harmonic Rutherford Island Calculation\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+val = input("Delta_2 ? ")
+Delta_2 = float(val)
+
 # ######################
 # Calculation parameters
 # ######################
-eps = 1.e-4       # Integrand regularization parameter
-kmax = 20.        # Maximum k value in k integrals
-tol = 1.e-10      # Root finding accuracy
-step = 1.e-3      # Initial step in root finding
+d1_start = 1.e-3   # Lowest Delta_1 scan start value
+d1_end   = 10.     # Highest Delta_1 scan end value
+Nd1      = 101     # Number of points Delta_1 scan
 
-k1_start = 0.999    # Lowest wavenumber scan start value
-k1_end   = 0.151   # Lowest wavenumber scan end value
-Nk1      = 101    # Number of points in lowest wavenumber scan
+eps      = 1.e-4   # phi integrand regularization parameter
+eta      = 1.e-5   # k integrand regularization parameter
+kmax     = 20.     # Maximum k value 
+tol      = 1.e-10  # Root finding accuracy
+step     = 1.e-3   # Initial step in root finding
+Eps2_old = 1.e-4   # Initial guess for epsilon_2
 
 # ################
 # Define functions
 # ################
-
-def Delta_Element(k):
-    return 2.*(1./k - k)
 
 def Cosxi02(k, eps2):
     if k >= 1.:
@@ -56,7 +62,11 @@ def Get_kmin(eps2):
 
 def Cos_m_Integrand_1(y, k, m, eps2):
     siny = math.sin(y)
-    return math.cos(2.*m*(math.pi/2.-y)) /math.sqrt(k*k-(1.-4.*eps2)*siny*siny-4.*eps2*siny*siny*siny*siny) /math.pi
+    fun = k*k - (1.-4.*eps2)*siny*siny - 4.*eps2*siny*siny*siny*siny
+    if fun < 0.:
+        return 0.
+    else:
+        return math.cos(2.*m*(math.pi/2.-y)) /math.sqrt(fun) /math.pi
 
 def Cos_m_Integrand_2(y, k, m, eps2):
     kk = Cosxi02(k, eps2)
@@ -95,12 +105,12 @@ def I_Element_Integrand(k, m, mp, eps2):
 def I_Element(m, mp, eps2):
     kmin = Get_kmin(eps2)
     if kmin < 0.:
-        return integrate.quad(I_Element_Integrand, kmin, -eps, args=(m, mp, eps2))[0] \
-            + integrate.quad(I_Element_Integrand, eps, 1.-eps, args=(m, mp, eps2))[0] \
-            + integrate.quad(I_Element_Integrand, 1.+eps, kmax, args=(m, mp, eps2))[0]
+        return integrate.quad(I_Element_Integrand, kmin, -eta, args=(m, mp, eps2))[0] \
+            + integrate.quad(I_Element_Integrand, eps, 1.-eta, args=(m, mp, eps2))[0] \
+            + integrate.quad(I_Element_Integrand, 1.+eta, kmax, args=(m, mp, eps2))[0]
     else:
-        return integrate.quad(I_Element_Integrand, eps, 1.-eps, args=(m, mp, eps2))[0] \
-            + integrate.quad(I_Element_Integrand, 1.+eps, kmax, args=(m, mp, eps2))[0]
+        return integrate.quad(I_Element_Integrand, eta, 1.-eta, args=(m, mp, eps2))[0] \
+            + integrate.quad(I_Element_Integrand, 1.+eta, kmax, args=(m, mp, eps2))[0]
 
 def I_Matrix(eps2):
     for m in range(2):
@@ -127,32 +137,8 @@ def lambda_plus(eps2):
 
 def f_plus(eps2):
     Lambda_plus = lambda_plus(eps2)
+
     return I[0,0] + I[0,1] * eps2 - Delta[0] /Lambda_plus, Lambda_plus
-
-def I12(x):
-    return I_Element(1, 2, x)
-
-def FindRoot0(x1):
-    x2 = x1 + step
-    f1 = I12(x1)
-    f2 = I12(x2)
-
-    while True:
-        x = (f1*x2 - f2*x1) /(f1 - f2)
-        f = I12(x)
-        #print ("x = %11.4e f = %11.4e" % (x, f))
-
-        if abs(f) < tol:
-            break
-        
-        if f*f1 < 0.:
-            x2 = x
-            f2 = f
-        else:
-            x1 = x
-            f1 = f
-
-    return x, f   
 
 def FindRoot(x1):
     x2 = x1 + step
@@ -181,50 +167,29 @@ def FindRoot(x1):
 
     return x, f, l, feval       
                    
-print ("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\nTwo-Harmonic Rutherford Island Calculation\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-
 # #################
 # Construct m array
 # #################
+I = np.zeros((2,2))
 M = np.zeros(2)
 for m in range(2):
     M[m] = (m+1)*1.
 
-# #######################
-# Calculate critical Eps2
-# #######################
-I = np.zeros((2,2))
-Eps2_crit = 0.157
-Eps2_crit, I12_crit = FindRoot0(Eps2_crit)
-I11_crit = I_Element(M[0], M[0], Eps2_crit)
-I22_crit = I_Element(M[1], M[1], Eps2_crit)
-
-print ("Eps2_crit = %11.4e  I_11_crit = %11.4e  I_12_crit = %11.4e  I_22_crit = %11.5e" % (Eps2_crit, I11_crit, I12_crit, I22_crit))
-
-# #######
-# Scan k1
-# #######
-kk1 = []
+# ############
+# Scan Delta_1
+# ############
 ddd = []
 ep2 = []
-fpl = []
-i12 = []
 lpl = []
-lc1 = []
-lc2 = []
-Eps2_old = 2.e-2
-for k1 in np.linspace(k1_start, k1_end, Nk1):
+lpd = []
+for Delta_1 in np.linspace(d1_start, d1_end, Nd1):
 
-    # ############################
-    # Construct k and Delta arrays
-    # ############################
-    K = np.zeros(2)
+    # ######################
+    # Construct Delta arrays
+    # ######################
     Delta = np.zeros(2)
-    for m in range(2):
-        K[m] = (m+1)*k1
-        Delta[m] = Delta_Element(K[m])
-
-    Delta[1] = -1.     
+    Delta[0] = Delta_1
+    Delta[1] = Delta_2
 
     # #########    
     # Find root
@@ -232,24 +197,19 @@ for k1 in np.linspace(k1_start, k1_end, Nk1):
     Eps2, F_plus, Lambda_plus, feval = FindRoot(Eps2_old)
     Eps2_old = Eps2
 
-    kk1.append(k1)
     ddd.append(Delta[0])
     ep2.append(Eps2)
-    fpl.append(F_plus)
-    i12.append(-I[0,1])
     lpl.append(Lambda_plus)
-    lc1.append(Delta[0]/I11_crit)
-    lc2.append(Delta[1]/I22_crit)
-    print ("k_1 = %11.4e feval = %2d Del_1 = %11.4e eps_2 = %11.4e F_+ = %11.4e I_12 = %11.4e lam = %11.4e lam_1 = %11.4e lam_2 = %11.4e" \
-           % (k1, feval, Delta[0], Eps2, F_plus, I[0,1], Lambda_plus, Delta[0]/I11_crit, Delta[1]/I22_crit))
+    lpd.append(Lambda_plus/Delta[0])
+    print ("Delta_1 = %11.4e  F_+ = %11.4e  feval = %2d  epsilon2_2 = %11.4e  lambda = %11.4e  lambda/Delta_1 = %11.4e" \
+           % (Delta[0], F_plus, feval, Eps2, Lambda_plus, Lambda_plus/Delta[0]))
 
-    
 # ###########
 # Output data
 # ###########
-with open("TwoHarmonic_2.txt", "w") as file:
-    for n in range(len(kk1)):
-        file.write("%11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e\n" % (kk1[n], ddd[n], ep2[n], fpl[n], i12[n], lpl[n], lc1[n], lc2[n]))
+with open("TwoHarmonic.txt", "w") as file:
+    for n in range(len(ddd)):
+        file.write("%11.4e %11.4e %11.4e %11.4e\n" % (ddd[n], ep2[n], lpl[n], lpd[n]))
     
 # ##########    
 # Graph data
@@ -257,19 +217,12 @@ with open("TwoHarmonic_2.txt", "w") as file:
 plt.figure(figsize=(10,7))
 plt.rc('xtick', labelsize=16) 
 plt.rc('ytick', labelsize=16) 
-plt.xlim(k1_end,k1_start)
-plt.ylim(0., 0.5)
-lpl1 = np.asarray(lpl)/50.
-lc11 = np.asarray(lc1)/50.
-lc21 = np.asarray(lc2)/50.
-plt.plot(kk1, ep2, color='blue',  linewidth='1.5', label='$\epsilon_2$')
-plt.plot(kk1, lpl1, color='red',  linewidth='1.5', label='$\lambda/50$')
-plt.plot(kk1, lc11, color='yellow',  linewidth='1.5', label='$\lambda_1$/50')
-plt.plot(kk1, lc21, color='magenta',  linewidth='1.5', label='$\lambda_2$/50')
-plt.plot(kk1, i12, color='green',  linewidth='1.5', label='-$A_{12}$')
-plt.axhline(y=Eps2_crit, linewidth='1.5', linestyle='dashed', color='blue')
+plt.xlim(0.,10.)
+plt.ylim(0., 1.3)
+plt.plot(ddd, ep2, color='blue',  linewidth='1.5', label='$\epsilon_2$')
+plt.plot(ddd, lpd, color='red',  linewidth='1.5', label="$\lambda/\Delta_1$'")
 plt.legend(fontsize='20')
-plt.xlabel('$k_1$', fontsize='20')
+plt.xlabel("$\Delta_1'$", fontsize='20')
 
 plt.show()
 #plt.savefig("TwoHarmonic.eps")    
