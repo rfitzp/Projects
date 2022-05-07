@@ -1,0 +1,498 @@
+\documentclass[12pt,prb,aps]{revtex4-1}
+\usepackage {amsmath}
+\pdfoutput = 1 
+\usepackage {graphicx}
+\newcommand{\bomega}{\mbox{\boldmath$\omega$}}
+
+
+\begin{document}
+
+\title{Multi-Harmonic Rutherford Island Theory}
+
+\author{R.~Fitzpatrick\,\footnote{rfitzp@utexas.edu}}
+\affiliation{Institute for Fusion Studies,  Department of Physics,  University of Texas at Austin,  Austin TX, 78712, USA}
+
+\begin{abstract}
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Preliminary Analysis}
+\subsection{Reduced-MHD Equations}
+Our starting point is a set of MHD equations that neglects plasma compressibility,
+but incorporates  plasma resistivity and non-inductive current drive: 
+\begin{align}
+\nabla\cdot{\bf V} &= 0,\label{e9.1m}\\[0.5ex]
+\rho\left[\frac{\partial {\bf V}}{\partial t} + ({\bf V}\cdot\nabla) {\bf V}\right]+\nabla p-{\bf j}\times {\bf B} &=0,\label{e9.2m}\\[0,5ex]
+{\bf E} + {\bf V} \times {\bf B} &=\eta\,({\bf j}-{\bf j}_{\rm ni}).\label{e9.3m}
+\end{align}
+Here, ${\bf V}$, $p$,   ${\bf j}$, ${\bf j}_{\rm ni}$, ${\bf B}$,  and ${\bf E}$  represent the plasma flow velocity, the plasma
+pressure, the total plasma current density, 
+the non-inductive component of the plasma current density, the magnetic field-strength, and the electric field-strength, respectively.  Moreover, the plasma mass density, $\rho$, and resistivity, $\eta$, are both assumed to be spatially uniform, for the sake of simplicity.  
+Equations (\ref{e9.1m})--(\ref{e9.3m})  form a complete set when combined with the following subset of 
+Maxwell's equations:
+$\nabla\cdot{\bf B} =0$,
+$ \nabla\times {\bf E}=-\partial{\bf B}/\partial t$, and $\nabla\times {\bf B} = \mu_0\,{\bf j}$.
+ 
+Consider a simplified scenario in which the Cartesian coordinate $z$ is ignorable. In other words, there is
+no variation in the $z$-direction (i.e., $\partial/\partial z=0$). We can automatically satisfy Eq.~(\ref{e9.1m})
+and $\nabla\cdot{\bf B} = 0$ by writing
+${\bf V} =\nabla\phi\times {\bf e}_z + V_z\,{\bf e}_z$ and 
+${\bf B} = \nabla\psi\times{\bf e}_z + B_z\,{\bf e}_z$,
+where ${\bf e}_z$ is a unit vector parallel to the $z$-axis, and $V_z$ and $B_z$  are constants.  
+
+If we take the $z$-component of Eq.~(\ref{e9.3m}) and the $z$-component of the curl of Eq.~(\ref{e9.2m}), making use of Maxwell's equations,
+then we obtain the  so-called {\em reduced-MHD equations}:\,\cite{strauss}
+\begin{align}
+\frac{\partial\psi}{\partial t} &= [\phi,\psi]+\frac{\eta}{\mu_0}\,(J-J_0-J_{\rm ni}),\label{e9.11m}\\[0.5ex]
+\rho\,\frac{\partial U}{\partial t} &= \rho\,[\phi,U] + \mu_0^{-1}\,[J,\psi],\\[0.5ex]
+J&=\nabla^2\psi,\\[0.5ex]
+U&=\nabla^2\phi,\label{e9.14m}
+\end{align}
+where $[A,B]\equiv \nabla A\times \nabla B\cdot{\bf e}_z$. Here, the plasma current density
+is written ${\bf j} = -\mu_0^{-1}\,J\,{\bf e}_z$, the  non-inductive current density is written ${\bf j}_{\rm ni} = -\mu_0^{-1}\,J_{\rm ni}\, {\bf e}_z$, 
+ and $\bomega\equiv \nabla\times{\bf V}=-U\,{\bf e}_z$ is the plasma vorticity. 
+Moreover, $J_0(x)=-(\mu_0/\eta)\,E_{z\,{\rm in}}$, where $E_{z\,{\rm in}}(x)$ is  the $z$-directed inductive electric field that maintains the equilibrium current density.
+
+\subsection{Linearized Reduced-MHD Equations}
+Consider the stability of a current sheet whose equilibrium state is characterized by zero flow and 
+\begin{align}
+{\bf B}&= B_0\,F(x/a)\,{\bf e}_y,\\[0.5ex]
+{\bf j}&= \frac{B_0}{\mu_0\,a}\,F'(x/a)\,{\bf e}_z,
+\end{align}
+where $F(-y)= - F(y)$, and $F(y)\rightarrow {\rm sgn}(y)$ as $|y|\rightarrow 1$. Here, $a$ is a measure of the thickness of the sheet, and $B_0$ is a typical value of $B_y$ within the sheet.   Neglecting the non-inductive current
+drive, for the moment, 
+ we  deduce from Eq.~(\ref{e9.11m}) that
+\begin{equation}
+J_0(x) = - \frac{B_0}{a}\,F'(x/a).
+\end{equation}
+
+Suppose that the system is periodic in the $y$ direction, with period $L$. Consider a small-amplitude perturbation to the system of the
+form
+\begin{align}\label{e11}
+\psi(x,y,t) &= -B_0\int_0^xF(x'/a)\,dx' + \sum_{m=1,\infty}\psi_m(x)\,{\rm e}^{\,{\rm i}\,(m\,k_0\,y+\gamma\,t)},\\[0.5ex]
+J(x,y,t) &= -\frac{B_0}{a}\,F'(x/a)+ \sum_{m=1,\infty}J_m(x)\,{\rm e}^{\,{\rm i}\,(m\,k_0\,y+\gamma\,t)},\\[0.5ex]
+\phi(x,y,t) &=  \sum_{m=1,\infty}\phi_m(x)\,{\rm e}^{\,{\rm i}\,(m\,k_0\,y+\gamma\,t)},\\[0.5ex]
+U(x,y,t) &=  \sum_{m=1,\infty}U_m(x)\,{\rm e}^{\,{\rm i}\,(m\,k_0\,y+\gamma\,t)},\label{e14}
+\end{align}
+where $k_0=2\pi/L$. 
+
+Substituting Eqs.~(\ref{e11})--(\ref{e14}) into the reduced-MHD equations, (\ref{e9.11m})--(\ref{e9.14m}), and
+only retaining terms that are first order in small quantities, we obtain the so-called {\em linearized reduced-MHD equations}: 
+\begin{align}
+\gamma\,\psi_m &= {\rm i}\,k_m\,B_0\,F\,\phi_m +\frac{\eta}{\mu_0}\left(\frac{d^2}{dx^2}-k_m^{2}\right)\psi_m,\label{e15}
+\\[0.5ex]
+\gamma\,\rho\left(\frac{d^2}{dx^2}-k_m^{2}\right)\phi_m &= {\rm i}\,\mu_0^{-1}\,k_m\,B_0\,F\left(\frac{d^2}{dx^2}
+-k_m^{2}-\frac{F''}{a^2\,F}\right)\psi_m,\label{e16}
+\end{align}
+where $k_m= m\,k_0$. 
+
+It is helpful to define the Alfv\'{e}n timescale,
+\begin{equation}
+\tau_{A\,m} = \frac{k_m^{-1}}{(B_0^{\,2}/\mu_0\,\rho)^{1/2}},
+\end{equation}
+the resistive diffusion timescale,
+\begin{equation}
+\tau_R = \frac{\mu_0\,a^2}{\eta},
+\end{equation}
+and the Lundquist number,
+\begin{equation}
+S_m = \frac{\tau_R}{\tau_{A\,m}}.
+\end{equation}
+It is assumed that $S_m\gg 1$. 
+
+Let $x=a\,\hat{x}$, $k_m = \hat{k}_m/a$, $\gamma=\hat{\gamma}/\tau_{A\,m}$, $\psi_m = -a\,B_0\,\hat{\psi}_m$,
+and $\phi_m= {\rm i}\,(\gamma\,a/k_m)\,\skew{3}\hat{\phi}_m$. The dimensionless normalized versions of the
+linearized reduced-MHD equations, (\ref{e15}) and (\ref{e16}),  become
+\begin{align}
+S_m\,\hat{\gamma}\left(\hat{\psi}_m-F\,\skew{3}\hat{\phi}_m\right)&= \left(\frac{d^2}{d\hat{x}^2}-\hat{k}_m^2\right)\hat{\psi}_m,\label{e9.27}\\[0.5ex]
+\hat{\gamma}^{\,2}\left(\frac{d^2}{d\hat{x}^2}-\hat{k}_m^2\right)\skew{3}\hat{\phi}_m&= - F\left(\frac{d^2}{d\hat{x}^2}
+-\hat{k}_m^2-\frac{F''}{F}\right)\hat{\psi}_m.\label{e9.28}
+\end{align}
+ Our normalization scheme is designed such that, throughout the
+bulk of the plasma, $\hat{\psi}_m\sim \skew{3}\hat{\phi}_m$, and the only other quantities in the previous two equations whose magnitudes differ substantially
+from unity are $S_m\,\hat{\gamma}$ and $\hat{\gamma}^{\,2}$. 
+
+\subsection{Asymptotic Matching}
+Suppose that the perturbation   grows on a timescale that is much less than $\tau_R$, but much greater than
+$\tau_{A\,m}$. It follows that
+\begin{equation}\label{e9.29}
+\hat{\gamma} \ll 1 \ll S_m\,\hat{\gamma}.
+\end{equation}
+Thus, throughout the bulk of the plasma, we can neglect the right-hand side of Eq.~(\ref{e9.27}), and the left-hand side of Eq.~(\ref{e9.28}), which is equivalent to the neglect of plasma resistivity and inertia. In this case,
+Eqs.~(\ref{e9.27}) and (\ref{e9.28}) reduce to the so-called {\em linearized marginally-stable ideal-MHD equations}:
+\begin{align}
+\skew{3}\hat{\phi}_m &= \frac{\hat{\psi}_m}{F},\label{e9.30}\\[0.5ex]
+\frac{d^2\hat{\psi}_m}{d\hat{x}^2} - \hat{k}_m^2\,\hat{\psi}_m-\frac{F''}{F}\,\hat{\psi}_m &= 0.\label{e9.31}
+\end{align}
+Equation~(\ref{e9.30}) is equivalent to the well-known {\em flux-freezing constraint}, and forbids any changes in the
+topology of the equilibrium magnetic field-lines. 
+However, it is clear that the linearized marginally-stable ideal-MHD  equations break down in the
+immediate vicinity of the so-called {\em resonant surface}, located at $x=0$,  where $F=0$ (i.e., where $B_y$ reverses direction). This follows from Eq.~(\ref{e9.30}), which implies that $\skew{3}\hat{\phi}_m\rightarrow\infty$ as $F\rightarrow 0$ if $\hat{\psi}_m(0)\neq 0$ (i.e., if the topology of the magnetic
+field-lines changes in the  vicinity of the resonant surface). 
+ In general, we need to employ the full set of reduced-MHD equations in the so-called {\em inner region}, close to the resonant
+surface, where Eqs.~(\ref{e9.30}) and (\ref{e9.31}) break down. The remainder of the plasma,
+which is governed by the linearized marginally-stable ideal-MHD  equations, is known as the {\em outer region}. 
+
+The stability problem reduces to solving the  reduced-MHD equations, (\ref{e9.11m})--(\ref{e9.14m}), in the inner region, solving the linearized marginally-stable ideal-MHD
+equations, (\ref{e9.30}) and (\ref{e9.31}), in the outer region, and matching the two solutions at the boundary between the
+inner and outer regions.\cite{fkr} In general, the tearing-parity [i.e., $\hat{\psi}_m(-\hat{x})=\hat{\psi}_m(\hat{x})$] solution of the so-called {\em tearing mode equation,} (\ref{e9.31}), that satisfies
+physical boundary conditions at $|\hat{x}|\rightarrow\infty$ (i.e., $|\hat{\psi}_m|\rightarrow 0$ as $|\hat{x}|\rightarrow \infty$), has a gradient discontinuity across the resonant surface.\cite{fkr} 
+Note that the adopted boundary conditions assume that the plasma is isolated. In other words, the plasma is not subject to any externally generated magnetic perturbations. It is helpful to define the {\em tearing stability
+index},\cite{fkr} 
+\begin{equation}\label{e25}
+{\mit\Delta}_m' =\left[\frac{1}{\hat{\psi}_m}\,\frac{d\hat{\psi}_m}{d\hat{x}}\right]_{\hat{x}=0_-}^{\hat{x}=0_+}.
+\end{equation}
+This real dimensionless quantity is uniquely determined by the tearing mode equation, and the boundary conditions,
+for each mode number, $m$. 
+
+Let $W_1\ll a$ be the thickness (in $x$) of the inner region. Our task is thus to solve the   reduced-MHD equations, (\ref{e9.11m})--(\ref{e9.14m}), in the inner region,  subject to the matching 
+condition [see Eqs.~(\ref{e11}) and (\ref{e25})]
+\begin{equation}\label{e26}
+\psi(\hat{x},\xi,t) \rightarrow -B_0\,a\,F'(0)\,\frac{\hat{x}^2}{2} +\sum_{m=1,\infty}
+{\mit\Psi}_m(t)\left(1+\frac{1}{2}\,{\mit\Delta}_m'\,|\hat{x}|\right)\cos(m\,\xi-\varphi_m)
+\end{equation}
+as $|x|/W_1\rightarrow\infty$. Here, $\xi=k_0\,y$, and the ${\mit\Psi}_m$ and $\varphi_m$ are real. Note that the
+system is periodic in $\xi$, with period $2\pi$. 
+
+\section{Multi-Harmonic Rutherford Island Theory}
+\subsection{Normalization Scheme}
+Let $t=\tau_R\,\hat{t}$, $\psi= -B_0\,a\,F'(0)\,\hat{\psi}$, ${\mit\Psi}_m = -B_0\,a\,F'(0)\,\hat{\mit\Psi}_m$, $J=-(B_0/a)\,F'(0)(1+\hat{J})$, $J_{\rm ni} =-(B_0/a)\,F'(0)\,\hat{J}_{\rm ni}$, $\phi= (a/k_0\,\tau_R)\,\skew{3}\hat{\phi}$, and
+$U= (1/a\,k_0\,\tau_R)\,\hat{U}$. The reduced-MHD equations, (\ref{e9.11m})--(\ref{e9.14m}), yield
+\begin{align}
+\frac{\partial\hat{\psi}}{\partial\hat{t}}&=\{\skew{3}\hat{\phi},\hat{\psi}\}+\hat{J}-\hat{J}_{\rm ni},\label{e9.89m}\\[0.5ex]
+\frac{\partial\hat{U}}{\partial\hat{t}}&= \{\skew{3}\hat{\phi},\hat{U}\}+S^{\,2}\,\{\hat{J},\hat{\psi}\},\label{e9.90}\\[0.5ex]
+\frac{\partial^2\hat{\psi}}{\partial \hat{x}^2} &= 1 + \hat{J},\label{e9.91}\\[0.5ex]
+\hat{U}&=\frac{\partial^2 \skew{3}\hat{\phi}}{\partial \hat{x}^2}\label{e9.92m}
+\end{align}
+in the inner region, 
+where
+\begin{align}
+\{A, B\} &\equiv \frac{\partial A}{\partial\hat{x}}\,\frac{\partial B}{\partial\xi} - \frac{\partial A}{\partial\xi}\,\frac{\partial B}{\partial\hat{x}},\\[0.5ex]
+S &=\frac{\tau_R}{\tau_H},\\[0.5ex]
+\tau_H &= \frac{1}{k_0\,F'(0)}\left(\frac{\mu_0\,\rho}{B_0^{\,2}}\right)^{1/2},
+\end{align}
+and we have assumed that $k_m\,W_1\ll 1$. Note that we  have included the non-inductive current
+drive in Eq.~(\ref{e9.89m}), while neglecting it in the outer region,  because we are assuming that the current drive is only applied in the inner region.. 
+As before, the modified Lundquist number, $S$, is assumed to be much greater than unity. 
+Moreover, the matching condition (\ref{e26}) gives
+\begin{equation}\label{e34}
+\hat{\psi}(\hat{x},\xi,\hat{t}) \rightarrow \frac{\hat{x}^2}{2}+ \sum_{m=1,\infty}\hat{\mit\Psi}_m(\hat{t})\left(1+\frac{{\mit\Delta}_m'}{2}\,|\hat{x}|\right)\cos(m\,\xi-\varphi_m)
+\end{equation}
+as $|\hat{x}|/\hat{W}_1\rightarrow \infty$, where $W_1=a\,\hat{W}_1$. 
+
+\subsection{Ordering Scheme}
+Now, we are assuming that $\hat{W}_1\ll 1$. In other words, we are assuming that the thickness of the
+inner region is much less than that of the equilibrium current sheet. In the inner region,
+$\hat{t}\sim \hat{W}_1$ (as will become apparent), $\hat{x}\sim \hat{W}_1$, $\xi\sim 1$, $\hat{\psi}\sim \hat{W}_1^{\,2}$, $\hat{J}\sim \hat{W}_1$ (this is
+consistent with ${\mit\Delta}_m'\sim 1$), $\hat{J}_{\rm ni}\sim \hat{W}_1$ (by assumption), 
+$\hat{\phi}\sim 1$, and $\hat{U}\sim 1/\hat{W}_1^2$.  It follows that all terms in Eqs.~(\ref{e9.89m}) and (\ref{e9.92m}) are of the same order of magnitude. On the other hand, the terms involving $\hat{U}$ in Eq.~(\ref{e9.90}) are 
+smaller than the other term by a factor $(\hat{\delta}/\hat{W}_1)^5$, where $\hat{\delta}=S^{-2/5}$ is
+the (normalized) linear layer width.\cite{fkr} Finally, the term involving $\hat{J}$ in Eq.~(\ref{e9.91})
+is smaller than the other terms by a factor $\hat{W}_1$. Thus, assuming that $\hat{\delta}\ll \hat{W}_1\ll 1$ (i.e.,
+the inner region is much wider than the linear layer width, but much thinner than the equilibrium current sheet width), Eqs.~(\ref{e9.89m})--(\ref{e9.92m})
+reduce to 
+\begin{align}
+\frac{\partial\hat{\psi}}{\partial\hat{t}}&=\{\skew{3}\hat{\phi},\hat{\psi}\}+\hat{J}-\hat{J}_{\rm ni},\label{e9.94m}\\[0.5ex]
+\{\hat{J},\hat{\psi}\}& = 0,\label{e9.95m}\\[0.5ex]
+\frac{\partial^2\hat{\psi}}{\partial \hat{x}^2} &= 1\label{e9.96m}.
+\end{align}
+
+
+\subsection{Analysis}
+Equation~(\ref{e9.96m}) can be integrated, subject to the matching condition (\ref{e34}), to give
+\begin{equation}\label{e38}
+\hat{\psi}(\hat{x},\xi,\hat{t}) = \frac{\hat{x}^{\,2}}{2} + \sum_{m=1,\infty}\hat{\mit \Psi}_m(\hat{t})\,\cos(m\,\xi-\varphi_m)
+\end{equation}
+in the inner region.
+The previous equation is consistent with Eq.~(\ref{e34}) provided that $|{\mit\Delta}_m'|\,\hat{W}_1\ll 1$, for all $m$.  This ordering is
+known as the {\em constant-$\psi$ approximation},\cite{fkr} and is automatically satisfied if ${\mit\Delta}_m'\sim 1$ and
+$\hat{W}_1\ll 1$. 
+
+Equation~(\ref{e9.95m}) implies that
+\begin{equation}\label{e9.98m}
+\hat{J} = \hat{J}(\hat{\psi}).
+\end{equation}
+In other words, the current density in the island region is a flux-surface function (i.e., it is constant
+on magnetic field-lines). We shall also assume that
+\begin{equation}
+\hat{J}_{\rm ni} = \hat{J}_{\rm ni}(\hat{\psi}), 
+\end{equation}
+because non-inductive current drive is due to the action of fast electrons that very rapidly equilibriate on
+magnetic flux surfaces. 
+
+Equation~(\ref{e9.94m}) can be combined with the previous three equations to give 
+\begin{equation}\label{e41}
+\sum_{m=1,\infty}\frac{d\hat{\mit\Psi}_m}{d\hat{t}}\,\cos(m\,\xi-\varphi_m)=\{\skew{3}\hat{\phi},\hat{\psi}\}+\hat{J}(\hat{\psi})-\hat{J}_{\rm ni}(\hat{\psi}). 
+\end{equation}
+Suppose that
+\begin{equation}\label{e42}
+\frac{d\hat{\mit\Psi}_m}{d\hat{t}} =\tilde{\gamma}\,\hat{\mit\Psi}_m
+\end{equation}
+for all $m$. This assumption is reasonable if the $m=1$ mode is the only intrinsically unstable mode, and the $m>1$ modes are driven via nonlinear coupling  to the $m=1$ mode. Let us suppose that this is the case. Furthermore, let us write
+\begin{align}
+\hat{W}_1 &= 4\,\hat{\mit\Psi}_1^{1/2},\label{e43}\\[0.5ex]
+X &= \frac{4\,\hat{x}}{\hat{W}_1},\label{e44}\\[0.5ex]
+\hat{\psi}(\hat{x},\xi,\hat{t}) &= \hat{\mit\Psi}_1(\hat{t})\,{\mit\Omega}(\hat{x},\xi),\\[0.5ex]
+\epsilon_m &= \frac{\hat{\mit\Psi}_m}{\hat{\mit\Psi}_1}.\label{e46}
+\end{align}
+Thus, $W_1=\hat{W}_1\,a$ is the full width of the magnetic separatrix of the island chain that would develop in the inner region if $\epsilon_m=0$ for $m>1$ (i.e., if the $m=1$ mode were dominant). (See Sect.~\ref{s1}.) Note that the $\epsilon_m$ are independent of time. 
+
+Equations~(\ref{e42}) and (\ref{e43}) imply that
+\begin{equation}\label{e47}
+\frac{d\hat{W}_1}{d\hat{t}} = \lambda,
+\end{equation}
+where 
+\begin{equation}
+\lambda = \frac{\tilde{\gamma}\,\hat{W}_1}{2}.
+\end{equation}
+Note that $\lambda\sim 1$, according to our ordering assumptions. Equations~(\ref{e38}) and (\ref{e43})--(\ref{e46})
+yield
+\begin{equation}\label{e50}
+{\mit\Omega}(X,\xi) = \frac{X^2}{2}+f(\xi),
+\end{equation}
+where
+\begin{equation}
+f(\xi) = \sum_{m=1,\infty} \epsilon_m\,\cos(m\,\xi-\varphi_m).
+\end{equation}
+Finally, Eq.~(\ref{e41}) reduces to 
+\begin{equation}\label{e51}
+\frac{\lambda\,\hat{W}_1}{8}\,f(\xi)= \{\skew{3}\hat{\phi},\hat{\psi}\}+\hat{J}(\hat{\psi})-\hat{J}_{\rm ni}(\hat{\psi}).
+\end{equation}
+
+\subsection{Flux-Surface Average Operator}
+According to Eq.~(\ref{e50}), 
+\begin{equation}
+X = s\sqrt{2\left[{\mit\Omega}-f(\xi)\right]},
+\end{equation}
+where $s\equiv {\rm sgn}(X)$. Now,
+\begin{equation}
+ \{\skew{3}\hat{\phi},\hat{\psi}\} = -\hat{x}\left.\frac{\partial\hat{\phi}}{\partial\xi}\right|_{\mit\Omega}= -\frac{\hat{W}_1}{4}\,
+ s\sqrt{2\left[{\mit\Omega}-f(\xi)\right]}\,\left.\frac{\partial\hat{\phi}}{\partial\xi}\right|_{\mit\Omega}.
+ \end{equation}
+ The {\em flux-surface average operator} is defined
+ \begin{equation}\label{e54}
+ \langle A({\mit\Omega},\xi)\rangle= \int_{0}^{2\pi}\frac{A({\mit\Omega},\xi)\,H({\mit\Omega},\xi)}
+ {\sqrt{2\left[{\mit\Omega}-f(\xi)\right]}}\,\frac{d\xi}{2\pi},
+ \end{equation}
+ where
+ \begin{equation}\label{e55}
+ H({\mit\Omega},\xi) = \left\{
+ \begin{array}{ccc} 1&~~~~~&{\mit\Omega}\geq f(\xi)\\[0.5ex]
+ 0 &&{\mit\Omega}< f(\xi)\end{array}\right..
+ \end{equation}
+ It follows that
+ \begin{equation}
+ \langle \{\skew{3}\hat{\phi},\hat{\psi}\}\rangle = 0,
+ \end{equation}
+ because $\skew{3}\hat{\phi}(\hat{x},\xi)$ is periodic in $\xi$, with period $2\pi$, and $\skew{3}\hat{\phi}(\hat{x},\xi)$
+ is odd in $\hat{x}$ [so $\skew{3}\hat{\phi}(0,\
+ \xi)=0$]. Thus, the flux-surface average of Eq.~(\ref{e51}) yields
+ \begin{equation}\label{e57}
+ \hat{J}({\mit\Omega}) = \frac{\lambda\,\hat{W}_1}{8}\,\frac{\langle f(\xi)\rangle}{\langle 1\rangle} + \hat{J}_{\rm ni}({\mit\Omega}).
+ \end{equation}
+
+\subsection{Asymptotic Matching} 
+According to the matching condition (\ref{e34}),
+\begin{align}
+2\int_{-\infty}^\infty \int_0^{2\pi} \frac{\partial^2\hat{\psi}}{\partial \hat{x}^{\,2}}\,\cos(m\,\xi-\varphi_m)\,d\hat{x}\,\frac{d\xi}{2\pi}& = {\mit\Delta}_m'\,\hat{\mit\Psi}_m,\\[0.5ex]
+2\int_{-\infty}^\infty \int_0^{2\pi} \frac{\partial^2\hat{\psi}}{\partial \hat{x}^{\,2}}\,\sin(m\,\xi-\varphi_m)\,d\hat{x}\,\frac{d\xi}{2\pi}& =0,\label{e59}
+\end{align}
+for $m=1,\infty$. Equation~(\ref{e59}) follows because the ${\mit\Delta}_m'$ are real quantities. 
+The previous two equations can be combined with Eq.~(\ref{e9.91}) to give 
+\begin{align}\label{e60c}
+2\int_{-\infty}^\infty \int_0^{2\pi} \hat{J}({\mit\Omega})\,\cos(m\,\xi-\varphi_m)\,d\hat{x}\,\frac{d\xi}{2\pi}& = {\mit\Delta}_m'\,\hat{\mit\Psi}_m,\\[0.5ex]
+2\int_{-\infty}^\infty \int_0^{2\pi} \hat{J}({\mit\Omega})\,\sin(m\,\xi-\varphi_m)\,d\hat{x}\,\frac{d\xi}{2\pi}& =0.\label{e61c}
+\end{align}
+ It is easily demonstrated that 
+\begin{equation}
+d\hat{x}\,d\xi = \frac{(\hat{W}_1/4)\,d{\mit\Omega}\,d\xi}{s\sqrt{2\left[{\mit\Omega}-f(\xi)\right]}}.
+\end{equation}
+Hence, making use of  Eq.~(\ref{e54}), Eqs.~(\ref{e60c}) and (\ref{e61c}) reduce to 
+\begin{align}\label{e63}
+\hat{W}_1\int_{{\mit\Omega}_{\rm min}}^\infty\hat{J}({\mit\Omega})\,\langle\cos(m\,\xi-\varphi_m)\rangle\,d{\mit\Omega}&= {\mit\Delta}_m'\,\hat{\mit\Psi}_m,\\[0.5ex]
+\hat{W}_1\int_{{\mit\Omega}_{\rm min}}^\infty\hat{J}({\mit\Omega})\,\langle\sin(m\,\xi-\varphi_m)\rangle\,d{\mit\Omega}&=0.\label{e64}
+\end{align}
+Here, ${\mit\Omega}_{\rm min}$ is equal to the minimum value of $f(\xi)$. 
+
+The only obvious way of satisfying the contraint Eq.~(\ref{e64}) is to set all of the phase angles, $\varphi_m$, equal to
+one another. In fact, without loss of generality, we can set all of the phase angles equal to zero. In this case,
+\begin{equation}\label{e65}
+f(\xi) = \sum_{m=1,\infty} \epsilon_m\,\cos(m\,\xi),
+\end{equation}
+and Eqs.~(\ref{e63}) and (\ref{e64}) become 
+\begin{align}\label{e65a}
+\hat{W}_1\int_{{\mit\Omega}_{\rm min}}^\infty\hat{J}({\mit\Omega})\,\langle\cos(m\,\xi)\rangle\,d{\mit\Omega}&= {\mit\Delta}_m'\,\hat{\mit\Psi}_m,\\[0.5ex]
+\hat{W}_1\int_{{\mit\Omega}_{\rm min}}^\infty\hat{J}({\mit\Omega})\,\langle\sin(m\,\xi)\rangle\,d{\mit\Omega}&=0.\label{e66}
+\end{align}
+Equation~(\ref{e66}) is now automatically satisfied because $\hat{J}({\mit\Omega})$ is an even function of $\xi$ [since ${\mit\Omega}= X^2/2+f(\xi)$ is an even function of $\xi$]. 
+
+Let us adopt a simplified current drive model in which 
+\begin{equation}\label{e68a}
+\hat{J}_{\rm ni}({\mit\Omega}) = \left\{
+\begin{array}{ccc} -\mu\,\hat{W}_1&~~~&{\mit\Omega}_{\rm min}\leq {\mit\Omega} \leq {\mit\Omega}_c\\[0.5ex]
+0&&{\mit\Omega}>{\mit\Omega}_c\end{array}\right.,
+\end{equation}
+where $\mu$ is a constant. 
+
+Equations~(\ref{e43}), (\ref{e57}), (\ref{e65}), (\ref{e65a}), and (\ref{e68a}) yield the tearing mode dispersion relation
+\begin{equation}\label{e68}
+{\mit\Delta}_m'\,\epsilon_m = \lambda\sum_{m'=1,\infty}I_{m,m'}\,\epsilon_{m'} + \mu\,K_m,
+\end{equation}
+where 
+\begin{align}
+I_{m,m' } &= 2\int_{{\mit\Omega}_{\rm min}}^\infty\frac{C_m({\mit\Omega})\,C_{m'}({\mit\Omega})}{C_0({\mit\Omega})}\,d{\mit\Omega},\\[0.5ex]
+K_m &= -16\int_{{\mit\Omega}_{\rm min}}^{\mit\Omega_c}\,C_m({\mit\Omega})
+\,d{\mit\Omega},\label{e70}\\[0.5ex]
+C_m({\mit\Omega})& = \langle\cos(m\,\xi)\rangle.\label{e72}
+\end{align}
+Note  that $I_{m,m'}\sim 1$ and $K_m\sim 1$. Thus, assuming
+that ${\mit\Delta}_m'\sim 1$ and $\mu\sim 1$, it follows from Eq.~(\ref{e68}) that $\lambda\sim 1$, which justifies our previous assumption that $\hat{t}\sim \hat{W}_1$. Incidentally, the ordering  $\mu\sim 1$ implies that the
+non-inductive current density in the inner region is smaller than the equilibrium current density by a factor $\hat{W}_1$.
+[See Eq.~(\ref{e68a}).]
+\begin{figure}
+\centerline{\includegraphics[height=4in]{Figure3.eps}}
+\caption{Contours of the normalized magnetic flux, ${\mit\Omega}(X,\xi)$, in the two-harmonic approximation for 
+$\epsilon_2=0.4$. Positive/negative contours are shown as solid/dashed lines. The magnetic separatrices are shown
+as  bold lines.}\label{fig3}
+\end{figure}Nevertheless, according to Eq.~(\ref{e68}), this level of non-inductive current drive is still able to affect the growth of the tearing mode. 
+This is significant because it would be completely impractical to generate a non-inductive current density
+in the inner region that competes with the equilibrium current density.  Note, finally, that if $\lambda\sim 1$ then the tearing mode grows on the timescale $\hat{W}_1\,\tau_R$, which is much less than $\tau_R$, but much greater than
+$\tau_{A\,m}$, as was previously assumed. 
+
+\section{Single-Harmonic Approximation}\label{s1}
+Suppose that $\epsilon_1=1$ and $\epsilon_m=0$ for $m>1$. In other words, suppose that the $m=1$ harmonic
+is dominant. In this case,
+\begin{align}
+f(\xi) &= \cos\xi,\label{e71}\\[0.5ex]
+{\mit\Omega}(X,\xi) &= \frac{X^2}{2}+\cos\xi.
+\end{align}
+Note that, for $0\leq \xi < 2\pi$, $f(\xi)$ attains its maximum value, 1, at $\xi=0$, and its minimum value, $-1$, at $\xi=\pi$. 
+Figure~\ref{fig1} shows the contours of the normalized magnetic flux, ${\mit\Omega}(X,\xi)$, in the single-harmonic approximation. It can be seen that the tearing mode has changed the
+topology of the magnetic field in the immediate vicinity of the resonant surface, by breaking and reconnecting magnetic field-lines,  to produce a chain of magnetic islands. There are magnetic
+X-points at $\xi=n\,2\pi$, where $n$ is an integer, and magnetic O-points at $\xi=(2n-1)\,\pi$. The magnetic
+separatix, which separates the reconnected magnetic field-lines from the unreconnected field-lines, corresponds to
+the contour ${\mit\Omega}=1$. The full width of the separatrix in $X$ is 4, which corresponds to a full width
+of $\hat{W}_1$ in $\hat{x}$ [see Eq.~(\ref{e44})]. 
+
+According to Eq.~(\ref{e54}), (\ref{e55}), (\ref{e72}), and (\ref{e71}), 
+\begin{equation}
+ C_m({\mit\Omega})= \int_{0}^{2\pi}\frac{\cos(m\,\xi)\,H({\mit\Omega},\xi)}
+ {\sqrt{2\left({\mit\Omega}-\cos\xi\right)}}\,\frac{d\xi}{2\pi},
+ \end{equation}
+ where
+ \begin{equation}
+ H({\mit\Omega},\xi) = \left\{
+ \begin{array}{ccc} 1&~~~~~&{\mit\Omega}\geq \cos\xi\\[0.5ex]
+ 0 &&{\mit\Omega}< \cos\xi\end{array}\right..
+ \end{equation}
+ Hence, we deduce that
+ \begin{equation}
+ C_m({\mit\Omega}\geq 1)= \int_{0}^{2\pi}\frac{\cos(m\,\xi)}
+ {\sqrt{2\left({\mit\Omega}-\cos\xi\right)}}\,\frac{d\xi}{2\pi},
+\end{equation}
+and 
+ \begin{equation}
+C_m(-1\leq {\mit\Omega}<1)= \int_{\xi_0}^{2\pi-\xi_0}\frac{\cos(m\,\xi)}
+ {\sqrt{2\left({\mit\Omega}-\cos\xi\right)}}\,\frac{d\xi}{2\pi}, 
+\end{equation}
+ where
+\begin{equation}
+\xi_0=\cos^{-1}({\mit\Omega}).
+\end{equation}
+Here, $0\leq \xi_0\leq \pi$. 
+
+It is helpful to define $p = \sqrt{(1+{\mit\Omega})/2}$. Thus, $p=0$ at the magnetic O-points, and $p=1$ at the
+X-points. In the region $p\geq1$, which lies outside the magnetic separatrix, let $\sin\varphi = \cos(\xi/2)$. 
+It follows that 
+\begin{equation}
+ C_m(p\geq 1)=\frac{1}{\pi} \int_{0}^{\pi/2}\frac{\cos[2\,m\,\cos^{-1}(\sin\varphi)]}
+ {\sqrt{p^{\,2}-\sin^2\varphi}}\,d\varphi.
+\end{equation}
+In the region $0\leq p< 1$, which lies inside the magnetic separatrix, let 
+\begin{equation}
+\sin\varphi = \frac{\cos(\xi/2)}{\cos(\xi_0/2)}=\frac{\cos(\xi/2)}{p}.
+\end{equation}
+ It follows that 
+\begin{equation}
+ C_m(-1\leq p< 1)=\frac{1}{\pi} \int_{0}^{\pi/2}\frac{\cos[2\,m\,\cos^{-1}(p\,\sin\varphi)]}
+ {\sqrt{1-p^{\,2}\,\sin^2\varphi}}\,d\varphi.
+\end{equation}
+
+
+The tearing mode dispersion relation (\ref{e68}) yields
+\begin{equation}\label{e82}
+{\mit\Delta}_1' = \lambda\,I_{1,1}+\mu\,K_1,
+\end{equation}
+where
+\begin{align}
+I_{m,m'} &= 8\int_0^\infty\frac{p\,C_m(p)\,C_{m'}(p)}{C_0(p)}\,dp,\\[0.5ex]
+K_m &= -64 \int_0^{p_c} p\,C_m(p)\,dp,
+\end{align}
+and $p_c= \sqrt{(1+{\mit\Omega}_c)/2}$. 
+
+Equation~(\ref{e82}) can be rearranged to give
+\begin{equation}
+\lambda = \frac{{\mit\Delta}_1'-\mu\,K_1(p_c)}{I_{1,1}}.
+\end{equation}
+Now, $I_{1,1}$ takes the value $0.8227$, whereas the function $K_1(p_c)$ is shown in Fig.~\ref{fig2}. 
+We can see that, in the absence of current drive, if the $m=1$ mode is unstable (i.e., if ${\mit\Delta}_1'> 0$) then the island width grows linearly in time  [see Eq.~(\ref{e47})] at the rate ${\mit\Delta}_1'/I_{1,1}$.\cite{ruth}
+Moreover, the application of non-inductive current drive causes the growth rate to decrease linearly with
+increasing normalized non-inductive current density, $\mu$. The tearing mode is stabilized when $\mu$ exceeds the critical value
+\begin{equation}
+\mu_{\rm crit} =\frac{{\mit\Delta}_1'}{K_1(p_c)}.
+\end{equation}
+As is clear from Fig.~\ref{fig2}, the critical non-inductive current density required to stabilize the mode is minimized when $p_c\sim 1$. In other words, when the region in which the non-inductive current is driven extends all the way from the island O-points to the magnetic sepatatrix.
+
+\section{Two-Harmonic Approximation}
+Suppose that $\epsilon_1=1$, $\epsilon_2\neq 0$,  and $\epsilon_m=0$ for $m>2$. In other words, suppose that the $m=2$ harmonic
+is included in the calculation. In this case,
+\begin{align}
+f(\xi) &= \cos\xi + \epsilon_2\,\cos(2\xi),\label{e71a}\\[0.5ex]
+{\mit\Omega}(X,\xi) &= \frac{X^2}{2}+\cos\xi + \epsilon_2\,\cos(2\,\xi).
+\end{align}
+ 
+\section*{Acknowledgements}
+This research was directly funded by the U.S.\ Department of Energy, Office of Science, Office of Fusion Energy Sciences,  under  contracts DE-FG02-04ER54742 and DE-SC0021156. 
+
+\section*{Data Availability Statement}
+The data that support the findings of this study are available from the corresponding author upon reasonable request.
+
+\section*{References}
+\begin{thebibliography}{99}\baselineskip 5ex
+
+\bibitem{fw} R.~Fitzpatrick, and F.L.~Waelbroeck, Phys. Plasmas {\bf 12}, 022307 (2005).
+\bibitem{fkr} H.P.~Furth, J.~Killeen, and M.N.~Rosenbluth, Phys.\ Fluids {\bf 6}, 459 (1963).
+\bibitem{hm} R.D.~Hazeltine, and J.D.~Meiss. Phys.\ Reports {\bf 121}, 1 (1985).
+\bibitem{ruth} P.H.~Rutherford,  Phys.\ Fluids {\bf 16}, 1903 (1973).
+\bibitem{strauss} H.R.~Strauss, Phys.\  Fluids {\bf 19}, 134 (1976). 
+\end{thebibliography}
+
+\begin{figure}
+\centerline{\includegraphics[height=4in]{Figure1.eps}}
+\caption{Contours of the normalized magnetic flux, ${\mit\Omega}(X,\xi)$, in the single-harmonic approximation. Positive/negative contours are shown as solid/dashed lines. The magnetic separatrix is shown
+as a  bold line.}\label{fig1}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=4in]{Figure2.eps}}
+\caption{The current-drive function, $K_1(p_c)$, evaluated in the single-harmonic approximation.}\label{fig2}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=4in]{Figure3.eps}}
+\caption{Contours of the normalized magnetic flux, ${\mit\Omega}(X,\xi)$, in the two-harmonic approximation for 
+$\epsilon_2=0.4$. Positive/negative contours are shown as solid/dashed lines. The magnetic separatrices are shown
+as  bold lines.}\label{fig3}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=4in]{Figure4.eps}}
+\caption{Contours of the normalized magnetic flux, ${\mit\Omega}(X,\xi)$, in the two-harmonic approximation for 
+$\epsilon_2=-0.4$. Positive/negative contours are shown as solid/dashed lines. The magnetic separatrix is shown
+as a  bold line.}\label{fig4}
+\end{figure}
+
+\end{document}

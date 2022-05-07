@@ -33,13 +33,45 @@ for x in lines:
     lama.append(float(data[2]))
     lamda.append(float(data[3]))
 
+with open('TwoHarmonic.000.txt' ,"r") as file:
+    lines = file.readlines()
+    file.close()
+
+Delta_1b = []
+epsilon_2b  = []
+lamb = []
+lamdb  = []
+for x in lines:
+    data = x.split()
+    Delta_1b.append(float(data[0]))
+    epsilon_2b.append(float(data[1]))
+    lamb.append(float(data[2]))
+    lamdb.append(float(data[3]))    
+
+with open('TwoHarmonic.m300.txt' ,"r") as file:
+    lines = file.readlines()
+    file.close()
+
+Delta_1c = []
+epsilon_2c  = []
+lamc = []
+lamdc  = []
+for x in lines:
+    data = x.split()
+    Delta_1c.append(float(data[0]))
+    epsilon_2c.append(float(data[1]))
+    lamc.append(float(data[2]))
+    lamdc.append(float(data[3]))    
+        
 plt.figure(figsize=(10,7))
 plt.rc('xtick', labelsize=16) 
 plt.rc('ytick', labelsize=16) 
-plt.xlim(0., 10.)
+plt.xlim(0., 20.)
 plt.ylim(0., 0.10)
-plt.plot(Delta_1, epsilon_2, color='red',  linewidth='1.5', label="$\Delta_2'=-1.")
-plt.plot(Delta_1a, epsilon_2a, color='green',  linewidth='1.5', label="$\Delta_2'=-1.")
+plt.plot(Delta_1, epsilon_2, color='red',  linewidth='1.5')
+plt.plot(Delta_1a, epsilon_2a, color='green',  linewidth='1.5')
+plt.plot(Delta_1c, epsilon_2c, color='blue',  linewidth='1.5')
+plt.plot(Delta_1b, epsilon_2b, color='black',  linewidth='1.5')
 plt.xlabel("$\Delta'_1$", fontsize='20')
 plt.ylabel("$\epsilon_2$", fontsize='20')
 #plt.legend(fontsize='20')
