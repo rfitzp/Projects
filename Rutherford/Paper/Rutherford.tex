@@ -363,6 +363,7 @@ in the inner region that competes with the equilibrium current density.  Note, f
 $\tau_{A\,m}$, as was previously assumed. 
 
 \section{Single-Harmonic Approximation}\label{s1}
+\subsection{Analysis}
 Suppose that $\epsilon_1=1$ and $\epsilon_m=0$ for $m>1$. In other words, suppose that the $m=1$ harmonic
 is dominant. In this case,
 \begin{align}
@@ -371,8 +372,8 @@ f(\xi) &= \cos\xi,\label{e71}\\[0.5ex]
 \end{align}
 Note that, for $0\leq \xi < 2\pi$, $f(\xi)$ attains its maximum value, 1, at $\xi=0$, and its minimum value, $-1$, at $\xi=\pi$. 
 Figure~\ref{fig1} shows the contours of the normalized magnetic flux, ${\mit\Omega}(X,\xi)$, in the single-harmonic approximation. It can be seen that the tearing mode has changed the
-topology of the magnetic field in the immediate vicinity of the resonant surface, by breaking and reconnecting magnetic field-lines,  to produce a chain of magnetic islands. There are magnetic
-X-points at $\xi=n\,2\pi$, where $n$ is an integer, and magnetic O-points at $\xi=(2n-1)\,\pi$. The magnetic
+topology of the magnetic field in the immediate vicinity of the resonant surface, by breaking and reconnecting magnetic field-lines,  to produce a chain of magnetic islands. There is a chain of magnetic
+X-points located at $\xi=n\,2\pi$, where $n$ is an integer, which are all connected by the separatrix. Moreover, there are magnetic O-points, located at $\xi=(2n-1)\,\pi$, in the regions enclosed by the separatrix. The magnetic
 separatix, which separates the reconnected magnetic field-lines from the unreconnected field-lines, corresponds to
 the contour ${\mit\Omega}=1$. The full width of the separatrix in $X$ is 4, which corresponds to a full width
 of $\hat{W}_1$ in $\hat{x}$ [see Eq.~(\ref{e44})]. 
@@ -405,7 +406,7 @@ C_m(-1\leq {\mit\Omega}<1)= \int_{\xi_0}^{2\pi-\xi_0}\frac{\cos(m\,\xi)}
 Here, $0\leq \xi_0\leq \pi$. 
 
 It is helpful to define $p = \sqrt{(1+{\mit\Omega})/2}$. Thus, $p=0$ at the magnetic O-points, and $p=1$ at the
-X-points. In the region $p\geq1$, which lies outside the magnetic separatrix, let $\sin\varphi = \cos(\xi/2)$. 
+X-points and on the separatrix. In the region $p\geq1$, which lies outside the magnetic separatrix, let $\sin\varphi = \cos(\xi/2)$. 
 It follows that 
 \begin{equation}
  C_m(p\geq 1)=\frac{1}{\pi} \int_{0}^{\pi/2}\frac{\cos[2\,m\,\cos^{-1}(\sin\varphi)]}
@@ -421,10 +422,9 @@ In the region $0\leq p< 1$, which lies inside the magnetic separatrix, let
  {\sqrt{1-p^{\,2}\,\sin^2\varphi}}\,d\varphi.
 \end{equation}
 
-
 The tearing mode dispersion relation (\ref{e68}) yields
 \begin{equation}\label{e82}
-{\mit\Delta}_1' = \lambda\,I_{1,1}+\mu\,K_1,
+{\mit\Delta}_1' = \lambda\,I_{1,1}+\mu\,K_1(p_c),
 \end{equation}
 where
 \begin{align}
@@ -433,6 +433,7 @@ K_m &= -64 \int_0^{p_c} p\,C_m(p)\,dp,
 \end{align}
 and $p_c= \sqrt{(1+{\mit\Omega}_c)/2}$. 
 
+\subsection{Results}
 Equation~(\ref{e82}) can be rearranged to give
 \begin{equation}
 \lambda = \frac{{\mit\Delta}_1'-\mu\,K_1(p_c)}{I_{1,1}}.
@@ -444,15 +445,70 @@ increasing normalized non-inductive current density, $\mu$. The tearing mode is 
 \begin{equation}
 \mu_{\rm crit} =\frac{{\mit\Delta}_1'}{K_1(p_c)}.
 \end{equation}
-As is clear from Fig.~\ref{fig2}, the critical non-inductive current density required to stabilize the mode is minimized when $p_c\sim 1$. In other words, when the region in which the non-inductive current is driven extends all the way from the island O-points to the magnetic sepatatrix.
+As is clear from Fig.~\ref{fig2}, the critical non-inductive current density required to stabilize the mode is minimized when $p_c\sim 1$. In other words, when the region in which the non-inductive current is driven extends all the way from the island O-points to the magnetic sepatatrix.  
 
 \section{Two-Harmonic Approximation}
+\subsection{Analysis}
+\subsubsection{Introduction}
 Suppose that $\epsilon_1=1$, $\epsilon_2\neq 0$,  and $\epsilon_m=0$ for $m>2$. In other words, suppose that the $m=2$ harmonic
 is included in the calculation. In this case,
 \begin{align}
 f(\xi) &= \cos\xi + \epsilon_2\,\cos(2\xi),\label{e71a}\\[0.5ex]
 {\mit\Omega}(X,\xi) &= \frac{X^2}{2}+\cos\xi + \epsilon_2\,\cos(2\,\xi).
 \end{align}
+There are three cases of interest.
+
+\subsubsection{$-1/4 < \epsilon_2 < 1/4$}
+Suppose that $-1/4<\epsilon_2< 1/4$. In this case, for $0\leq \xi< 2\pi$, $f(\xi)$ attains its maximum value, $1+\epsilon_2$, at $\xi=0$, and its minimum value, $-1+\epsilon_2$, at $\xi=\pi$.  The topology of the magnetic field 
+in the vicinity of the resonant surface is as shown in Fig.~\ref{fig1}, with a chain of X-points connected by a
+magnetic separatrix that extends over all values of $\xi$, and encloses a chain of magnetic islands each containing a
+single O-point. 
+
+We can write 
+\begin{equation}
+C_m({\mit\Omega})({\mit\Omega}\geq 1+\epsilon_2) = \int_0^{2\pi}
+\frac{\cos(m\,\xi)}{\sqrt{2[{\mit\Omega}-\cos\xi-\epsilon_2\,\cos(2\,\xi)]}}\,\frac{d\xi}{2\pi},
+\end{equation} 
+and
+\begin{equation}
+C_m({\mit\Omega})(1-\epsilon_2\leq {\mit\Omega}< 1+\epsilon_2) = \int_{\xi_0}^{2\pi-\xi_0}
+\frac{\cos(m\,\xi)}{\sqrt{2[{\mit\Omega}-\cos\xi-\epsilon_2\,\cos(2\,\xi)]}}\,\frac{d\xi}{2\pi},
+\end{equation} 
+where
+\begin{equation}
+\xi_0 =\cos^{-1}\left[\frac{1+\sqrt{1+8\,\epsilon_2\,({\mit\Omega}+\epsilon_2)}}{4\,\epsilon_2}\right].
+\end{equation}
+Here, $0\leq \xi_0\leq \pi$. 
+
+It is helpful to define $p=\sqrt{(1+{\mit\Omega}-\epsilon_2)/2}$.  Thus, $p=0$ at the magnetic O-points, and $p=1$ at the
+X-points and on the separatrix. In the region $p\geq1$, which lies outside the magnetic separatrix, let $\sin\varphi = \cos(\xi/2)$. 
+It follows that 
+\begin{equation}
+ C_m(p\geq 1)=\frac{1}{\pi} \int_{0}^{\pi/2}\frac{\cos[2\,m\,\cos^{-1}(\sin\varphi)]}
+ {\sqrt{p^{\,2}-(1-4\,\epsilon_2)\,\sin^2\varphi-4\,\epsilon_2\,\sin^4\varphi}}\,d\varphi.
+\end{equation}
+In the region $0\leq p< 1$, which lies inside the magnetic separatrix, let 
+\begin{equation}
+\sin\varphi = \frac{\cos(\xi/2)}{\cos(\xi_0/2)}.
+\end{equation}
+ It follows that 
+\begin{equation}
+ C_m(-1\leq p< 1)=\frac{1}{\pi} \int_{0}^{\pi/2}\frac{\cos[2\,m\,\cos^{-1}(\tilde{p}\,\sin\varphi)]\,\tilde{p}\,\cos\varphi}
+ {\sqrt{p^2-(1-4\,\epsilon_2)\,\tilde{p}^{\,2}\,\sin^2\varphi-4\,\epsilon_2\,\tilde{p}^4\sin^4\varphi}\,\sqrt{1-\tilde{p}^2\,\sin^2\varphi}}\,d\varphi,
+\end{equation}
+where
+\begin{equation}
+\tilde{p}= \cos(\xi_0/2) = \left[\frac{4\,\epsilon_2-1+\sqrt{(4\,\epsilon_2-1)^2+16\,\epsilon_2\,p^2}}{8\,\epsilon_2}\right]^{1/2}.
+\end{equation}
+
+\subsubsection{$\epsilon_2 > 1/4$}
+Suppose that $\epsilon_2> 1/4$. In this case, for $0\leq \xi< 2\pi$, $f(\xi)$ attains its absolute maximum value, $1+\epsilon_2$, at $\xi=0$, its local maximum value, $-1/(8\,\epsilon_2)-\epsilon_2$, at $\xi=\cos^{-1}[-1/(4\,\epsilon_2)]$,
+and its absolute minimum value, $-1+\epsilon_2$, at $\xi=\pi$.    The topology of the magnetic field 
+in the vicinity of the resonant surface is as shown in Fig.~\ref{fig3}, with  a chain of X-points connected by a
+magnetic separatrix that extends over all values of $\xi$, and encloses a chain of magnetic islands. However,
+each magnetic island includes an internal magnetic separatrix that runs through an isolated magnetic
+X-point. Moreover, each internal magnetic separatrix encloses two magnetic O-points. 
+
  
 \section*{Acknowledgements}
 This research was directly funded by the U.S.\ Department of Energy, Office of Science, Office of Fusion Energy Sciences,  under  contracts DE-FG02-04ER54742 and DE-SC0021156. 
