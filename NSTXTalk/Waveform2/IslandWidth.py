@@ -38,4 +38,5 @@ plt.legend(fontsize='15')
 plt.xlabel('$time$ (ms)', fontsize='15')
 plt.ylabel('$W$', fontsize='15')
 
-plt.show()
+#plt.show()
+plt.savefig("Waveform2.eps")
