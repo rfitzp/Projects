@@ -177,9 +177,9 @@ plt.plot(p011,  t011,  color='blue', linewidth=2)
 plt.plot(p013,  t013,  color='blue', linewidth=2)
 plt.plot(p014,  t014,  color='blue', linewidth=2)
 
-plt.xlabel('$Period (ms)$', fontsize="20")
-plt.ylabel("$I_{rmp} (kA)$", fontsize="20")
+plt.xlabel('$Period$ (ms)', fontsize="20")
+plt.ylabel("$I_{rmp}$ (kA)", fontsize="20")
 #plt.legend(fontsize="20")
 
 plt.show()
-#plt.savefig("PeriodScan.pdf")
+#plt.savefig("PeriodScan0.eps")

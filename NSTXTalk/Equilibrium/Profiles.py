@@ -31,7 +31,7 @@ plt.plot(psin, p, linewidth='2')
 #plt.axvline(psirat, color='black', linewidth=0.5, linestyle='dotted')
 #plt.axvline(psiped, color='black', linewidth=0.5, linestyle='dotted')
 plt.xlabel('$\\Psi_N$')
-plt.ylabel('$P$ (kPa)')
+plt.ylabel('$P$ (Pa)')
 
 plt.subplot(1, 2, 2)
 plt.xlim((0.0, 1.0))
