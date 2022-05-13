@@ -84,6 +84,13 @@ for pc in np.linspace(pc_start, pc_end, Npc):
     pcc.append(pc)
     ll1.append(L1)
 
+# ###########
+# Output data
+# ###########
+with open("SingleHarmonic.txt", "w") as file:
+    for n in range(len(pcc)):
+        file.write("%11.4e %11.4e\n" % (pcc[n], ll1[n]))
+
 # ##########    
 # Graph data
 # ##########

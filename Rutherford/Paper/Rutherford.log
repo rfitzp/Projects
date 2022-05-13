@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.5.22)  9 MAY 2022 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=latex 2016.5.22)  13 MAY 2022 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -160,6 +160,18 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+LaTeX Info: Redefining \frak on input line 111.
+LaTeX Info: Redefining \Bbb on input line 113.
+))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -192,27 +204,27 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
 )
-Class revtex4-1 Info: Patching LaTeX tabular. on input line 8.
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 8.
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 8.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 8.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 8.
+Class revtex4-1 Info: Patching LaTeX tabular. on input line 9.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 9.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 9.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 9.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 9.
 
 (./Rutherford.aux)
 \openout1 = `Rutherford.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -276,25 +288,43 @@ e
 ))
 \openout3 = `RutherfordNotes.bib'.
 
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 
-[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
-Overfull \hbox (27.30817pt too wide) in paragraph at lines 407--411
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+ [3] [4] [5]
+[6] [7] [8] [9] [10] [11] [12] [13] [14]
+Overfull \hbox (27.30817pt too wide) in paragraph at lines 486--490
 \OT1/cmr/m/n/12 In the re-gion $0 \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 p < \OT
 1/cmr/m/n/12 1$, which lies in-side the mag-netic sep-a-ra-trix, let $[] \OML/c
 mm/m/it/12 ' \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 ^^X=\OT1/cmr/m/n/12 2)\OML/c
 mm/m/it/12 = []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X[]=\OT1/cmr/m/n/12 2) =
  []
 
-[12] [13]
-Overfull \hbox (18.09995pt too wide) in paragraph at lines 479--483
+[15] [16]
+Overfull \hbox (18.09995pt too wide) in paragraph at lines 559--563
 \OT1/cmr/m/n/12 In the re-gion $0 \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 p < \OT
 1/cmr/m/n/12 1$, which lies in-side the mag-netic sep-a-ra-trix, let $[] \OML/c
 mm/m/it/12 ' \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 ^^X=\OT1/cmr/m/n/12 2)\OML/c
 mm/m/it/12 = []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X[]=\OT1/cmr/m/n/12 2)$.
  []
 
-[14] [15] [16] [17] [18]
+[17]
+Overfull \hbox (3.175pt too wide) in paragraph at lines 628--630
+\OT1/cmr/m/n/12 at the in-ter-nal mag-netic O-points. In the re-gion, $\OML/cmm
+/m/it/12 p[] \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 p < \OT1/cmr/m/n/12 0$, let 
+$[] \OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 ^^X=\OT1/cmr/m/n/1
+2 2)\OML/cmm/m/it/12 = []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X[]=\OT1/cmr/m/n/1
+2 2)$.
+ []
+
+[18] [19] [20] [21] [22] [23] [24]
 No file Rutherford.bbl.
 Package epstopdf Info: Source file: <Figure1.eps>
 (epstopdf)                    date: 2022-05-05 13:51:59
@@ -304,19 +334,19 @@ Package epstopdf Info: Source file: <Figure1.eps>
 (epstopdf)                    size: 83629 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure1-eps-converted-to.p
 df Figure1.eps>
-(epstopdf)             \includegraphics on input line 688.
+(epstopdf)             \includegraphics on input line 858.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /Library/TeX/texbin/latex (file ./Figure1-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figure1-eps-converted-to.pdf, id=77, 867.24pt x 578.16pt>
+<Figure1-eps-converted-to.pdf, id=97, 867.24pt x 578.16pt>
 File: Figure1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure1-eps-converted-to.pdf>
-Package pdftex.def Info: Figure1-eps-converted-to.pdf used on input line 688.
-(pdftex.def)             Requested size: 433.61894pt x 289.07999pt.
- [19]
+Package pdftex.def Info: Figure1-eps-converted-to.pdf used on input line 858.
+(pdftex.def)             Requested size: 487.8213pt x 325.215pt.
+ [25]
 Package epstopdf Info: Source file: <Figure2.eps>
 (epstopdf)                    date: 2022-05-05 16:48:28
 (epstopdf)                    size: 18341 bytes
@@ -325,18 +355,18 @@ Package epstopdf Info: Source file: <Figure2.eps>
 (epstopdf)                    size: 9572 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure2-eps-converted-to.p
 df Figure2.eps>
-(epstopdf)             \includegraphics on input line 694.
+(epstopdf)             \includegraphics on input line 864.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /Library/TeX/texbin/latex (file ./Figure2-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figure2-eps-converted-to.pdf, id=82, 722.7pt x 505.89pt>
+<Figure2-eps-converted-to.pdf, id=102, 722.7pt x 505.89pt>
 File: Figure2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure2-eps-converted-to.pdf>
-Package pdftex.def Info: Figure2-eps-converted-to.pdf used on input line 694.
-(pdftex.def)             Requested size: 412.97986pt x 289.07999pt.
+Package pdftex.def Info: Figure2-eps-converted-to.pdf used on input line 864.
+(pdftex.def)             Requested size: 464.59958pt x 325.215pt.
 Package epstopdf Info: Source file: <Figure3.eps>
 (epstopdf)                    date: 2022-05-06 16:34:08
 (epstopdf)                    size: 355352 bytes
@@ -345,18 +375,18 @@ Package epstopdf Info: Source file: <Figure3.eps>
 (epstopdf)                    size: 104757 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure3-eps-converted-to.p
 df Figure3.eps>
-(epstopdf)             \includegraphics on input line 699.
+(epstopdf)             \includegraphics on input line 869.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /Library/TeX/texbin/latex (file ./Figure3-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figure3-eps-converted-to.pdf, id=83, 867.24pt x 578.16pt>
+<Figure3-eps-converted-to.pdf, id=103, 867.24pt x 578.16pt>
 File: Figure3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure3-eps-converted-to.pdf>
-Package pdftex.def Info: Figure3-eps-converted-to.pdf used on input line 699.
-(pdftex.def)             Requested size: 433.61894pt x 289.07999pt.
+Package pdftex.def Info: Figure3-eps-converted-to.pdf used on input line 869.
+(pdftex.def)             Requested size: 487.8213pt x 325.215pt.
 Package epstopdf Info: Source file: <Figure4.eps>
 (epstopdf)                    date: 2022-05-06 16:35:45
 (epstopdf)                    size: 329975 bytes
@@ -365,29 +395,111 @@ Package epstopdf Info: Source file: <Figure4.eps>
 (epstopdf)                    size: 98451 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure4-eps-converted-to.p
 df Figure4.eps>
-(epstopdf)             \includegraphics on input line 706.
+(epstopdf)             \includegraphics on input line 876.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /Library/TeX/texbin/latex (file ./Figure4-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figure4-eps-converted-to.pdf, id=84, 867.24pt x 578.16pt>
+<Figure4-eps-converted-to.pdf, id=104, 867.24pt x 578.16pt>
 File: Figure4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure4-eps-converted-to.pdf>
-Package pdftex.def Info: Figure4-eps-converted-to.pdf used on input line 706.
-(pdftex.def)             Requested size: 433.61894pt x 289.07999pt.
- [20 <./Figure1-eps-converted-to.pdf>]
-[21 <./Figure2-eps-converted-to.pdf>] [22 <./Figure3-eps-converted-to.pdf>]
-[23 <./Figure4-eps-converted-to.pdf>] (./Rutherford.aux) ) 
+Package pdftex.def Info: Figure4-eps-converted-to.pdf used on input line 876.
+(pdftex.def)             Requested size: 487.8213pt x 325.215pt.
+Package epstopdf Info: Source file: <Figure5.eps>
+(epstopdf)                    date: 2022-05-12 15:35:51
+(epstopdf)                    size: 26999 bytes
+(epstopdf)             Output file: <Figure5-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-12 15:40:47
+(epstopdf)                    size: 11439 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figure5-eps-converted-to.p
+df Figure5.eps>
+(epstopdf)             \includegraphics on input line 883.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: /Library/TeX/texbin/latex (file ./Figure5-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figure5-eps-converted-to.pdf, id=105, 722.7pt x 505.89pt>
+File: Figure5-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Figure5-eps-converted-to.pdf>
+Package pdftex.def Info: Figure5-eps-converted-to.pdf used on input line 883.
+(pdftex.def)             Requested size: 464.59958pt x 325.215pt.
+Package epstopdf Info: Source file: <Figure6.eps>
+(epstopdf)                    date: 2022-05-12 15:49:49
+(epstopdf)                    size: 32897 bytes
+(epstopdf)             Output file: <Figure6-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-12 15:49:52
+(epstopdf)                    size: 15255 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figure6-eps-converted-to.p
+df Figure6.eps>
+(epstopdf)             \includegraphics on input line 891.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: /Library/TeX/texbin/latex (file ./Figure6-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figure6-eps-converted-to.pdf, id=106, 722.7pt x 505.89pt>
+File: Figure6-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Figure6-eps-converted-to.pdf>
+Package pdftex.def Info: Figure6-eps-converted-to.pdf used on input line 891.
+(pdftex.def)             Requested size: 464.59958pt x 325.215pt.
+Package epstopdf Info: Source file: <Figure7.eps>
+(epstopdf)                    date: 2022-05-12 17:10:47
+(epstopdf)                    size: 27262 bytes
+(epstopdf)             Output file: <Figure7-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-12 17:13:58
+(epstopdf)                    size: 14210 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figure7-eps-converted-to.p
+df Figure7.eps>
+(epstopdf)             \includegraphics on input line 899.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: /Library/TeX/texbin/latex (file ./Figure7-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figure7-eps-converted-to.pdf, id=107, 722.7pt x 505.89pt>
+File: Figure7-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Figure7-eps-converted-to.pdf>
+Package pdftex.def Info: Figure7-eps-converted-to.pdf used on input line 899.
+(pdftex.def)             Requested size: 464.59958pt x 325.215pt.
+Package epstopdf Info: Source file: <Figure8.eps>
+(epstopdf)                    date: 2022-05-12 15:35:57
+(epstopdf)                    size: 27366 bytes
+(epstopdf)             Output file: <Figure8-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-12 17:16:40
+(epstopdf)                    size: 15481 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figure8-eps-converted-to.p
+df Figure8.eps>
+(epstopdf)             \includegraphics on input line 905.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: /Library/TeX/texbin/latex (file ./Figure8-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figure8-eps-converted-to.pdf, id=108, 722.7pt x 505.89pt>
+File: Figure8-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Figure8-eps-converted-to.pdf>
+Package pdftex.def Info: Figure8-eps-converted-to.pdf used on input line 905.
+(pdftex.def)             Requested size: 464.59958pt x 325.215pt.
+ [26 <./Figure1-eps-converted-to.pdf>]
+[27 <./Figure2-eps-converted-to.pdf>] [28 <./Figure3-eps-converted-to.pdf>]
+[29 <./Figure4-eps-converted-to.pdf>] [30 <./Figure5-eps-converted-to.pdf>]
+[31 <./Figure6-eps-converted-to.pdf>] [32 <./Figure7-eps-converted-to.pdf>]
+[33 <./Figure8-eps-converted-to.pdf>] (./Rutherford.aux) ) 
 Here is how much of TeX's memory you used:
- 4206 strings out of 493015
- 55735 string characters out of 6133377
- 143376 words of memory out of 5000000
- 7703 multiletter control sequences out of 15000+600000
- 13019 words of font info for 46 fonts, out of 8000000 for 9000
+ 4550 strings out of 493015
+ 60057 string characters out of 6133377
+ 145968 words of memory out of 5000000
+ 8024 multiletter control sequences out of 15000+600000
+ 15907 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,15n,28p,354b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,15n,28p,494b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/201
@@ -406,11 +518,12 @@ ype1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmti12.pfb>
-Output written on Rutherford.pdf (23 pages, 557835 bytes).
+ublic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb>
+Output written on Rutherford.pdf (33 pages, 638399 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 394 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

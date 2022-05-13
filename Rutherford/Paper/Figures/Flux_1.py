@@ -39,5 +39,5 @@ if eps2 < -0.25:
 plt.ylabel("$X$", fontsize='20')
 plt.xlabel(r"$\xi / \pi$", fontsize='20')
 
-#plt.show()
-plt.savefig("Flux.eps")        
+plt.show()
+#plt.savefig("Flux.eps")        
