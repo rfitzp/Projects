@@ -44,4 +44,4 @@ plt.xlabel("$p_c$", fontsize='20')
 plt.legend(fontsize='20')
 
 #plt.show()
-plt.savefig("Figure7.eps")
+plt.savefig("Figure8.eps")

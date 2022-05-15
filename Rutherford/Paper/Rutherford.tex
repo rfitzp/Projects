@@ -11,18 +11,18 @@
 \title{Multi-Harmonic Rutherford Island Theory}
 
 \author{R.~Fitzpatrick\,\footnote{rfitzp@utexas.edu}}
-\affiliation{Institute for Fusion Studies,  Department of Physics,  University of Texas at Austin,  Austin TX, 78712, USA}
+\affiliation{Institute for Fusion Studies,  Department of Physics,  University of Texas at Austin,  Austin TX 78712, USA.}
 
 \begin{abstract}
 Rutherford island theory, which governs the nonlinear evolution of tearing modes in tokamak plasmas,  is generalized to take into account situations in which the conventional one-harmonic
 approximation is not valid. The analysis incorporates  non-inductive currents driven by radio-frequency (RF) electromagnetic waves injected into the plasma. A
 multi-harmonic tearing mode dispersion relation is derived that takes the form of a nonlinear inhomogeneous matrix
 eigenvalue problem.   The  dispersion relation is solved in the so-called two-harmonic approximation,
-in which  only the principal Fourier harmonic and its first overtone are included in the calculation.
-In the absence of RF current drive, the nonlinear behavior of the tearing
+in which  only the principal Fourier harmonic of the perturbed magnetic flux and its first overtone are included in the calculation.
+In the absence of RF current drive, the nonlinear behavior of a tearing
 mode predicted in the two-harmonic approximation does not differ substantially from that predicted in the
- one-harmonic approximation.  RF current drive that is sufficiently localized in the
-vicinity of the O-points of the magnetic island chain associated with the tearing mode is capable of triggering  homoclinic bifurcations of the O-points. Current
+ one-harmonic approximation.  On the other hand, RF current drive that is sufficiently localized in the
+vicinity of the O-points of the mode's magnetic island chain is capable of triggering  homoclinic bifurcations of the O-points (which is impossible in the one-harmonic approximation). However, current
 drive is incapable of triggering heteroclinic bifurcations of the island X-points. This is significant because
  Bard\'{o}czi \& Evans [Phys.\ Rev.\ Lett.\ {\bf 126}, 085003 (2021)]  observed homoclinic bifurcations of magnetic island chains in the presence of RF
  current drive in the DIII-D tokamak, but did not observe heteroclinic bifurcations. Finally, the changes in topology of the magnetic island
@@ -81,7 +81,7 @@ governed by
 A recent experimental paper by Bard\'{o}czi \& Evans\,\cite{bar} clearly shows that the one-harmonic
 approximation is not necessarily valid, especially in cases in which RF-driven non-inductive
 currents  are applied in the island region. 
-The purpose of this paper is to examine under what circumstances the one-harmonic approximation is valid, and
+The purpose of this paper is to examine under which circumstances the one-harmonic approximation is valid, and
 also to devise a multi-harmonic extension to Rutherford's analysis that is capable of  describing situations in 
 which the one-harmonic approximation fails. 
 
@@ -287,7 +287,7 @@ Equation~(\ref{e9.96m}) can be integrated, subject to the matching condition (\r
 \end{equation}
 in the inner region.
 The previous equation is consistent with Eq.~(\ref{e34}) provided that $|{\mit\Delta}_m'|\,\hat{W}_1\ll 1$, for all $m$.  This ordering is
-known as the {\em constant-$\psi$ approximation},\cite{fkr} and is automatically satisfied if ${\mit\Delta}_m'\sim 1$ and
+known as the {\em constant-$\psi$ approximation},\cite{fkr} and is automatically satisfied if $|{\mit\Delta}_m'|\sim 1$ and
 $\hat{W}_1\ll 1$. 
 
 Equation~(\ref{e9.95m}) implies that
@@ -366,9 +366,9 @@ where $s\equiv {\rm sgn}(X)$. Now,
  \begin{equation}
  \langle \{\skew{3}\hat{\phi},\hat{\psi}\}\rangle = 0,
  \end{equation}
- because $\skew{3}\hat{\phi}(\hat{x},\xi)$ is periodic in $\xi$, with period $2\pi$, and $\skew{3}\hat{\phi}(\hat{x},\xi)$
+ because $\skew{3}\hat{\phi}(\hat{x},\xi,\hat{t})$ is periodic in $\xi$, with period $2\pi$, and $\skew{3}\hat{\phi}(\hat{x},\xi,\hat{t})$
  is odd in $\hat{x}$ [so $\skew{3}\hat{\phi}(0,\
- \xi)=0$]. Thus, the flux-surface average of Eq.~(\ref{e51}) yields
+ \xi,\hat{t})=0$]. Thus, the flux-surface average of Eq.~(\ref{e51}) yields
  \begin{equation}\label{e57}
  \hat{J}({\mit\Omega}) = \frac{\lambda\,\hat{W}_1}{8}\,\frac{\langle f(\xi)\rangle}{\langle 1\rangle} + \hat{J}_{\rm ni}({\mit\Omega}).
  \end{equation}
@@ -379,7 +379,7 @@ According to the matching condition (\ref{e34}),
 2\int_{-\infty}^\infty \int_0^{2\pi} \frac{\partial^2\hat{\psi}}{\partial \hat{x}^{\,2}}\,\cos(m\,\xi-\varphi_m)\,d\hat{x}\,\frac{d\xi}{2\pi}& = {\mit\Delta}_m'\,\hat{\mit\Psi}_m,\\[0.5ex]
 2\int_{-\infty}^\infty \int_0^{2\pi} \frac{\partial^2\hat{\psi}}{\partial \hat{x}^{\,2}}\,\sin(m\,\xi-\varphi_m)\,d\hat{x}\,\frac{d\xi}{2\pi}& =0,\label{e59}
 \end{align}
-for $m=1,\infty$. Equation~(\ref{e59}) follows because the ${\mit\Delta}_m'$ are real quantities. 
+for $m=1,\infty$. Equation~(\ref{e59}) follows because the ${\mit\Delta}_m'$ are all real quantities. 
 The previous two equations can be combined with Eq.~(\ref{e9.91}) to give 
 \begin{align}\label{e60c}
 2\int_{-\infty}^\infty \int_0^{2\pi} \hat{J}({\mit\Omega})\,\cos(m\,\xi-\varphi_m)\,d\hat{x}\,\frac{d\xi}{2\pi}& = {\mit\Delta}_m'\,\hat{\mit\Psi}_m,\\[0.5ex]
@@ -396,7 +396,7 @@ Hence, making use of  Eq.~(\ref{e54}), Eqs.~(\ref{e60c}) and (\ref{e61c}) reduce
 \end{align}
 Here, ${\mit\Omega}_{\rm min}$ is equal to the minimum value of $f(\xi)$. 
 
-The only obvious way of satisfying the contraint Eq.~(\ref{e64}) is to set all of the phase angles, $\varphi_m$, equal to
+The only obvious way of satisfying the constraints (\ref{e64}) is to set all of the phase angles, $\varphi_m$, equal to
 one another. In fact, without loss of generality, we can set all of the phase angles equal to zero. In this case,
 \begin{equation}\label{e65}
 f(\xi) = \sum_{m=1,\infty} \epsilon_m\,\cos(m\,\xi),
@@ -414,7 +414,7 @@ Let us adopt a simplified current drive model in which
 \begin{array}{ccc} -\mu\,\hat{W}_1&~~~&{\mit\Omega}_{\rm min}\leq {\mit\Omega} \leq {\mit\Omega}_c\\[0.5ex]
 0&&{\mit\Omega}>{\mit\Omega}_c\end{array}\right.,
 \end{equation}
-where $\mu$ is a constant. 
+where $\mu$ is a constant. Thus, the non-inductive current density takes a uniform value within (i.e., closer to the resonant surface) the magnetic flux-surface ${\mit\Omega}={\mit\Omega}_c$, and is zero, otherwise. 
 
 Equations~(\ref{e43}), (\ref{e57}), (\ref{e65}), (\ref{e65a}), and (\ref{e68a}) yield the tearing mode dispersion relation
 \begin{equation}\label{e68}
@@ -427,6 +427,11 @@ K_m &= -16\int_{{\mit\Omega}_{\rm min}}^{\mit\Omega_c}\,C_m({\mit\Omega})
 \,d{\mit\Omega},\label{e70}\\[0.5ex]
 C_m({\mit\Omega})& = \langle\cos(m\,\xi)\rangle.\label{e72}
 \end{align}
+
+The tearing mode dispersion relation, (\ref{e68}), takes the form of a nonlinear inhomogeneous matrix
+eigenvalue problem. The problem is nonlinear because the matrix elements are functions of the components of the normalized eigenvector. In general, the tearing mode dispersion relation is difficult to solve because of the great multiplicity of
+possible magnetic flux-surface topologies in the island region. 
+
 Note  that $I_{m,m'}\sim 1$ and $K_m\sim 1$. Thus, assuming
 that ${\mit\Delta}_m'\sim 1$ and $\mu\sim 1$, it follows from Eq.~(\ref{e68}) that $\lambda\sim 1$, which justifies our previous assumption that $\hat{t}\sim \hat{W}_1$. Incidentally, the ordering  $\mu\sim 1$ implies that the
 RF-driven non-inductive  current density in the inner region is smaller than the equilibrium current density by a factor $\hat{W}_1$.
@@ -446,10 +451,10 @@ f(\xi) &= \cos\xi,\label{e71}\\[0.5ex]
 Note that, for $0\leq \xi < 2\pi$, $f(\xi)$ attains its maximum value, 1, at $\xi=0$, and its minimum value, $-1$, at $\xi=\pi$. 
 Figure~\ref{fig1} shows the contours of the normalized magnetic flux, ${\mit\Omega}(X,\xi)$, in the one-harmonic approximation. It can be seen that the tearing mode has changed the
 topology of the magnetic field in the immediate vicinity of the resonant surface, by breaking and reconnecting magnetic field-lines,  to produce a chain of magnetic islands. The magnetic
-separatix, which separates the reconnected magnetic field-lines from the unreconnected field-lines, corresponds to
+separatrix, which separates the reconnected magnetic field-lines from the unreconnected field-lines, corresponds to
 the contour ${\mit\Omega}=1$. There is a chain of magnetic
 X-points located at $\xi=n\,2\pi$, where $n$ is an integer, which are all connected by the separatrix.
- Such X-points are termed {\em heteroclinic}.  Moreover, there are magnetic O-points, located at $\xi=(2n-1)\,\pi$, in the regions enclosed by the separatrix. The full width of the separatrix in $X$ is 4, which corresponds to a full width
+ Such X-points are termed {\em heteroclinic}.  Moreover, there are magnetic O-points, located at $\xi=(2n-1)\,\pi$, in the regions enclosed by the separartrix. The full width of the separartrix in $X$ is 4, which corresponds to a full width
 of $\hat{W}_1$ in $\hat{x}$ [see Eq.~(\ref{e44})]. 
 
 According to Eq.~(\ref{e54}), (\ref{e55}), (\ref{e72}), and (\ref{e71}), 
@@ -744,7 +749,7 @@ $m=1$ mode is intrinsically unstable. In this case, the most unstable root of (\
 \begin{equation}
 \lambda(\epsilon_2) = \frac{-B +\sqrt{B^{\,2}-4\,A\,C}}{2\,A}.
 \end{equation}
-Here, we are assuming that $A>0$. The dispersion relation (\ref{e133})  yields
+Here, we are assuming that $A>0$ (as is generally the case). The dispersion relation (\ref{e133})  yields
 \begin{equation}
 {\cal F}(\epsilon_2)\equiv -{\mit\Delta}_1'+\mu\,K_1(\epsilon_2)+\lambda(\epsilon_2)\,I_{1,1}(\epsilon_2)+\lambda(\epsilon_2)\,\epsilon_2\,I_{1,2}(\epsilon_2) = 0.
 \end{equation}
@@ -752,7 +757,7 @@ Thus, at fixed ${\mit\Delta}_1'$, ${\mit\Delta}_2'$, $p_c$ and $\mu$, the determ
 
 \subsection{Results in Absence of RF Current Drive}
 Let us first consider the nonlinear growth of the tearing mode in the absence of RF current drive. Figure~\ref{fig5}
-shows $\epsilon_2$ as a function of ${\mit\Delta}_1'$ for various values of
+shows $\epsilon_2$, which measures the ratio of the $m=2$ to the $m=1$ harmonics of the perturbed magnetic flux,  as a function of ${\mit\Delta}_1'$ for various values of
 ${\mit\Delta}_2'$. Note that we are assuming that ${\mit\Delta}_1'\geq 0$ and ${\mit\Delta}_2'\leq 0$. In other words, we are assuming  that
 the $m=1$ mode is intrinsically unstable, whereas the $m=2$ mode is intrinsically stable. It can be seen that $\epsilon_2=0$
 when ${\mit\Delta}_1'=0$. In other words, the tearing mode is exactly described by the one-harmonic approximation
@@ -760,12 +765,12 @@ when it is marginally stable. However, as ${\mit\Delta}_1'$ rises above zero, an
 ${\mit\Delta}_1'\rightarrow \infty$. Moreover, $\epsilon_2$ attains this asymptotic value more rapidly, as ${\mit\Delta}_1'$ rises, 
 when $|{\mit\Delta}_2'|$ is smaller. 
 Note that the asymptotic value of $\epsilon_2$ is not 
-sufficiently large  to trigger a homoclinic bifurcation of the island O-points (i.e., it is less than $1/4$). Hence, we deduce that, in the absence of RF current drive,  the topology of the island
+sufficiently positive  to trigger a homoclinic bifurcation of the island O-points (i.e., it is less than $1/4$). Hence, we deduce that, in the absence of RF current drive,  the topology of the island
 magnetic flux-surfaces remains as shown in Fig.~\ref{fig1}. 
 
 Figure~\ref{fig2} shows the
 difference between $\lambda/{\mit\Delta}_1'$ in the two- and one-harmonic approximations. It can be seen that, at fixed ${\mit\Delta}_1'$ and ${\mit\Delta}_2'$, the
-normalized growth-rate of the tearing mode, $\lambda$,  in the two-harmonic approximation is higher that that in the one-harmonic
+normalized growth-rate of the tearing mode, $\lambda$,  in the two-harmonic approximation is higher than that in the one-harmonic
 approximation. Moreover, the relative difference asymptotes to a finite value of about 9\% in the limit that 
 ${\mit\Delta}_1'\rightarrow \infty$. As before,  the relative difference attains this asymptotic value more rapidly, as ${\mit\Delta}_1'$ rises, 
 when $|{\mit\Delta}_2'|$ is smaller. 
@@ -789,8 +794,8 @@ Figure~\ref{fig8} shows the critical normalized RF current density, $\mu_{\rm cr
 unstable tearing mode as a function of the RF injection width parameter, $p_c$. Also shown is  $\mu_{\rm crit}$ predicted in the one-harmonic approximation, as well as the value of $\epsilon_2$ at marginal stability. It can be seen that
 if the RF-driven current density is localized in the vicinity of the O-points of the magnetic island chain (i.e., $p_c\lesssim 0.85$) then $\epsilon_2$ is driven to positive values. In fact, $\epsilon_2$ is driven to sufficiently large positive
 values (i.e., $\epsilon_2>1/4$) to trigger a homoclinic bifurcation of the  island O-points when  $p_c\lesssim 0.25$. On the other hand, if the RF-driven current density is broadly distributed (i.e., $p_c\gtrsim 0.85$) then $\epsilon_2$ is driven to negative values. The peak negative value of $\epsilon_2$ occurs when $p_c\simeq 1.0$. In other words,
-when the RF-driven current density fills the region between the magnetic O-points and the magnetic separatrix. Note, however, that the peak negative value of $\epsilon_2$ is not large enough to trigger a heteroclinic bifurcation of the
-island X-points (i.e. $\epsilon_2> -1/4$). If the region in which the RF current is driven is much wider than the
+when the RF-driven current density fills the region between the magnetic O-points and the magnetic separatrix. Note, however, that the peak negative value of $\epsilon_2$ is not sufficiently negative to trigger a heteroclinic bifurcation of the
+island X-points (i.e. it is greater than $-1/4$). If the region in which the RF current is driven is much wider than the
 island width (i.e., $p_c\gg 1$) then $\epsilon_2\rightarrow 0$. In other words, this case is well-described by the one-harmonic approximation. It is clear, from the figure, that the value of $\mu_{\rm crit}$ predicted  in the two-harmonic approximation matches that predicted in the one-harmonic approximation as long as $|\epsilon_2|\lesssim 0.1$. On the other hand, when $p_c\lesssim 0.75$, and $\epsilon_2$ rises above 0.1, the $\mu_{\rm crit}$ value predicted  in the 
 two-harmonic approximation is significantly less than that predicted  in the one-harmonic approximation, again indicating that the multi-harmonic content of the tearing mode (i.e., $\epsilon_2\neq 0$) that is
 generated by the RF current drive facilitates the stabilization of the mode. 
@@ -802,18 +807,18 @@ of a tearing mode in the two- and one-harmonic approximations can be significant
 We have generalized Rutherford island theory to take into account situations in which the conventional one-harmonic
 approximation is not valid. Our analysis incorporates RF-driven non-inductive currents. We obtain a
 multi-harmonic tearing mode dispersion relation, (\ref{e68}), that takes the form of a nonlinear inhomogeneous matrix
-eigenvalue problem. The problem is nonlinear because the matrix elements are functions of the components of the normalized eigenvector. In general, the tearing mode dispersion is difficult to solve because of the great multiplicity of
+eigenvalue problem. The problem is nonlinear because the matrix elements are functions of the components of the normalized eigenvector. In general, the tearing mode dispersion relation  is difficult to solve because of the great multiplicity of
 possible magnetic flux-surface topologies in the island region. However, in the so-called two-harmonic approximation,
-in which we only include the principal Fourier harmonic and its first overtone in the calculation, there are
+in which we only include the principal Fourier harmonic of the perturbed magnetic flux and its first overtone in the calculation, there are
 only three possible flux-surface topologies. The first is the standard topology in which heteroclinic magnetic X-points
-alternate with magnetic O-points. The second is a topology in which each magnetic O-point undergoes a
-homoclinic bifurcation to produce a  homoclinic X-point straddled by two O-points. The third
-is a topology in which each magnetic X-point undergoes a heteroclinic bifurfaction to produce two
-heteroclinic X-points straddling an O-point. These possibilities are sufficiently simple to allow a solution of the dispersion relation. 
-We find that, in the absence of RF current drive, the nonlinear behavior of the tearing
+alternate with magnetic O-points. (See Fig.~1.)  The second is a topology in which each magnetic O-point undergoes a
+homoclinic bifurcation to produce a  homoclinic X-point straddled by two O-points. (See Fig.~\ref{fig3}.) The third
+is a topology in which each magnetic X-point undergoes a heteroclinic bifurcation to produce two
+heteroclinic X-points straddling an O-point. (See Fig.~\ref{fig4}.)  These possibilities are sufficiently simple to allow a solution of the dispersion relation. 
+We find that, in the absence of RF current drive, the nonlinear behavior of a tearing
 mode predicted in the two-harmonic approximation does not differ substantially from that predicted in the
- one-harmonic approximation. In addition, we find that RF current drive that is sufficiently localized in the
-vicinity of the island O-points can trigger homoclinic bifurcations of the O-points. On the other hand, current
+ one-harmonic approximation. On the other hand, we find that RF current drive that is sufficiently localized in the
+vicinity of the island O-points can trigger homoclinic bifurcations of the O-points (which is impossible in the one-harmonic approximation). However, current
 drive does not seem capable of triggering heteroclinic bifurcations of the island X-points. This is significant because
  Bard\'{o}czi \& Evans observed homoclinic bifurcations of magnetic island chains in the presence of RF
  current drive in the DIII-D tokamak,\cite{bar}  but did not observe heteroclinic bifurcations. Finally, the changes in topology of the magnetic

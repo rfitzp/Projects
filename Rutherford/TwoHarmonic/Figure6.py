@@ -92,5 +92,5 @@ plt.xlabel("$\Delta'_1$", fontsize='20')
 plt.ylabel("$(\lambda/\Delta_1')_{2-harmonic}-(\lambda/\Delta_1')_{1-harmonic}$", fontsize='20')
 #plt.legend(fontsize='20')
 
-plt.show()    
-#plt.savefig("Figure7.eps")
+#plt.show()    
+plt.savefig("Figure6.eps")
