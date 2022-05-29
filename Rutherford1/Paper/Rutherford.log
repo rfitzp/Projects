@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.5.15)  27 MAY 2022 14:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.5.15)  28 MAY 2022 09:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -265,10 +265,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 No file Rutherford.bbl.
 [15] (./Rutherford.aux) ) 
 Here is how much of TeX's memory you used:
- 4635 strings out of 478287
- 65076 string characters out of 5849289
- 386381 words of memory out of 5000000
- 22806 multiletter control sequences out of 15000+600000
+ 4636 strings out of 478287
+ 65086 string characters out of 5849289
+ 386400 words of memory out of 5000000
+ 22807 multiletter control sequences out of 15000+600000
  479338 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,62p,376b,245s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -288,7 +288,7 @@ s/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 >
-Output written on Rutherford.pdf (15 pages, 252678 bytes).
+Output written on Rutherford.pdf (15 pages, 253014 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream

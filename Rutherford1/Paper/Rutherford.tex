@@ -270,7 +270,7 @@ In other words, the current density in the island region is a flux-surface funct
 \delta\hat{\eta}  &= \delta\hat{\eta}(\hat{\psi}),\\[0.5ex]
 \hat{J}_{\rm ni} &= \hat{J}_{\rm ni}(\hat{\psi})
 \end{align}
-because the plasma resistivity and the non-inductive current density are both functions of the plasma temperature and pressure, which are also flux-surface functions because of the very rapid parallel transport of heat and particles that is characteristic of tokamak plasmas. 
+because the plasma resistivity and the non-inductive current density are both functions of the plasma temperature and pressure, which are also flux-surface functions because of the very rapid parallel transport of heat and particles that is characteristic of tokamak plasmas. (See Sect.~\ref{sthermal}.)
 
 Equation~(\ref{e42x}) can be combined with the previous four equations to give
 \begin{equation}\label{e41x}
@@ -374,14 +374,14 @@ F_\theta = \oint\oint\int_{r_{s-}}^{r_{s+}}{\bf j}\times {\bf B}\times {\bf e}_\
 \end{equation}
 Making use of Eqs.~(\ref{e46x}), (\ref{e43}), and (\ref{e46}), we obtain
 \begin{equation}
-F_\theta = \frac{\rho\,r_s^{\,2}}{2^9\,m_\theta\,\tau_H^{\,2}}\,W_1^{\,4}\,{\cal F}_\theta,
+F_\theta = \frac{\rho\,r_s^{\,2}}{2^9\,m_\theta\,\tau_H^{\,2}}\,\hat{W}_1^{\,4}\,{\cal F}_\theta,
 \end{equation}
 where
 \begin{equation}
 {\cal F}_\theta =-\sum_{m=1,\infty}m\,\epsilon_m^2\,{\rm Im}({\mit\Delta}_m').
 \end{equation}
 
-In general, we expect the electromagnetic force acting on the inner region to be balanced by a perpendicular viscous force. Moreover, the electromagnetic force acting on the inner region cannot exceed that required to bring the plasma flow at the resonant surface to a complete halt.\cite{rf0} Thus, we expect
+In general, we expect the electromagnetic force acting on the inner region to be balanced by a perpendicular viscous force.\cite{rf0} Moreover, the electromagnetic force acting on the inner region cannot exceed that required to bring the plasma flow at the resonant surface to a complete halt.\cite{rf0} Thus, we expect
 \begin{equation}
 F_\theta \lesssim \mu\,V_\theta',
 \end{equation}
@@ -424,7 +424,7 @@ Let us assume, for the sake of simplicity, that the electron
 number density in the inner region takes the uniform value
 $n_{e\,s}$. The electrical resistivity thus satisfies $\eta\propto
 T_e^{\,-3/2}$, where $T_e$ is the electron temperature.\cite{plasma} Let $u=(T_e-T_{e\,s})/T_{e\,s}$, where $T_{e\,s} = T_e(r_s)$, and
-$T_e(r)$ is the unperturbed temperature profile. Our ordering assumptions imply that $u\sim \hat{W}_1\ll 1$. It follows
+$T_e(r)$ is the unperturbed electron temperature profile. Our ordering assumptions imply that $u\sim \hat{W}_1\ll 1$. It follows
 that
 \begin{equation}
 \delta{\hat\eta} = (1+u)^{-3/2} - 1\simeq -\frac{3}{2}\,u.
@@ -447,13 +447,13 @@ It follows that
 \end{equation}
 where 
 \begin{equation}
-\beta_p = \left(\frac{q_s}{\epsilon_s}\right)^2\,\frac{\mu_0\,n_{e\,s}\,T_{e\,s}}{B_z^{\,2}}.
+\beta_{p\,e} = \left(\frac{q_s}{\epsilon_s}\right)^2\,\frac{\mu_0\,n_{e\,s}\,T_{e\,s}}{B_z^{\,2}}.
 \end{equation}
 Note that $\hat{J}_{\rm bs}\sim \hat{W}_1$, according to our ordering scheme.
 
-\subsection{Thermal Transport}
+\subsection{Thermal Transport}\label{sthermal}
 Steady-state perturbed thermal transport in the inner region is
-governed by
+governed by\,\cite{plasma}
 \begin{equation}
 0 = \nabla_\parallel(\chi_\parallel\,\nabla_\parallel u)+ 
 \nabla_\perp(\chi_\perp\,\nabla_\perp u) + \frac{P_{\rm rf}}{n_{e\,s}\,T_{e\,s}},
@@ -471,7 +471,7 @@ where
 \hat{W}_c &= 4\left(\frac{\chi_\perp}{\chi_\parallel}\right)^{1/4}\left(\frac{R_0}{n_\varphi\,s_s\,r_s}\right)^{1/2},\\[0.5ex]
 \hat{P}_{\rm rf} &= \frac{P_{\rm rf}\,\tau_E}{n_{e\,s}\,T_{e\,s}},
 \end{align}
-and $T_E=r_s^2/\chi_\perp$ is the energy confinement time. 
+and $\tau_E=r_s^2/\chi_\perp$ is the energy confinement time. 
 Let us assume that $\hat{W}_1\gg \hat{W}_c$. In other words, the
 radial extent of the inner region is sufficiently large that parallel transport is able to force the electron temperature to be a flux-surface function.\cite{fitz}
 We can write
@@ -491,6 +491,8 @@ which reduces to
 \begin{equation}
 0=\langle X^2\rangle \,\frac{d^2u_0}{d{\mit\Omega}^2} +\langle 1\rangle\,\frac{du_0}{d{\mit\Omega}} + \frac{\hat{W}_1^2}{16}\,\langle \hat{P}_{\rm rf}\rangle.
 \end{equation}
+
+Suppose, for the sake of simplicity, that $\langle \hat{P}_{\rm rf}\rangle$ is even in $x$. 
 
 
 \section*{Acknowledgements}
