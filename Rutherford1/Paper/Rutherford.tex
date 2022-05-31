@@ -198,7 +198,7 @@ E_z = \frac{\eta_s}{\mu_0}\,\frac{B_z}{R_0\,q_s}\,(
 in the inner region.
 The reduced-MHD equations, (\ref{e4})--(\ref{e7}), yield
 \begin{align}\label{e38}
-\frac{\partial\hat{\psi}}{\partial\hat{t}} &= \{\hat{\phi},\hat{\psi}\} + (1+\delta\hat{\eta})\,\hat{J} + \left(\frac{2}{s_s}-1\right)\delta\hat{\eta} + (1+\delta\hat{\eta})\,\hat{J}_{\rm ni},\\[0.5ex]
+\frac{\partial\hat{\psi}}{\partial\hat{t}} &= \{\hat{\phi},\hat{\psi}\} + (1+\delta\hat{\eta})\,\hat{J} - \left(\frac{2}{s_s}-1\right)\delta\hat{\eta} + (1+\delta\hat{\eta})\,\hat{J}_{\rm ni},\\[0.5ex]
 \frac{\partial\hat{U}}{\partial\hat{t}}&= \{\hat{\phi},\hat{U}\} + S^{\,2}\,\{\hat{J},\hat{\psi}\}+P\,\frac{\partial^2\hat{U}}{\partial{\hat{x}^2}},\label{e39}\\[0.5ex]
 \frac{\partial^2\hat{\psi}}{\partial \hat{x}^2}&= 1+ \hat{J},\label{e40}\\[0.5ex]
 \hat{U} &= \frac{\partial^2\hat{\phi}}{\partial \hat{x}^2},\label{e41}
@@ -323,7 +323,7 @@ where $s\equiv {\rm sgn}(X)$. Now,
  \end{equation}
  The  flux-surface average operator\,\cite{ruth} is defined
  \begin{equation}\label{e54}
- \langle A({\mit\Omega},\xi)\rangle= \int_{0}^{2\pi}\frac{A({\mit\Omega},\xi)\,H({\mit\Omega},\xi)}
+ \langle A(s,{\mit\Omega},\xi)\rangle= \int_{0}^{2\pi}\frac{A(s,{\mit\Omega},\xi)\,H({\mit\Omega},\xi)}
  {\sqrt{2\left[{\mit\Omega}-f(\xi)\right]}}\,\frac{d\xi}{2\pi},
  \end{equation}
  where
@@ -340,7 +340,7 @@ where $s\equiv {\rm sgn}(X)$. Now,
  is odd in $\hat{x}$ [so $\skew{3}\hat{\phi}(0,\
  \xi,\hat{t})=0$]. Thus, the flux-surface average of Eq.~(\ref{e51}) yields
  \begin{equation}\label{e57}
- \hat{J}({\mit\Omega}) = \frac{\lambda\,\hat{W}_1}{8}\,\frac{\langle f(\xi)\rangle}{\langle 1\rangle} +\left(\frac{2}{s_s}-1\right)\delta\hat{\eta}({\mit\Omega}) - \hat{J}_{\rm ni}({\mit\Omega}).
+ \hat{J}(s,{\mit\Omega}) = \frac{\lambda\,\hat{W}_1}{8}\,\frac{\langle f(\xi)\rangle}{\langle 1\rangle} +\left(\frac{2}{s_s}-1\right)\delta\hat{\eta}(s,{\mit\Omega}) - \hat{J}_{\rm ni}(s,{\mit\Omega}).
  \end{equation}
 
 \subsection{Asymptotic Matching} 
@@ -364,7 +364,8 @@ Hence, making use of  Eq.~(\ref{e54}), Eqs.~(\ref{e60c}) and (\ref{e61c}) reduce
 \hat{W}_1\int_{{\mit\Omega}_{\rm min}}^\infty\hat{J}_+({\mit\Omega})\,\langle\cos(m\,\xi-\varphi_m)\rangle\,d{\mit\Omega}&= {\rm Re}({\mit\Delta}_m')\,\hat{\mit\Psi}_m,\\[0.5ex]
 \hat{W}_1\int_{{\mit\Omega}_{\rm min}}^\infty\hat{J}_+({\mit\Omega})\,\langle\sin(m\,\xi-\varphi_m)\rangle\,d{\mit\Omega}&=-{\rm Im}({\mit\Delta}_m')\,\hat{\mit\Psi}_m.\label{e64}
 \end{align}
-Here, ${\mit\Omega}_{\rm min}$ is equal to the minimum value of $f(\xi)$. Moreover, $\hat{J}_+({\mit\Omega})$ refers to the component of $\hat{J}({\mit\Omega})$ that is even in $x$. 
+Here, ${\mit\Omega}_{\rm min}$ is equal to the minimum value of $f(\xi)$. Moreover, $\hat{J}_+({\mit\Omega})$ refers to the component of $\hat{J}({\mit\Omega})$ that is even in $x$ [i.e., $J_+({\mit\Omega})=
+[J(s=+1,{\mit\Omega}) + J(s=-1,{\mit\Omega})]/2$].
 
 \subsection{Force Balance}
 The radially integrated, flux-surface averaged, poloidal electromagnetic force density acting on the
