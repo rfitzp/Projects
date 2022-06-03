@@ -371,7 +371,7 @@ Here, ${\mit\Omega}_{\rm min}$ is equal to the minimum value of $f(\xi)$. Moreov
 The radially integrated, flux-surface averaged, poloidal electromagnetic force density acting on the
 plasma in the inner region is
 \begin{equation}
-F_\theta = \oint\oint\int_{r_{s-}}^{r_{s+}}{\bf j}\times {\bf B}\times {\bf e}_\theta\,dr\,\frac{d\theta}{2\pi}\,\frac{d\varphi}{2\pi} =-\frac{\rho\,r_s^{\,2}}{m_\theta^2\,\tau_H^2}\oint\oint\left[\frac{\partial\hat{\psi}}{\partial\hat{x}}\right]_{-\infty}^\infty\,\frac{\partial\hat{\psi}}{\partial \theta}\,\frac{d\theta}{2\pi}\,\frac{d\varphi}{2\pi}.
+F_\theta = \oint\oint\int_{r_{s-}}^{r_{s+}}{\bf j}\times {\bf B}\cdot {\bf e}_\theta\,dr\,\frac{d\theta}{2\pi}\,\frac{d\varphi}{2\pi} =-\frac{\rho\,r_s^{\,2}}{m_\theta^2\,\tau_H^2}\oint\oint\left[\frac{\partial\hat{\psi}}{\partial\hat{x}}\right]_{-\infty}^\infty\,\frac{\partial\hat{\psi}}{\partial \theta}\,\frac{d\theta}{2\pi}\,\frac{d\varphi}{2\pi}.
 \end{equation}
 Making use of Eqs.~(\ref{e46x}), (\ref{e43}), and (\ref{e46}), we obtain
 \begin{equation}
@@ -382,7 +382,7 @@ where
 {\cal F}_\theta =-\sum_{m=1,\infty}m\,\epsilon_m^2\,{\rm Im}({\mit\Delta}_m').
 \end{equation}
 
-In general, we expect the electromagnetic force acting on the inner region to be balanced by a perpendicular viscous force.\cite{rf0} Moreover, the electromagnetic force acting on the inner region cannot exceed that required to bring the plasma flow at the resonant surface to a complete halt.\cite{rf0} Thus, we expect
+In general, we expect the electromagnetic force acting on the inner region to be balanced by a perpendicular viscous force.\cite{rf0} Moreover, the electromagnetic force acting on the inner region cannot exceed that required to bring the plasma flow at the resonant surface to a complete halt.\cite{rf0} Thus, we obtain
 \begin{equation}
 F_\theta \lesssim \mu\,V_\theta',
 \end{equation}
@@ -395,7 +395,7 @@ where
 \tau_c = 2^9\,m_\theta\,\sqrt{S\,P}\,\tau_H.
 \end{equation}
 Now, we are assuming that $\hat{W}_1\gg \hat{\delta}$ (i.e., the radial width of the inner region is much greater than the linear layer width). Moreover, for a tokamak plasma with realistic (i.e., highly sub-Alfv\'{e}nic) rotation levels, we expect $V_\theta'\,\tau_c\ll 1$. Hence, we deduce that ${\cal F}_\theta\ll 1$, which
-implies that ${\rm Im}({\mit\Delta}_m')\ll 1$ for all $m$. In other words, even in situations in which a net force acts on the
+suggests that ${\rm Im}({\mit\Delta}_m')\ll 1$ for all $m$. In other words, even in situations in which a net force acts on the
 inner region, implying that the ${\mit\Delta}_m'$ have imaginary components, the force is sufficiently small that  $|{\rm Im}({\mit\Delta}_m')|\ll |{\rm Re}({\mit\Delta}_m')|$ for all $m$. 
 Thus, it is a good approximation to treat the ${\mit\Delta}_m'$ as real quantities for the purposes of asymptotic matching. 
 (In reality, the poloidal electromagnetic force is balanced by neoclassical viscosity, and it is the toroidal electromagnetic force that is balanced by perpendicular viscosity. However, this
@@ -477,11 +477,11 @@ Let us assume that $\hat{W}_1\gg \hat{W}_c$. In other words, the
 radial extent of the inner region is sufficiently large that parallel transport is able to force the electron temperature to be a flux-surface function.\cite{fitz}
 We can write
 \begin{equation}
-u= u_0({\mit\Omega})+\left(\frac{\hat{W}_c}{\hat{W}_1}\right)^4\,u_1({\mit\Omega},\xi).
+u= u_0(s,{\mit\Omega})+\left(\frac{\hat{W}_c}{\hat{W}_1}\right)^4\,u_1(s,{\mit\Omega},\xi).
 \end{equation}
 To lowest order, Eq.~(\ref{e85}) gives
 \begin{equation}
-0 = \{\{u_1,{\mit\Omega}\},u\} + \frac{\partial^2 u_0}{\partial\hat{x}^2}+ \hat{P}_{\rm rf}.
+0 = \{\{u_1,{\mit\Omega}\},{\mit\Omega}\} + \frac{\partial^2 u_0}{\partial\hat{x}^2}+ \hat{P}_{\rm rf}.
 \end{equation}
 Flux-surface averaging, we obtain
 \begin{equation}

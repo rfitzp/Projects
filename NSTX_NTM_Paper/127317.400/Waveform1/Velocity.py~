@@ -1,0 +1,8 @@
+import netCDF4 as nc
+import matplotlib.pyplot as plt
+import numpy as np
+
+fn = 'Stage5.nc'
+ds = nc.Dataset(fn)
+time = ds['time']
+ome = ds['phi_dot']
