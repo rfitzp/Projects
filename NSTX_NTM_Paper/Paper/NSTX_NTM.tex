@@ -39,17 +39,56 @@ The main advantage of the asymptotic matching approach is that it largely remove
 code is capable of accurately simulating the resistive response of a toroidal tokamak plasma to an RMP while taking time steps that extend over many Alfv\'{e}n times. 
 In this manner, the code is able to simulate a complete plasma discharge in a matter of minutes of real time. 
 
-The version of the EPEC model used in this paper described in detail in Appendix~\ref{epec}. 
-The EPEC model is fully toroidal, and makes use of experimental magnetic equilibria (gfiles)  and experimental profile data (pfiles). The model incorporates an accurate neoclassical model\,\cite{sigmar} that takes impurities and neutral particles into account, and  allows the calculation of the neoclassical poloidal flow-damping timescale, the 
-charge-exchange damping timescale, the neoclassical ion rotation profile, and the bootstrap current profile. The model also includes  magnetic field-line curvature, ion polarization current, and island saturation terms in the resonant plasma response model that governs the growth of magnetic island chains at the various rational surfaces within the plasma. Finally, the model accurately calculates the critical
+The version of the EPEC model used in this paper is described in detail in Appendix~\ref{epec}. 
+The EPEC model is fully toroidal, and makes use of experimental magnetic equilibrium data (gfiles)  and plasma profile data (pfiles). The model incorporates an accurate neoclassical model\,\cite{sigmar} that takes impurities and neutral particles into account, and  allows the calculation of the neoclassical poloidal flow-damping timescale, the 
+charge-exchange damping timescale, the neoclassical ion rotation profile, and the bootstrap current profile. The model also includes  perturbed bootstrap current, magnetic field-line curvature, ion polarization current, and island saturation terms in the resonant plasma response model that governs the growth of magnetic island chains at the various rational surfaces within the plasma. Finally, the model accurately calculates the critical
 island widths needed to locally flatten the plasma pressure profile. 
 
 \section{NSTX Discharge 127317}
 \subsection{Introduction}
-$R_0=0.85$ m, $B_0=0.44$ T, $I_\phi = 753$ kA, $q_{95} = 11.0$. $\beta_p=0.61$ 400 ms. $6$ MW of NBI. $n=3$ RMP. 
+The two NSTX discharges studied in this paper were chosen because they were both fairly generic and had precomputed  kinetic-EFITs. 
+
+The first discharge studied in this paper is 127317, which was one of the discharges used in an investigation of the interaction between
+edge localized modes (ELMs) and RMPs in NSTX.\cite{nstx} Discharge 127317 is an H-mode discharge, characterized by a double magnetic null boundary shape,  6 MW of neutral
+beam heating power, and no lithium coating of the walls. 
+
+\subsection{Magnetic Equilibrium}
+Figure~\ref{fig1} shows the magnetic equilibrium of NSTX discharge 127317 at $t=400$ ms. This equilibrium is characterized by a scale major radius
+$R_0=0.85$ m (see Sect.~\ref{a1}), a scale toroidal magnetic field-strength $B_0=0.44$ T (see Sect.~\ref{a2}), a net toroidal plasma current $I_\phi = 753$ kA, a safety-factor at the 95\% flux-surface $q_{95} = 11.0$, and a poloidal beta $\beta_p=0.61$. 
+
+\subsection{Plasma Profiles}
+Figure~\ref{fig2} shows the safety-factor, electron number density, electron temperature, impurity ion number density, and impurity ion toroidal angular velocity profiles in NSTX discharge 127317 at $t=400$ ms. The majority ions are deuterium, and the impurities are assumed to
+be fully-stripped carbon ions. Note that the discharge is subject to rotation braking due to an applied $n=3$ RMP, which accounts for the lower than usual toroidal rotation. Because there is no
+poloidal impurity ion rotation data for this discharge, the ${\bf E}\times {\bf B}$ rotation profile is deduced from the
+toroidal  impurity ion rotation data using neoclassical theory. (See Sect.~\ref{srotation}.) 
+
+The perpendicular electron energy diffusivity ($\chi_e$), perpendicular ion energy diffusivity ($\chi_i$), perpendicular toroidal momentum diffusivity ($\chi_\phi$), and perpendicular particle diffusivity ($D_\perp$) are given the plausible values $1.0$, $1.0$, $1.0$, and $0.2$
+${\rm m}^2/{\rm s}$, respectively,  throughout the plasma.
+
+ The flux-surface averaged neutral deuterium atom number density takes the form $\langle n_n\rangle(r) = \langle n_n\rangle(r_{100})/[1+(r-r_{100})^2/l_n^{\,2}]$, where
+$\langle n_n\rangle(r_{100})= 1\times 10^{16}\,{\rm m}^{-3}$, and $l_n=1.3\times 10^{-2}\,{\rm m}$. The flux-surface neutral poloidal asymmetry parameter is given the value $y_n=1.5$. (See Sect.~\ref{sbalance}.) The flux-surface averaged deuterium-atom/deuterium-ion charge-exchange rate constant is $\langle \sigma\,v\rangle_i^{{\rm cx}} = 4\times 10^{-14}\,{\rm m}^{3}\,{\rm s}^{-1}$.\cite{barnett} The neutrals are assumed to be hot (i.e., $E_n/T_i=1$.) 
+Note that neutrals do not really play a role in the physics of NTMs, which are resonant in the plasma core. 
+
+\subsection{NTM Stability}
 
 \section{NSTX Discharge 139057}
-$R_0=0.85$ m, $B_0=0.54$ T, $I_\phi= 907$ kA, $q_{95} = 9.5$. $\beta_p=0.57$ 557 ms. $6$ MW of NBI. 
+\subsection{Introduction}
+The second discharge  studied in this paper is 139057, which was one of the discharges used in an investigation of blob dynamics in NSTX.\cite{nstx1} Discharge 139057 is an H-mode discharge, characterized by a single magnetic null boundary shape,  6 MW of neutral
+beam heating power, and  lithium coating of the walls. 
+
+\subsection{Magnetic Equilibrium}
+Figure~\ref{fig11} shows the magnetic equilibrium of NSTX discharge 139057 at $t=557$ ms. This equilibrium is characterized by a scale major radius
+$R_0=0.85$ m, a scale toroidal magnetic field-strength $B_0=0.54$ T, a net toroidal plasma current $I_\phi = 907$ kA, a safety-factor at the 95\% flux-surface $q_{95} = 9.5$, and a poloidal beta $\beta_p=0.57$. 
+
+\subsection{Plasma Profiles}
+Figure~\ref{fig12} shows the safety-factor, electron number density, electron temperature, impurity ion number density, and impurity ion toroidal angular velocity profiles in NSTX discharge 139057 at $t=557$ ms. As before, the majority ions are deuterium, and the impurities are assumed to
+be fully-stripped carbon ions. Note that the discharge is not subject to rotation braking due to an applied $n=3$ RMP, which accounts for the higher toroidal rotation than that in discharge 127317. As before, the ${\bf E}\times {\bf B}$ rotation profile is deduced from the
+toroidal  impurity ion rotation data using neoclassical theory. 
+
+The diffusivity and neutral profiles in discharge 139057 are assumed to be the same as those adopted in the study of
+discharge 127317. 
+
+\subsection{NTM Stability}
 
 \section{Summary and Conclusions}
 
@@ -63,12 +102,12 @@ This research was directly funded by the U.S.\ Department of Energy, Office of S
 \appendix
 \section{Description of EPEC Model}\label{epec}
 \subsection{Introduction}
-The (Extended Perturbed Equilibrium Code) EPEC model was introduced in Ref.~\onlinecite{rftor}, and extended  in Refs.~\onlinecite{rftor1}, \onlinecite{rftor2}, and \onlinecite{rftor3}. The model has been further extended for the study
+The (Extended Perturbed Equilibrium Code) EPEC model was introduced in Ref.~\onlinecite{rftor}, and imporved  in Refs.~\onlinecite{rftor1}, \onlinecite{rftor2}, and \onlinecite{rftor3}. The model has been further extended for the study
 presented in this paper. 
-The latest extensions to the model are the inclusion of  perturbed bootstrap current, magnetic field-line
-curvature, ion polarization current, and island saturation terms in the resonant plasma response model (see Sects.~\ref{ggjs}, \ref{sbalance}, \ref{sneo}, and \ref{res}), an improvement in the calculation of the critical island widths needed to
+The latest improvements to the model include the introduction of  perturbed bootstrap current, magnetic field-line
+curvature, ion polarization current, and island saturation terms into the resonant plasma response model (see Sects.~\ref{ggjs}, \ref{sbalance}, \ref{sneo}, and \ref{res}), a more accurate calculation of the critical island widths needed to
 locally flatten the electron temperature, the ion temperature, and the electron number density profiles (see Sect.~\ref{scrit}), 
-and an improvement in the calculation of the natural frequencies of tearing modes (see Sect.~\ref{snat}). 
+and a better calculation of the natural frequencies of tearing modes (see Sect.~\ref{snat}). 
 
 \subsection{Plasma Response in Outer Region}
 \subsubsection{Coordinates}\label{a1}
@@ -78,7 +117,6 @@ whose Jacobian is ${\cal J}\equiv (\nabla r \times \nabla\theta\cdot\nabla\phi)^
 Here, $R_0$ is a convenient scale major radius, $r$ is a magnetic flux-surface label with dimensions of length,
 and $\theta$ is an axisymmetric angular coordinate that increases by $2\pi$ radians for every poloidal circuit of the magnetic axis.
 Let $r=0$ correspond to the magnetic axis, and let $r=r_{100}$ correspond to the last closed magnetic flux-surface. 
-
 
 \subsubsection{Equilibrium Magnetic Field}\label{a2}
 The equilibrium magnetic field is written
@@ -144,7 +182,7 @@ at the various resonant magnetic flux-surfaces in the plasma in response to the 
 \end{equation}
 where $q_k= m_k/n$, and $a_{kk}(r) = \oint |\nabla r|^{-2}\,d\theta/(2\pi)$. 
 
-\subsubsection{Glasser-Greene-Johnson Data}\label{ggjs}
+\subsubsection{Glasser-Greene-Johnson Parameters}\label{ggjs}
 Let us write
 ${\bf B} = \nabla\phi\times\nabla\psi_p+g(\psi_p)\,\nabla\phi$. 
 The angle $\theta^{\,\ast}$ is defined such that
@@ -354,7 +392,7 @@ where
 \langle A\rangle (r) \equiv\left.\oint \frac{A(r,{\mit\Theta})\,d{\mit\Theta}}{B(r,{\mit\Theta})}\right/\oint \frac{d{\mit\Theta}}{B(r,{\mit\Theta})}.
 \end{equation}
 Moreover, $\langle \sigma\,v\rangle_i^{\,\rm cx}$ is the flux-surface
-averaged rate constant for charge exchange reactions between neutrals and majority ions, $n_n(r,{\mit\Theta})$  the
+averaged rate constant for charge-exchange reactions between neutrals and majority ions, $n_n(r,{\mit\Theta})$  the
 neutral particle number density, and $E_n/T_i$ the ratio of the incoming neutral energy to the majority ion energy. The parameter
 $y_n$ takes into account the fact that the incoming neutrals at the
 edge of an H-mode tokamak plasma are usually
@@ -504,7 +542,7 @@ f_k &=f_{b\,k}+f_{c\,k} + f_{p\,k} + f_{s\,k}.
 \end{align}
 Here, ${\cal I} = 0.8227$, $\epsilon_{100}=r_{100}/R_0$, $\hat{r}=r/r_{100}$, $\hat{r}_k=r_k/r_{100}$, and $\hat{t}=t/\tau_A$. 
 
-The perturbed bootstrap current terms in the response model take the form
+The perturbed bootstrap current terms in the resonant response model take the form\,\cite{rfx,rfy}
 \begin{align}
 f_{b\,k} &= f_{b\,e\,k}+f_{b\,i\,k},\\[0.5ex]
 f_{b\,e\,k} &= \alpha_{b\,e\,k}\left(f_{b\,T_e\,k} + f_{b\,n_e\,k}\right),\\[0.5ex]
@@ -527,7 +565,7 @@ where
 \end{align}
 and $I_g = 1.58$.
 
-The magnetic field-line curvature terms take the form
+The magnetic field-line curvature terms in the resonant response model take the form\,\cite{rfx,rfy}
 \begin{align}
 f_{c\,k} &= \alpha_{c\,k}\left(f_{c\,T_e\,k} + f_{c\,n_e\,k} + f_{c\,T_i\,k} + f_{c\,n_i\,k}\right),\\[0.5ex]
 f_{c\,T_e\,k}&=\left(\frac{n_e}{n_e+n_i}\,\frac{\eta_e}{1+\eta_e}\right)_{r_k}\,\frac{\hat{W}_k}{\hat{W}_{T_e\,k}^{\,2}+\hat{W}_k^{\,2}},\\[0.5ex]
@@ -541,7 +579,7 @@ where
 \end{align}
 Here, $D_R(r)$ is the Glasser-Greene-Johnson resistive interchange stability parameter. (See Sect.~\ref{ggjs}.)
 
-The ion polarization terms take the form
+The ion polarization terms in the resonant response model  take the form\,\cite{rfx,rfy}
 \begin{align}
 f_{p\,k} &= \alpha_{p\,k}\left(f_{p\,T_i\,k} + f_{p\,n_i\,k}\right),\\[0.5ex]
 f_{p\,T_i\,k}&=\left(\frac{\eta_i}{1+\eta_i}\right)_{r_k}\,\frac{\hat{W}_k}{(\hat{W}_{T_i\,k}^{\,2}+\hat{W}_k^{\,2})^{\,2}},\\[0.5ex]
@@ -555,7 +593,7 @@ where
 and  $I_p=1.38$. 
 
 
-Finally, the island saturation terms take the form\,\cite{porc}
+Finally, the island saturation terms in the resonant response model  take the form\,\cite{porc}
 \begin{align}
 f_{s\,k} &=-(0.8\,A_k^{\,2} - 0.27\,B_k-0.09\,A_k)\,
 \frac{W_k}{r_k}.
@@ -595,19 +633,19 @@ and
 \begin{equation}
 \tau_{\rm cx}(r)=\frac{1}{\langle n_n\rangle\,\langle \sigma\,v\rangle_i^{\rm cx}}
 \end{equation}
-is the charge exchange damping timescale. 
+is the charge-exchange damping timescale. 
 Furthermore,\cite{hir}
 \begin{equation}\label{a71}
 Q^{\,2}(r) =\frac{q^{\,2}\,R_0^{\,2}}{2\,r^{\,2}}\left.\left(\left\langle\frac{1}{R^{\,2}}\right\rangle-\frac{1}{\langle R^{\,2}\rangle}\right)\right/\left\langle \frac{|\nabla r|^{\,2}}{R^{\,2}}\right\rangle.
 \end{equation}
 
 \subsubsection{Natural Frequencies}\label{snat}
-According to linear tearing mode theory, in the absence of the RMP, the natural frequency of the tearing mode resonant at the $k$th resonant surface is given by\,\cite{rftor}
+According to linear tearing mode theory, in the absence of the RMP, the natural frequency of the tearing mode resonant at the $k$th resonant surface is given by\,\cite{rftor,cole}
 \begin{equation}\label{elin}
  \varpi_{e\,k} = - n\,(\omega_E+\omega_{\ast\,e})_{r_k}.
 \end{equation}
 According to nonlinear tearing mode theory, in the absence of the RMP, 
-the natural frequency of the tearing mode resonant at the $k$th resonant surface is given by\,\cite{rftor}
+the natural frequency of the tearing mode resonant at the $k$th resonant surface is given by\,\cite{rftor,rfx,rfy}
 \begin{equation}\label{e28y}
  \varpi_{i\,k}=  -n\,(\omega_E+\omega_{\ast\,i}+\omega_{{\rm nc}\,i})_{r_k}.
  \end{equation}
@@ -629,7 +667,7 @@ f_{n_e\,k}&=\left(\frac{1}{1+\eta_e}\right)_{r_k}\,\frac{\hat{W}_{n_e\,k}^{\,2}}
 f_{T_i\,k}&=\left(\frac{\eta_i}{1+\eta_i}\right)_{r_k}\,\frac{\hat{W}_k^{\,2}}{\hat{W}_{T_i\,k}^{\,2}+\hat{W}_k^{\,2}},\\[0.5ex]
 f_{n_i\,k}&=\left(\frac{1}{1+\eta_i}\right)_{r_k}\,\frac{\hat{W}_k^{\,2}}{\hat{W}_{n_e\,k}^{\,2}+\hat{W}_k^{\,2}}.
 \end{align}
-Note that the switch-over from linear to nonlinear theory is now triggered by flattening of the local temperature
+Note that the switch-over from linear to nonlinear theory is triggered by the flattening of the local temperature
 and density profiles. 
 
 
@@ -672,6 +710,7 @@ Phys.\ Plasmas {\bf 10}, 1643 (2003).
 J.~Manickam, J.E.~Menard,
 T.H.~Osborne, J.-K.~Park, S.~Paul, P.B.~Snyder, S.A.~Sabbagh, E.A.~Unterberg, and the NSTX team, 
 Nucl.\ Fusion {\bf 50}, 034012 (2010). 
+\bibitem{barnett} C.F.~Barnett, {\em Atomic Data for Fusion} (Oak Ridge National Laboratory, TN, 1990). Vol.~1, p.~ORNL-6086. 
 \bibitem{nstx1} S.J.~Zweben,   J.R.~Myra,  A.~Diallo,   D.A.~Russell,   F.~Scotti,   and D.P.~Stotler, Phys.\ Plasmas
 {\bf 26}, 072502 (2019). 
 
@@ -683,9 +722,10 @@ Nucl.\ Fusion {\bf 50}, 034012 (2010).
 \bibitem{cole} A.~Cole and R.~Fitzpatrick, Phys.\ Plasmas {\bf 13}, 032503 (2006).
 \bibitem{cole1} R.~Fitzpatrick, Phys.\ Plasmas {\bf 29}, 032507 (2022). 
 \bibitem{brag} S.I.~Braginskii. In {\em Reviews of Plasma Physics}. Vol.~I, 205. Consultants Bureau (New York, NY, 1965).
+\bibitem{rfx} R.~Fitzpatrick, Phys.\ Plasmas {\bf 23},052506 (2016).
+\bibitem{rfy} R.~Fitzpatrick, Phys.\ Plasmas {\bf 25}, 082513 (2018).
 \bibitem{porc} R.J.~Hastie, F.~Militello, and F.~Porcelli, Phys.\ Rev.\ Lett.\ {\bf 95}, 065001 (2005).
 \bibitem{hir} S.P.~Hirshman, Nucl.\ Fusion {\bf 18}, 7 (1978). 
-
 
 \end{thebibliography}
 \newpage
@@ -769,7 +809,5 @@ unstable to NTMs.}\label{fig13}
 \caption{Critical $n=1$ RMP coil current pulse amplitude required to trigger an $m=4/n=1$ NTM in NSTX discharge 139057 
 as a function of the pulse frequency for a pulse duration of 20 ms.}\label{fig15}
 \end{figure}
-
-
 
 \end{document}
