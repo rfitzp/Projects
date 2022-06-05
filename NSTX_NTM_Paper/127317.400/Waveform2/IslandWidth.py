@@ -39,7 +39,7 @@ plt.plot(Time, ww5, color='cyan', linewidth=2, label='$m=7$')
 plt.plot(Time, ww6, color='magenta', linewidth=2, label='$m=8$')
 plt.axhline(0.0, color='black', linewidth=2, linestyle='dotted')
 plt.legend(fontsize='15')
-plt.xlabel('$time$ (ms)', fontsize='15')
+plt.xlabel('time (ms)', fontsize='15')
 plt.ylabel('$W (\\Psi_N)$', fontsize='15')
 
 #plt.show()

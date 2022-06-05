@@ -19,13 +19,13 @@ nw = RHS1.shape[1]
 plt.figure(figsize=(12,12))
 plt.rc('xtick', labelsize=16) 
 plt.rc('ytick', labelsize=16) 
-for n in range(1,3):
-    plt.subplot(2,1,n)
+for n in range(1,6):
+    plt.subplot(5,1,n)
     plt.xlim(0.0, W[nw - 1])
     ww2 = rhs2[n]
     plt.plot(W, ww2, color='black', linewidth=2)
     plt.xlabel('$W (\\Psi_N)$', fontsize='16')
-    strr = 'Rhs of Rutherford Eq. $(m = ' + str(Mpol[n]) + ')$'
+    strr = 'RHS $(m = ' + str(Mpol[n]) + ')$'
     plt.axhline(0.0, color='black', linewidth=2., linestyle='dotted')
     plt.ylabel(strr, fontsize='16')
 

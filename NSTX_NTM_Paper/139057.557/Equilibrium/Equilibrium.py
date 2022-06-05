@@ -35,7 +35,7 @@ plt.rc('ytick', labelsize=14)
 
 XX, YY = np.meshgrid(r, z, indexing='ij')
 ZZ = np.asarray(psi)
-levels = np.linspace(pax, pab, 40)
+levels = np.linspace(pax, pab, 30)
 
 plt.contour(XX, YY, ZZ, levels, colors='black', linestyles='solid', linewidths = 0.75)
 plt.ylim(-1.75,1.75)

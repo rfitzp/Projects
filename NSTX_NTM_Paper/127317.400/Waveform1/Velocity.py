@@ -24,7 +24,7 @@ plt.plot(Time, ww, color='red', linewidth=2, label='$\\dot{\\varphi}$ (krad/s)')
 plt.plot(Time, wf, color='blue', linewidth=2, label='$\\varpi$ (krad/s)', linestyle='dashed')
 plt.axhline(0.0, color='black', linewidth=2, linestyle='dotted')
 plt.legend(fontsize='15')
-plt.xlabel('$time$ (ms)', fontsize='15')
+plt.xlabel('time (ms)', fontsize='15')
 #plt.ylabel('$W (\\Psi_N)$', fontsize='15')
 
 

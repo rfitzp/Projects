@@ -25,7 +25,7 @@ for n in range(1,3):
     ww2 = rhs2[n]
     plt.plot(W, ww2, color='black', linewidth=2)
     plt.xlabel('$W (\\Psi_N)$', fontsize='16')
-    strr = 'Rhs of Rutherford Eq. $(m = ' + str(Mpol[n]) + ')$'
+    strr = 'RHS $(m = ' + str(Mpol[n]) + ')$'
     plt.axhline(0.0, color='black', linewidth=2., linestyle='dotted')
     plt.ylabel(strr, fontsize='16')
 

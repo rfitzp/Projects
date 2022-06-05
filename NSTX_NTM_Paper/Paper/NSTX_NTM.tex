@@ -1,7 +1,7 @@
 \documentclass[12pt,prb,aps]{revtex4-1}
 \usepackage {amsmath}
 \usepackage{amssymb}
-\pdfoutput = 1 
+%\pdfoutput = 1 
 \usepackage {graphicx}
 \newcommand{\bomega}{\mbox{\boldmath$\omega$}}
 \allowdisplaybreaks
@@ -19,7 +19,7 @@
 \maketitle
 
 \section{Introduction}
-Neoclassical tearing modes (NTMs) are the main limitation to obtaining
+Neoclassical tearing modes (NTMs) are the main obstacle to obtaining
 normalized plasma pressure ($\beta$) levels in tokamak\,\cite{wesson} plasmas that are adequate for  achieving 
 thermonuclear fusion.\cite{buttery,lahaye} NTMs were originally identified experimentally on the TFTR tokamak.\cite{tftr} NTMs lead to the generation of low poloidal and toroidal mode number ($m$ and $n$) magnetic island chains on toroidal magnetic flux-surfaces within the plasma that are characterized by rational (i.e., $m/n$) values of the safety-factor ($q$). An NTM is driven by a helical hole in the bootstrap current\,\cite{boot} profile  that arises as a consequence of the flattening of the
 plasma pressure across the associated island chain region.\cite{carrera} However, a magnetic island chain can only locally flatten
@@ -28,7 +28,7 @@ parallel and perpendicular energy diffusivities.\cite{fitz} This  leads to the c
 In other words, some sort of seed perturbation must be applied to the relevant rational magnetic flux-surface in order to trigger an NTM. In practice, the seed perturbation usually takes the form of a transient magnetic perturbation that is resonant at the
 rational surface. Such perturbations are generated in tokamak plasmas primarily by sawtooth crashes, edge localized modes, and fishbones.\cite{buttery,lahaye} 
 
-The aim of this paper is to inverstigate how the properties (e.g., amplitude, duration, rotation frequency) of a transient resonant
+The aim of this paper is to investigate how the properties (i.e., amplitude, duration, and rotation frequency) of a transient resonant
 magnetic perturbation (RMP) applied to a toroidal tokamak plasma affect its ability to trigger NTMs within the plasma. In this
 study, we shall use the EPEC code (see Sect.~\ref{epecc}) to simulate what happens when a transient  $n=1$  magnetic
 perturbation  is applied to a typical NSTX plasma. 
@@ -40,14 +40,16 @@ code is capable of accurately simulating the resistive response of a toroidal to
 In this manner, the code is able to simulate a complete plasma discharge in a matter of minutes of real time. 
 
 The version of the EPEC model used in this paper described in detail in Appendix~\ref{epec}. 
-The EPEC model is fully toroidal, and makes use of experimental magnetic equilibria (gfiles)  and experimental profile data (pfiles). The model incorporates an accurate neoclassical model\,\cite{sigmar} that takes impurities and neutral particles into account, and  allows the neoclassical poloidal flow-damping timescale, the charge exchange damping timescale, the neoclassical ion rotation profile, and the bootstrap current profile to be calculated. The model also includes  magnetic field-line curvature, ion polarization current, and island saturation terms in the resonant plasma response model that governs the growth of magnetic island chains at the various rational surfaces in the plasma. Finally, the model accurately calculates the critical
+The EPEC model is fully toroidal, and makes use of experimental magnetic equilibria (gfiles)  and experimental profile data (pfiles). The model incorporates an accurate neoclassical model\,\cite{sigmar} that takes impurities and neutral particles into account, and  allows the calculation of the neoclassical poloidal flow-damping timescale, the 
+charge-exchange damping timescale, the neoclassical ion rotation profile, and the bootstrap current profile. The model also includes  magnetic field-line curvature, ion polarization current, and island saturation terms in the resonant plasma response model that governs the growth of magnetic island chains at the various rational surfaces within the plasma. Finally, the model accurately calculates the critical
 island widths needed to locally flatten the plasma pressure profile. 
 
 \section{NSTX Discharge 127317}
 \subsection{Introduction}
-$R_0=0.85$ m, $B_0=0.44$ T, $q_{95} = 11.0$. $6$ MW of NBI. $n=3$ RMP. 
+$R_0=0.85$ m, $B_0=0.44$ T, $I_\phi = 753$ kA, $q_{95} = 11.0$. $\beta_p=0.61$ 400 ms. $6$ MW of NBI. $n=3$ RMP. 
 
 \section{NSTX Discharge 139057}
+$R_0=0.85$ m, $B_0=0.54$ T, $I_\phi= 907$ kA, $q_{95} = 9.5$. $\beta_p=0.57$ 557 ms. $6$ MW of NBI. 
 
 \section{Summary and Conclusions}
 
@@ -83,7 +85,7 @@ The equilibrium magnetic field is written
 ${\bf B} = R_0\,B_0\left[f(r)\,\nabla\phi\times \nabla r + g(r)\,\nabla\phi\right]$, 
 where $B_0$ is a convenient scale toroidal magnetic field-strength, and
 $q(r) = r\,g/(R_0\,f)$
-is the safety-factor profile. The equilibrium poloidal magnetic flux, ${\mit\Psi}_p(r)$,
+is the safety-factor profile.\cite{rftor} The equilibrium poloidal magnetic flux, ${\mit\Psi}_p(r)$,
 satisfies $d{\mit\Psi}_p/dr = R_0\,B_0\,f(r)$, where, by convention, ${\mit\Psi}_p(r_{100})=0$. The
 normalized poloidal magnetic flux, ${\mit\Psi}_N(r)$, is defined such that
 ${\mit\Psi}_N(r) = 1-{\mit\Psi}_p(r)/{\mit\Psi}_p(0)$. Hence, ${\mit\Psi}_N(0)=0$ and
@@ -91,10 +93,9 @@ ${\mit\Psi}_N(r_{100})=1$.
 
 \subsubsection{Perturbed Magnetic Field}
 Consider the response of the plasma to an RMP with $n>0$ periods in the toroidal direction.
-We can write the components of the perturbed magnetic field in the form
+We can write the components of the perturbed magnetic field in the form\,\cite{rftor}
 \begin{align}
 \frac{r\,R^{\,2}\,\delta{\bf B}\cdot\nabla r}{R_0^{\,2}}&= {\rm i}\sum_j \psi_j(r)\,{\rm e}^{\,{\rm i}\,(m_j\theta-n\,\phi)},\\[0.5ex]
-{\cal J} \,\delta{\bf B}\cdot\nabla\phi\times \nabla r &= -\sum_j{\mit\Xi}_j(r)\,{\rm e}^{\,{\rm i}\,(m_j\theta-n\,\phi)},\\[0.5ex]
 R^{\,2}\,\delta{\bf B}\cdot\nabla\phi&= n\sum_j \frac{{\mit\Xi}_j(r)}{m_j}\,{\rm e}^{\,{\rm i}\,(m_j\,\theta-n\,\phi)},
 \end{align}
 where the sum is over all relevant poloidal harmonics of the perturbed magnetic field. 
@@ -108,14 +109,14 @@ measure of the strength of the current sheet  at the same resonant surface.
 
 \subsubsection{Toroidal Tearing Mode Dispersion Relation}\label{tear}
 In the presence of the RMP, the ${\mit\Psi}_k$ and the ${\mit\Delta\Psi}_k$ values are related according to the inhomogeneous 
-toroidal tearing mode dispersion relation, which takes the form
+toroidal tearing mode dispersion relation, which takes the form\,\cite{tt3,rftor}
 \begin{equation}\label{dispersion}
 {\mit\Delta\Psi}_k = \sum_{k'=1,K} E_{kk'}\,{\mit\Psi}_{k'} + |E_{kk}|\,\chi_k.
 \end{equation}
-Here, $E_{kk'}$  (for $k$, $k'= 1$, $K$) is the dimensionless, Hermitian, toroidal tearing mode stability matrix, whereas the $\chi_k$ (for $k=1,K$) parameterize the current sheets driven at the various
+Here, $E_{kk'}$  (for $k$, $k'= 1$, $K$) is the dimensionless, Hermitian, toroidal tearing mode stability matrix,\cite{tt3} whereas the $\chi_k$ (for $k=1,K$) parameterize the current sheets driven at the various
 resonant surfaces when the plasma responds  to the applied RMP in accordance with the equations of linearized, marginally-stable, ideal-MHD. 
 
-The EPEC model determines the elements of the $E_{kk'}$ matrix using a high-$q$ approximation. In fact, if $F_{kk'}$ is the inverse of the $E_{kk'}$ matrix then
+The EPEC model determines the elements of the $E_{kk'}$ matrix using a high-$q$ approximation. In fact, if $F_{kk'}$ is the inverse of the $E_{kk'}$ matrix then\,\cite{rftor}
 \begin{equation}\label{e56}
 F_{kk'} = \oint\oint 
 G(R_k,Z_k;R_{k'},Z_{k'})\,{\rm e}^{-{\rm i}\,(m_k\,\theta_k-m_{k'}\,\theta_{k'})}\,\frac{d\theta_k}{2\pi}\,\frac{d\theta_{k'}}{2\pi},
@@ -198,7 +199,7 @@ $Z_{{\rm eff}\,I}=Z_I\,(Z_{\rm eff}-1)/(Z_I-1)$.
 
 \subsubsection{Collisionality Parameters}
 Consider an equilibrium magnetic flux-surface whose label is $r$. 
-Let
+Let\,\cite{sigmar}
 \begin{equation}
 \frac{1}{\gamma(r)} =\frac{q}{g}\oint\frac{ B\,R^{\,2}}{B_0\,R_0^{\,2}}\,\frac{d\theta}{2\pi}.
 \end{equation}
@@ -243,7 +244,7 @@ Here, the Coulomb logarithm, $\ln{\mit\Lambda}$, is assumed to take the same lar
 independent of species. 
 
 \subsubsection{Collisional Friction Matrices}
-Let $x_{ab}=v_{T\,b}/v_{T\,a}$. The  $2\times 2$ dimensionless ion collisional friction matrices, $[F^{\,ii}](r)$, $[F^{\,iI}](r)$, $[F^{\,Ii}](r)$, and $[F^{\,II}](r)$, are defined to have the following elements:
+Let $x_{ab}=v_{T\,b}/v_{T\,a}$. The  $2\times 2$ dimensionless ion collisional friction matrices, $[F^{\,ii}](r)$, $[F^{\,iI}](r)$, $[F^{\,Ii}](r)$, and $[F^{\,II}](r)$, are defined to have the following elements:\,\cite{sigmar}
 \begin{align}
 F^{\,ii}_{\,00} &= \frac{\alpha_I\,(1+m_i/m_I)}{(1+x_{iI}^{\,2})^{\,3/2}},\\[0.5ex]
 F^{\,ii}_{\,01}&=\frac{3}{2}\,\frac{\alpha_I\,(1+m_i/m_I)}{(1+x_{iI}^{\,2})^{\,5/2}},\\[0.5ex]
@@ -261,7 +262,7 @@ $F^{\,II}_{\,01}=F^{\,iI}_{01}$,
 $F^{\,II}_{\,10}=F^{\,iI}_{01}$.
 
 The $2\times 2$ dimensionless electron collisional friction matrices, $[F^{\,ee}](r)$,   $[F^{\,ei}](r)$, and
-$[F^{\,eI}](r)$, are defined to have the following elements:
+$[F^{\,eI}](r)$, are defined to have the following elements:\,\cite{sigmar}
 $F^{\,ee}_{00} = Z_{\rm eff}$,
 $F^{\,ee}_{01} = (3/2)\,Z_{\rm eff}$,
 $F^{\,ee}_{10} = F^{\,ee}_{01}$,
@@ -271,7 +272,7 @@ $F^{\,eI}_{01} =F^{\,eI}_{11}=0$, $F^{\,eI}_{10}=(3/2)\,Z_{{\rm eff}\,I}$.
 
 
 \subsubsection{Neoclassical Viscosity Matrices}\label{vmatrix}
-The $2\times 2$ dimensionless species-$a$ neoclassical viscosity matrix, $[\mu^{\,a}](r)$,  is defined to have the following elements:
+The $2\times 2$ dimensionless species-$a$ neoclassical viscosity matrix, $[\mu^{\,a}](r)$,  is defined to have the following elements:\,\cite{sigmar}
 $\mu_{00}^{\,a} = K_{00}^{\,a}$, $\mu_{01}^{\,a}= (5/2)\,K_{00}^{\,a}- K_{01}^{\,a}$,
 $\mu_{10}^{\,a}= \mu_{01}^{\,a}$,
 $\mu_{11}^{\,a} = K_{11}^{\,a} - 5\,K_{01}^{\,a}+(25/4)\,K_{00}^{\,a}$.
@@ -316,7 +317,7 @@ Let
 $[\tilde{\mu}^{\,I}] =\alpha_I^{\,2}\,(T_i/T_I)\,x_{Ii}\,[\mu^{\,I}]$.
 The requirement of equilibrium force and heat balance parallel to the magnetic field leads us to define
 four $2\times 2$  dimensionless ion matrices, $[L^{\,ii}](r)$, $[L^{\,iI}](r)$, $[L^{\,Ii}](r)$, and $[L^{\,II}](r)$,
-where
+where\,\cite{sigmar}
 \begin{align}
 \left(\begin{array}{cc} [L^{\,ii}], & [L^{\,iI}]\\[0.5ex] [L^{\,Ii}],& [L^{\,II}]\end{array}\right)=
 \left(\begin{array}{cc}[F^{\,ii}+\mu^{\,i}+ Y^{\,in}/y_n], & -[F^{\,iI}]\\[0.5ex] -[F^{\,Ii}], & [F^{\,II}+\tilde{\mu}^{\,I}]\end{array}\right)^{-1}
@@ -339,7 +340,7 @@ where
 [L^{\,ei}] &= [Q^{\,ee}]\left\{[F^{\,ei}\,]\,[L^{\,ii}]-[F^{\,ei}]+[F^{\,eI}]\,[L^{\,Ii}]\right\},\\[0.5ex]
 [L^{\,eI}] &= [Q^{\,ee}]\left\{[F^{\,eI}]\,[L^{\,II}]-[F^{\,eI}]+[F^{\,ei}]\,[L^{\,iI}]\right\}.
 \end{align}
-Here,
+Here,\,\cite{mon}
 \begin{align}
 [Y^{\,in}] &= \tau_{ii}\,\langle \sigma\,v\rangle_i^{\,\rm cx}
 \,\langle n_n\rangle\left[
@@ -385,7 +386,7 @@ Let
 \omega_{\theta\,I}(r)&=\frac{{\bf V}^{\,I}\cdot\nabla\theta}{{\bf B}\cdot\nabla\theta}\,\frac{R_0\,B_0\,g}{R^{\,2}},\\[0.5ex]
 \omega_{\phi\,I}(r) &= {\bf V}^{\,I}\cdot\nabla\phi,
 \end{align}
-where ${\bf V}^{\,I}$ is the impurity ion fluid velocity, and the right-hand sides are evaluated on the outboard mid-plane. According to neoclassical theory,
+where ${\bf V}^{\,I}$ is the impurity ion fluid velocity, and the right-hand sides are evaluated on the outboard mid-plane. According to neoclassical theory,\,\cite{rftor3}
 \begin{align}
 \omega_{\theta\,I} &= K_\theta\,\omega_{{\rm nc}\,I},\\[0.5ex]
 \omega_{\phi\,I} &= \omega_E+\omega_{\ast\,I} + \omega_{\theta\,I},
@@ -435,7 +436,7 @@ Note that Eq.~(\ref{e87}) can only be solved when $1+\tau>0$.
 \subsubsection{Island Widths}
 Let ${\mit\Psi}_k= R_0\,B_0\,\hat{\mit\Psi}_k\,{\rm e}^{-{\rm i}\,\varphi_k}$, where $\hat{\mit\Psi}_k>0$  and $\varphi_k$ are both real quantities.
 The full width (in $r$) of the magnetic island chain at the
-$k$th resonant surface is
+$k$th resonant surface is\,\cite{rftor}
 \begin{equation}
 W_k = 4\,R_0\left(\frac{q\,}{g\,s}\right)^{1/2}_{r_k}\hat{\mit\Psi}_k^{\,1/2}.
 \end{equation}
@@ -455,7 +456,7 @@ where $\epsilon =r/R_0$, and
 Equations~(\ref{e64g})--(\ref{e64d}) must be solved iteratively for $W_{T_e\,k}/r_k$. 
 
 The critical full island width (in $r$) which must be exceeded before the ion temperature is flattened within the
-magnetic separatrix of the magnetic island chain at the $k$th resonant surface is
+magnetic separatrix of the magnetic island chain at the $k$th resonant surface is\,\cite{fitz,brag}
 \begin{equation}\label{e64gg}
 W_{T_i\,k}= 5.07\left(\frac{\chi_i}{\chi_{\parallel\,i}}\right)^{1/4}_{r_k}\left(\frac{1}{\epsilon\,s\,n}\right)^{1/2}_{r_k}r_k,
 \end{equation}
@@ -468,7 +469,7 @@ where $\chi_i(r)$ is the perpendicular ion energy diffusivity profile,
 Equations~(\ref{e64gg})--(\ref{e64rr}) must be solved iteratively for $W_{T_i\,k}/r_k$.
 
 The critical full island width (in $r$) which must be exceeded before the electron density is flattened within the
-magnetic separatrix of the magnetic island chain at the $k$th resonant surface is
+magnetic separatrix of the magnetic island chain at the $k$th resonant surface is\,\cite{fitz,brag}
 \begin{equation}\label{e64ggg}
 W_{n_e\,k}= 5.07\left(\frac{D_\perp}{\chi_{\parallel\,i}}\right)^{1/4}_{r_k}\left(\frac{1}{\epsilon\,s\,n}\right)^{1/2}_{r_k}r_k,
 \end{equation}
@@ -484,7 +485,7 @@ Equations~(\ref{e64ggg})--(\ref{e64fff}) must be solved iteratively for $W_{n_e\
 Let ${\mit\chi}_k= R_0\,B_0\,\hat{\chi}_k\,{\rm e}^{-{\rm i}\,\zeta_k}$, and $E_{kk'}=\hat{E}_{kk'}\,{\rm e}^{-{\rm i}\,\xi_{kk'}}$,
 where  $\hat{\chi}_k>0$, $\zeta_k$, $\hat{E}_{kk}'>0$, and $\xi_{kk'}$ are all real quantities. Furthermore,
 let $X_k= \hat{\mit\Psi}_k\,\cos\varphi_k$ and $Y_k= \hat{\mit\Psi}_k\,\sin\varphi_k$. The resonant plasma response model at the 
-$k$th resonant surface takes the form
+$k$th resonant surface takes the form\,\cite{rftor,rftor2}
 \begin{align}\label{e21}
 \left(\hat{W}_k +\hat{\delta}_k\right){\cal S}_k\left(\frac{dX_k}{d\hat{t}} 
 +\hat{\varpi}_k\,Y_k\right)&= f_k\,X_k+ \sum_{k'=1,K}\hat{E}_{kk'}\,(\cos\xi_{kk'}\,X_{k'}  -\sin\xi_{kk'}\,Y_{k'})\nonumber\\[0.5ex] &\phantom{=}+ \hat{E}_{kk}\,\hat{\chi}_k\,\cos\zeta_k,\\[0.5ex]
@@ -499,7 +500,7 @@ where
 \hat{\delta}_k &= \frac{\delta_{\rm linear}(r_k)}{R_0\,\epsilon_{100}\,\hat{r}_k},\\[0.5ex]
 {\cal S}_k&=\frac{\tau_R(r_k)}{\tau_A},\\[0.5ex]
 \tau_A &= \left[\frac{\mu_0\,\rho(0)\,r_{100}^{\,2}}{B_0^{\,2}}\right]^{1/2},\\[0.5ex]
-f_k &=f_{b\,k}+f_{c\,k} + f_{p\,k} + f_{s\,k},
+f_k &=f_{b\,k}+f_{c\,k} + f_{p\,k} + f_{s\,k}.
 \end{align}
 Here, ${\cal I} = 0.8227$, $\epsilon_{100}=r_{100}/R_0$, $\hat{r}=r/r_{100}$, $\hat{r}_k=r_k/r_{100}$, and $\hat{t}=t/\tau_A$. 
 
@@ -563,7 +564,7 @@ f_{s\,k} &=-(0.8\,A_k^{\,2} - 0.27\,B_k-0.09\,A_k)\,
 
 \subsection{Plasma Angular Velocity Evolution}\label{a4}
 \subsubsection{Evolution Equations}
-The quantity $\hat{\varpi}_k$ that appears in Eqs.~(\ref{e21}) and (\ref{e22}) evolves in time according to
+The quantity $\hat{\varpi}_k$ that appears in Eqs.~(\ref{e21}) and (\ref{e22}) evolves in time according to\,\cite{rftor}
 \begin{equation}\label{e19a}
 \hat{\varpi}_k(\hat{t})= \hat{\varpi}_{k\,0}-\sum_{k'=1,K}^{p=1,\infty} \frac{m_k}{m_{k'}}\,\frac{y_p(\hat{r}_k)}{y_p(\hat{r}_{k'})}\,\alpha_{k',p}(\hat{t})-\sum_{k'=1,K}^{p=1,\infty}\frac{z_p(\hat{r}_k)}{z_p(\hat{r}_{k'})}\,\beta_{k',p}(\hat{t}),
 \end{equation}
@@ -572,7 +573,7 @@ is the so-called ``natural frequency''  (in the absence of the RMP) at the $k$th
 absence of an RMP (or any other island chains). Furthermore, $J_m(z)$ is a standard Bessel function, and $j_{m,p}$ denotes the $p$th zero of this function. 
 The time evolution equations for the $\alpha_{k,p}$ and $\beta_{k,p}$ parameters specify how the
 plasma poloidal and toroidal angular velocity profiles are modified by the electromagnetic torques that develop within the plasma, in response to the applied
-RMP, and how these modifications affect the natural frequencies. The evolution equations take the form
+RMP, and how these modifications affect the natural frequencies. The evolution equations take the form\,\cite{rftor}
 \begin{align}
 (1+2\,Q_k^{\,2})\,\frac{d\alpha_{k,p}}{d\hat{t}}+ \left(\frac{j_{1,p}^{\,2}}{\hat{\tau}_{M\,k}}+\frac{1}{\hat{\tau}_{\theta\,k}}+\frac{1}{\hat{\tau}_{{\rm cx}\,k}}\right)\alpha_{k,p}&=
 \frac{m_k^{\,2}\,[y_p(\hat{r}_k)]^{\,2}}{\hat{\rho}_k\,\epsilon_{100}^{\,2}\,[J_2(j_{1,p})]^{\,2}}\,\delta\hat{T}_k,\\[0.5ex]
@@ -595,18 +596,18 @@ and
 \tau_{\rm cx}(r)=\frac{1}{\langle n_n\rangle\,\langle \sigma\,v\rangle_i^{\rm cx}}
 \end{equation}
 is the charge exchange damping timescale. 
-Furthermore,
+Furthermore,\cite{hir}
 \begin{equation}\label{a71}
 Q^{\,2}(r) =\frac{q^{\,2}\,R_0^{\,2}}{2\,r^{\,2}}\left.\left(\left\langle\frac{1}{R^{\,2}}\right\rangle-\frac{1}{\langle R^{\,2}\rangle}\right)\right/\left\langle \frac{|\nabla r|^{\,2}}{R^{\,2}}\right\rangle.
 \end{equation}
 
 \subsubsection{Natural Frequencies}\label{snat}
-According to linear tearing mode theory, in the absence of the RMP, the natural frequency of the tearing mode resonant at the $k$th resonant surface is given by
+According to linear tearing mode theory, in the absence of the RMP, the natural frequency of the tearing mode resonant at the $k$th resonant surface is given by\,\cite{rftor}
 \begin{equation}\label{elin}
  \varpi_{e\,k} = - n\,(\omega_E+\omega_{\ast\,e})_{r_k}.
 \end{equation}
 According to nonlinear tearing mode theory, in the absence of the RMP, 
-the natural frequency of the tearing mode resonant at the $k$th resonant surface is given by
+the natural frequency of the tearing mode resonant at the $k$th resonant surface is given by\,\cite{rftor}
 \begin{equation}\label{e28y}
  \varpi_{i\,k}=  -n\,(\omega_E+\omega_{\ast\,i}+\omega_{{\rm nc}\,i})_{r_k}.
  \end{equation}
@@ -628,6 +629,8 @@ f_{n_e\,k}&=\left(\frac{1}{1+\eta_e}\right)_{r_k}\,\frac{\hat{W}_{n_e\,k}^{\,2}}
 f_{T_i\,k}&=\left(\frac{\eta_i}{1+\eta_i}\right)_{r_k}\,\frac{\hat{W}_k^{\,2}}{\hat{W}_{T_i\,k}^{\,2}+\hat{W}_k^{\,2}},\\[0.5ex]
 f_{n_i\,k}&=\left(\frac{1}{1+\eta_i}\right)_{r_k}\,\frac{\hat{W}_k^{\,2}}{\hat{W}_{n_e\,k}^{\,2}+\hat{W}_k^{\,2}}.
 \end{align}
+Note that the switch-over from linear to nonlinear theory is now triggered by flattening of the local temperature
+and density profiles. 
 
 
 \section*{Data Availability Statement}
@@ -675,66 +678,98 @@ Nucl.\ Fusion {\bf 50}, 034012 (2010).
 \bibitem{omfit} O.~Meneghini, S.P.~Smith, L.L.~Lao, O.~Izacard, Q.~Ren, J.M.~Park, J.~Candy, {\em et al.}, Nucl.\ Fusion {\bf 55}, 083008 (2015). 
 \bibitem{gpec} J.-K.~Park, and N.C.~Logan, Phys.\ Plasmas {\bf 24}, 032505 (2017).
 \bibitem{ggj} A.H.~Glasser, J.M.~Greene, and J.L.~Johnson, Phys.\ Fluids {\bf 18}, 875 (1975).
+\bibitem{mon} P.~Monier-Garbet, K.H.~Burrell, F.L.~Hinton, J.~Kim, X.~Garbet, and R.J.~Groebner, Nucl.\ Fusion {\bf 37}, 403 (1997).
+
 \bibitem{cole} A.~Cole and R.~Fitzpatrick, Phys.\ Plasmas {\bf 13}, 032503 (2006).
 \bibitem{cole1} R.~Fitzpatrick, Phys.\ Plasmas {\bf 29}, 032507 (2022). 
 \bibitem{brag} S.I.~Braginskii. In {\em Reviews of Plasma Physics}. Vol.~I, 205. Consultants Bureau (New York, NY, 1965).
 \bibitem{porc} R.J.~Hastie, F.~Militello, and F.~Porcelli, Phys.\ Rev.\ Lett.\ {\bf 95}, 065001 (2005).
+\bibitem{hir} S.P.~Hirshman, Nucl.\ Fusion {\bf 18}, 7 (1978). 
 
 
 \end{thebibliography}
 \newpage
 
 \begin{figure}
-\centerline{\includegraphics[height=6.25in]{Fig0.eps}}
-\caption{Equilibrium magnetic flux-surfaces in NSTX discharge 127317 at $t=400$\, ms.}\label{fig0}
-\end{figure}
-
-\begin{figure}
 \centerline{\includegraphics[height=6.25in]{Fig1.eps}}
-\caption{The safety-factor, electron number density, electron temperature, impurity ion number density, and  impurity ion toroidal rotation profiles in NSTX discharge 127317 at $t=400$\, ms.}\label{fig1}
+\caption{Equilibrium magnetic flux-surfaces in NSTX discharge 127317 at $t=400$\, ms. Here, $R_0=0.85$ m.}\label{fig1}
 \end{figure}
 
 \begin{figure}
-\centerline{\includegraphics[height=5in]{Fig2.eps}}
-\caption{$n=1$ natural frequencies in NSTX discharge 127317 at $t=400$\, ms. There are 18 $n=1$ resonant surfaces in the plasma corresponding to $m=2$ through $m=19$. Only the $m=3$ and $m=4$ surfaces are potentially
-unstable to NTMs.}\label{fig2}
+\centerline{\includegraphics[height=6.25in]{Fig2.eps}}
+\caption{The safety-factor, electron number density, electron temperature, impurity ion number density, and  impurity ion toroidal rotation profiles in NSTX discharge 127317 at $t=400$\, ms.}\label{fig2}
 \end{figure}
 
 \begin{figure}
-\centerline{\includegraphics[height=6in]{Fig3.eps}}
-\caption{Right-hand sides of modified Rutherford equations for $m=3/n=1$ and $m=4/n=1$ tearing modes in NSTX discharge 127317 at $t=400$\, ms.}\label{fig3}
+\centerline{\includegraphics[height=5in]{Fig3.eps}}
+\caption{Linear $n=1$ natural frequencies in NSTX discharge 127317 at $t=400$\, ms. There are 18 $n=1$ resonant surfaces in the plasma corresponding to $m=2$ through $m=19$. Only the $m=3$ and $m=4$ surfaces are potentially
+unstable to NTMs.}\label{fig3}
 \end{figure}
 
 \begin{figure}
-\centerline{\includegraphics[height=5in]{Fig4.eps}}
-\caption{Calculated $n=1$ island widths  versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.055$ kA, duration 5 ms, and frequency 0 krad/s applied to the RMP coils.}\label{fig4}
+\centerline{\includegraphics[height=6in]{Fig4.eps}}
+\caption{Right-hand sides of modified Rutherford equations for $m=3/n=1$ and $m=4/n=1$ tearing modes in NSTX discharge 127317 at $t=400$\, ms.}\label{fig4}
 \end{figure}
 
 \begin{figure}
 \centerline{\includegraphics[height=5in]{Fig5.eps}}
-\caption{Calculated $n=1$ island widths versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.057$ kA, duration 5 ms, and frequency 0 krad/s applied to the RMP coils.}\label{fig5}
-\end{figure}
-
-\begin{figure}
-\centerline{\includegraphics[height=5in]{Fig5a.eps}}
-\caption{Calculated phase velocity ($\dot{\varphi}$) and natural frequency ($\varpi$) of $m=3/n=1$ mode versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.057$ kA, duration 5 ms, and frequency 0 krad/s applied to the RMP coils.}\label{fig5a}
+\caption{Calculated $n=1$ island widths  versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.055$ kA, duration 5 ms, and frequency 0 krad/s applied to the RMP coils.}\label{fig5}
 \end{figure}
 
 \begin{figure}
 \centerline{\includegraphics[height=5in]{Fig6.eps}}
-\caption{Critical $n=1$ RMP coil current pulse amplitude required to trigger an $m=3/n=1$ NTM in NSTX discharge 127317 
-as a function of the pulse duration  for various different pulse frequencies.}\label{fig6}
+\caption{Calculated $n=1$ island widths versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.057$ kA, duration 5 ms, and frequency 0 krad/s applied to the RMP coils.}\label{fig6}
 \end{figure}
 
 \begin{figure}
 \centerline{\includegraphics[height=5in]{Fig7.eps}}
-\caption{Critical $n=1$ RMP coil current pulse amplitude required to trigger an $n=1$ NTM in NSTX discharge 127317 
-as a function of the pulse frequency for a pulse duration of 20 ms.}\label{fig7}
+\caption{Calculated phase velocity ($\dot{\varphi}$) and natural frequency ($\varpi$) of $m=3/n=1$ mode versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.057$ kA, duration 5 ms, and frequency 0 krad/s applied to the RMP coils.}\label{fig7}
 \end{figure}
 
 \begin{figure}
 \centerline{\includegraphics[height=5in]{Fig8.eps}}
-\caption{Calculated $n=1$ island widths versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.05$ kA, duration 5 ms, and frequency 10 krad/s applied to the RMP coils.}\label{fig8}
+\caption{Critical $n=1$ RMP coil current pulse amplitude required to trigger an $m=3/n=1$ NTM in NSTX discharge 127317 
+as a function of the pulse duration  for various different pulse frequencies.}\label{fig8}
 \end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=5in]{Fig9.eps}}
+\caption{Critical $n=1$ RMP coil current pulse amplitude required to trigger an $m=3/n=1$ NTM in NSTX discharge 127317 
+as a function of the pulse frequency for a pulse duration of 20 ms.}\label{fig9}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=5in]{Fig10.eps}}
+\caption{Calculated $n=1$ island widths versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.05$ kA, duration 5 ms, and frequency 10 krad/s applied to the RMP coils.}\label{fig10}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=6.25in]{Fig11.eps}}
+\caption{Equilibrium magnetic flux-surfaces in NSTX discharge  139057 at $t=557$\, ms. Here, $R_0=0.85$ m.}\label{fig11}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=6.25in]{Fig12.eps}}
+\caption{The safety-factor, electron number density, electron temperature, impurity ion number density, and  impurity ion toroidal rotation profiles in NSTX discharge 139057 at $t=557$\, ms.}\label{fig12}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=5in]{Fig13.eps}}
+\caption{Linear $n=1$ natural frequencies in NSTX discharge 139057 at $t=557$\, ms. There are 14 $n=1$ resonant surfaces in the plasma corresponding to $m=2$ through $m=15$. Only the $m=3$, $4$, $5$, $6$, and $7$ surfaces are potentially
+unstable to NTMs.}\label{fig13}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=6in]{Fig14.eps}}
+\caption{Right-hand sides of modified Rutherford equations for $m=3/n=1$, $4/1$, $5/1$, $6/1$, and $7/1$ tearing modes in NSTX discharge 139057 at $t=557$\, ms.}\label{fig14}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[height=5in]{Fig15.eps}}
+\caption{Critical $n=1$ RMP coil current pulse amplitude required to trigger an $m=4/n=1$ NTM in NSTX discharge 139057 
+as a function of the pulse frequency for a pulse duration of 20 ms.}\label{fig15}
+\end{figure}
+
+
 
 \end{document}

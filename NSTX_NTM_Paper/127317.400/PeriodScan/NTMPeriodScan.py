@@ -207,7 +207,7 @@ plt.plot(p031,  t031,  color='cyan', linewidth=2)
 plt.plot(p032,  t032,  color='cyan', linewidth=2)
 plt.plot(p033,  t033,  color='cyan', linewidth=2)
 
-plt.xlabel('$Duration$ (ms)', fontsize="20")
+plt.xlabel('Duration (ms)', fontsize="20")
 plt.ylabel("$I_{rmp}$ (kA)", fontsize="20")
 plt.legend(fontsize="20")
 
