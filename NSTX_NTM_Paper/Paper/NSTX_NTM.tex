@@ -13,9 +13,9 @@
 \affiliation{Institute for Fusion Studies,  Department of Physics,  University of Texas at Austin,  Austin TX 78712, USA.}
 
 \begin{abstract}
-The EPEC asymptotic matching code is used to investigate the triggering of $n=1$ neoclassical tearing modes (NTMs) by a pulsed, 
+The EPEC asymptotic matching code is used to simulate the triggering of $n=1$ neoclassical tearing modes (NTMs) by a pulsed, 
 rotating, $n=1$, resonant magnetic perturbation (RMP)  in
-two NSTX discharges. Although the two discharges are significantly different, the results of the two sets of simulations are quite similar. The critical $n=1$ RMP  amplitude required to
+two NSTX discharges. Although the two discharges are significantly different from one another, the results of the two sets of simulations are quite similar. The critical $n=1$ RMP  amplitude required to
 trigger an $n=1$ NTM is minimized when the RMP rotation frequency matches the linear natural frequency of an $n=1$  tearing mode, resonant within the plasma, that is meta-stable to an NTM. However, if there is a frequency mismatch then the seed magnetic island chain driven at the relevant resonant surface is forced to rotate with respect to the RMP, because the RMP amplitude is nowhere near sufficient to lock the island chain to the RMP.  
 This rotation causes the critical RMP amplitude required to trigger an NTM to oscillate as the RMP duration is varied. The critical amplitude is
 minimized when the RMP duration is such that  seed island chain executes a half-integer number of rotations with respect to the RMP. All of the minima have the same value. 
@@ -63,7 +63,7 @@ $R_0=0.85$ m (see Sect.~\ref{a1}), a scale toroidal magnetic field-strength $B_0
 
 \subsection{Plasma Profiles}
 Figure~\ref{fig2} shows the experimental safety-factor, electron number density, electron temperature, impurity ion number density, and impurity ion toroidal angular velocity profiles in NSTX discharge 127317 at $t=400$ ms. The majority ions are deuterium, and the impurities are assumed to
-be fully-stripped carbon ions. Note that the discharge is subject to rotation braking due to an applied $n=3$ RMP, which accounts for its slighty lower than usual toroidal rotation (see Fig.~\ref{fig13}). Because there is no
+be fully-stripped carbon ions. Note that the discharge is subject to rotation braking due to an applied $n=3$ RMP, which accounts for its slighty lower than usual toroidal rotation (compare the rotation in Fig.~\ref{fig12}). Because there is no
 poloidal impurity ion rotation data for this discharge, the ${\bf E}\times {\bf B}$ rotation profile is deduced from the
 toroidal  impurity ion rotation data using neoclassical theory. (See Sect.~\ref{srotation}.) 
 
@@ -81,8 +81,8 @@ $n=1$ tearing modes resonant within discharge 127317. There are 18 such modes, w
 lying in the range $m=2$ to $m=19$. As is usual in a tokamak discharge with co-injected neutral beam heating, the tearing modes resonant in the pedestal have large positive natural frequencies (which implies  that they would rotate in
 the electron diamagnetic direction were they naturally unstable), and the tearing modes resonant in the core have large negative natural frequencies (which implies  that they would rotate in
 the ion diamagnetic direction  were they naturally unstable).\cite{rftor3}. Possibly because of the rotation braking, there is a wide region lying between the pedestal and the core where the natural frequencies hover close to zero. Moreover,
-the natural frequency curve (i.e., the curve that interpolates the natural frequencies) crosses zero (i.e., switches direction) about half way between the magnetic axis and the last closed magnetic
-flux-surface (LCFS). In a conventional aspect-ratio tokamak plasma, the zero-crossing is at the top of the pedestal.\cite{rftor} The observation that 
+the natural frequency curve (i.e., the curve that interpolates between the natural frequencies) crosses zero (i.e., switches direction) about half way between the magnetic axis and the last closed magnetic
+flux-surface (LCFS). In a conventional aspect-ratio tokamak plasma, the zero-crossing is invariably at the top of the pedestal.\cite{rftor} The observation that 
 the zero-crossing of the $n=1$ natural frequency curve  in NSTX does not take place at the top of the
 pedestal (see also Fig.~\ref{fig13}) may help to explain why RMPs were unable to suppress ELMs in this device.\cite{nstx} (Admittedly, the
 ELM suppression experiments were performed with an $n=3$ RMP, but the location of the zero-crossing for the
@@ -112,20 +112,20 @@ sawtooth crash or an ELM.
 For this reason, we do not take into account the shielding effect of eddy currents induced in the vacuum vessel (because the real RMPs that trigger NTMs are generated inside the plasma, and are not subject to shielding). 
 
 \subsection{Triggering of $n=1$ NTMs}
-Figure~\ref{fig5} shows the $n=1$ island widths versus time in discharge 127317, as calculated by the EPEC code, 
+Figure~\ref{fig5} shows the $n=1$ island widths versus time driven in discharge 127317, as calculated by the EPEC code, 
 in response to an $n=1$ current pulse of amplitude 0.055 kA, duration 5 ms, and frequency 0 krad/s applied to the
-RMP coils. It can be seen that an NTM is not triggered (because all the island widths eventually decay to zero after the pulse is
+RMP coils. It can be seen that an NTM is not triggered (because all of the island widths eventually decay to zero after the pulse is
 applied). 
 
-Figure~\ref{fig6} shows the $n=1$ island widths versus time in discharge 127317 
+Figure~\ref{fig6} shows the $n=1$ island widths versus time driven in discharge 127317 
 in response to an $n=1$ current pulse of amplitude 0.057 kA, duration 5 ms, and frequency 0 krad/s applied to the
-RMP coils. It can be seen that the $m=3$ NTM is triggered. In other words, the $m=3$ island width grows and
-saturates at large amplitude. Note that most of the growth occurs long after the application of the RMP, indicating
+RMP coils. It can be seen that the $m=3$ NTM is triggered. In other words, the $m=3$ island width grows, and eventually 
+saturates at a large value. Note that most of the growth occurs long after the application of the RMP, indicating
 that something other than the RMP (i.e., the perturbed bootstrap current) is responsible for driving the growth. Because all of the
-$n=1$ tearing modes resonant in the plasma are coupled together, the growth of the $m=3$ NTM drives small
+$n=1$ tearing modes resonant in the plasma are coupled together, the growth of the $m=3$ NTM drives narrow 
 island chains at the $m=3$ and $m=4$ resonant surfaces. However, these are not NTMs. 
 
-Figure~\ref{fig7} shows the natural frequency and phase velocityof the $m=3$ NTM triggered in the previous figure  versus time. Note that the plasma is subject to a small-amplitude, static, background RMP in order to ensure 
+Figure~\ref{fig7} shows the natural frequency and phase velocity of the $m=3$ NTM triggered in the previous figure  versus time. Note that the plasma is subject to a small-amplitude, static, background RMP in order to ensure 
 that the various modes in the calculation have reproducible initial phases. Prior to the application of the transient
 RMP, there is a very small stationary magnetic island chain driven at the $m=3$ resonant surface. The fact that the
 phase velocity and natural frequency of the mode do not match  indicates that the plasma at the
@@ -158,9 +158,9 @@ in phase with the pulse,  it is now in phase quadrature). Hence, the critical pu
 minimum value. A longer pulse can make the seed island width smaller, but not larger. Thus, the minimum pulse
 amplitudes (which are all the same) correspond to pulse durations that allow the seed island chain to execute 1/2, 3/2, 5/2, et cetera rotations
 with respect to the pulse. The time needed for the seed island chain to execute a full rotation with respect to the pulse is
-inversely proportional to the difference between the pulse frequency and the linear natural frequency at the resonant surface. Thus, when the pulse frequency matches the linear natural frequency (light blue curve) the rotation time is infinite, and
-the critical pulse amplitude exhibits the expected monotonic decrease with pulse duration. On the other hand, when there is a
-large frequency mismatch (green curve) the oscillations in the critical pulse amplitude become both more frequent and
+inversely proportional to the difference between the pulse frequency and the linear natural frequency at the resonant surface. Thus, when the pulse frequency matches the linear natural frequency (light-blue curve) the rotation time is infinite, and
+the critical pulse amplitude exhibits the expected monotonic decrease with pulse duration. On the other hand, as the
+ frequency mismatch increases (see the sequence from the black to the dark-blue, to the red, to the green, curve) the oscillations in the critical pulse amplitude become shorter and
 more violent. 
 
 Note that at very short pulse durations, the critical pulse amplitude needed to trigger an NTM becomes independent
@@ -174,7 +174,7 @@ function of the pulse frequency for a pulse duration of 20 ms. The generation of
 simulations.  As might be expected, the critical pulse amplitude exhibits a minimum value (which is not quite zero) when
 the pulse frequency matches the linear natural frequency of the $m=3$ tearing mode. The critical pulse amplitude
 increases in a roughly linear fashion, with superimposed oscillations of increasing amplitude, as the size of the frequency mismatch increases. The critical pulse amplitude  exhibits a secondary minimum when the pulse frequency matches the
-linear natural frequency of the $m=4$ tearing mode. This is a synergistic effect by which the pulse simultaneously trigger 
+linear natural frequency of the $m=4$ tearing mode. This is a synergistic effect by which the pulse simultaneously triggers 
 both an $m=3$ and an $m=4$ NTM. This process is illustrated in Fig.~\ref{fig10}, which shows what happens when
 a pulse whose frequency closely matches the
 linear natural frequency of the $m=4$ tearing mode is applied to the plasma. It can be seen that an $m=4$
@@ -226,17 +226,17 @@ As before, the $n=1$ transient rotating RMP that is used to (theoretically) trig
 \subsection{Pulse Frequency Scan}
 Figure~\ref{fig15} shows the critical $n=1$ RMP current  pulse amplitude required to trigger an $m=4$ NTM in discharge 139057 as a
 function of the pulse frequency for a pulse duration of 20 ms. The critical pulse amplitude exhibits a minimum value (which is not quite zero) when
-the pulse frequency matches the linear)natural frequency of the $m=4$ tearing mode. The critical pulse amplitude
-also exhibits  second minima when the pulse frequency matches the
+the pulse frequency matches the linear natural frequency of the $m=4$ tearing mode. The critical pulse amplitude
+also exhibits  secondary minima when the pulse frequency matches the
 linear natural frequencies of the $m=5$ and the $m=6$ tearing modes. Again, this is a synergistic effect by which the pulse simultaneously 
 triggers both an $m=4$ and either an $m=5$ or an $m=5$ and an $m=6$ NTM. There is no secondary minimum
-when the pulse frequency matches the linear natural frequency of the $m=7$ tearing mode because the
+when the pulse frequency matches the linear natural frequency of the $m=7$ tearing mode, because the
 $m=7$ NTM is comparatively feeble. There is no minimum
-when the pulse frequency matches the linear natural frequency of the $m=3$ tearing mode because the
+when the pulse frequency matches the linear natural frequency of the $m=3$ tearing mode, because the
 $m=3$ NTM can be triggered independently of the $m=4$ NTM (i.e., there is no synergistic effect). 
 
 \section{Summary and Conclusions}
-The EPEC asymptotic matching code has been used to investigate the triggering of $n=1$ NTMs by a
+The EPEC asymptotic matching code has been used to simulate the triggering of $n=1$ NTMs by a
 pulsed, rotating, $n=1$ RMP  in
 two NSTX discharges. Although the two discharges are significantly different (the first is double-null, the second is single-null;
 the first is subject to $n=3$ rotation braking, the second is not; the first has no lithium coating on the wall, the
