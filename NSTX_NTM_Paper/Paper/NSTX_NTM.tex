@@ -13,18 +13,23 @@
 \affiliation{Institute for Fusion Studies,  Department of Physics,  University of Texas at Austin,  Austin TX 78712, USA.}
 
 \begin{abstract}
-
+The EPEC asymptotic matching code is used to investigate the triggering of $n=1$ neoclassical tearing modes (NTMs) by a pulsed, 
+rotating, $n=1$, resonant magnetic perturbation (RMP)  in
+two NSTX discharges. Although the two discharges are significantly different, the results of the two sets of simulations are quite similar. The critical $n=1$ RMP  amplitude required to
+trigger an $n=1$ NTM is minimized when the RMP rotation frequency matches the linear natural frequency of an $n=1$  tearing mode, resonant within the plasma, that is meta-stable to an NTM. However, if there is a frequency mismatch then the seed magnetic island chain driven at the relevant resonant surface is forced to rotate with respect to the RMP, because the RMP amplitude is nowhere near sufficient to lock the island chain to the RMP.  
+This rotation causes the critical RMP amplitude required to trigger an NTM to oscillate as the RMP duration is varied. The critical amplitude is
+minimized when the RMP duration is such that  seed island chain executes a half-integer number of rotations with respect to the RMP. All of the minima have the same value. 
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
 Neoclassical tearing modes (NTMs) are the main obstacle to obtaining
-normalized plasma pressure ($\beta$) levels in tokamak\,\cite{wesson} plasmas that are adequate for  achieving 
-thermonuclear fusion.\cite{buttery,lahaye} NTMs were originally identified experimentally on the TFTR tokamak.\cite{tftr} NTMs lead to the generation of low poloidal and toroidal mode number ($m$ and $n$) magnetic island chains on toroidal magnetic flux-surfaces within the plasma that are characterized by rational (i.e., $m/n$) values of the safety-factor ($q$). An NTM is driven by a helical hole in the bootstrap current\,\cite{boot} profile  that arises as a consequence of the flattening of the
+normalized plasma pressure ($\beta$) levels in tokamak\,\cite{wesson} plasmas that are adequate for  the achievement of 
+thermonuclear fusion.\cite{buttery,lahaye} NTMs were originally identified experimentally on the TFTR tokamak.\cite{tftr} NTMs lead to the development of low poloidal and toroidal mode number ($m$ and $n$) magnetic island chains on toroidal magnetic flux-surfaces within the plasma that are characterized by rational (i.e., $m/n$) values of the safety-factor ($q$). An NTM is driven by a helical hole in the bootstrap current\,\cite{boot} profile  that arises as a consequence of the flattening of the
 plasma pressure across the associated island chain region.\cite{carrera} However, a magnetic island chain can only locally flatten
 the plasma pressure  when its radial width exceeds a certain threshold value that depends on the local ratio of the
-parallel and perpendicular energy diffusivities.\cite{fitz} This  leads to the conclusion that NTMs are actually meta-stable.
+parallel and perpendicular energy diffusivities.\cite{fitz} This observation leads to the conclusion that NTMs are actually meta-stable.
 In other words, some sort of seed perturbation must be applied to the relevant rational magnetic flux-surface in order to trigger an NTM. In practice, the seed perturbation usually takes the form of a transient magnetic perturbation that is resonant at the
 rational surface. Such perturbations are generated in tokamak plasmas primarily by sawtooth crashes, edge localized modes, and fishbones.\cite{buttery,lahaye} 
 
@@ -48,17 +53,17 @@ island widths needed to locally flatten the plasma pressure profile.
 \subsection{Introduction}
 The two NSTX discharges studied in this paper were chosen because they were both fairly generic and had precomputed  kinetic-EFITs. 
 
-The first discharge studied in this paper is 127317, which was one of the discharges used in an investigation of the interaction between
-edge localized modes (ELMs) and RMPs in NSTX.\cite{nstx} Discharge 127317 is an H-mode discharge, characterized by a double magnetic null boundary shape,  6 MW of neutral
+The first discharge  is 127317, which was one of the discharges used in an investigation of the interaction between
+edge localized modes (ELMs) and RMPs in NSTX.\cite{nstx} Discharge 127317 is an H-mode plasma, characterized by a double magnetic null boundary shape,  6 MW of neutral
 beam heating power, and no lithium coating of the walls. 
 
 \subsection{Magnetic Equilibrium}
-Figure~\ref{fig1} shows the magnetic equilibrium of NSTX discharge 127317 at $t=400$ ms. This equilibrium is characterized by a scale major radius
+Figure~\ref{fig1} shows the experimental magnetic equilibrium of NSTX discharge 127317 at $t=400$ ms. This equilibrium is characterized by a scale major radius
 $R_0=0.85$ m (see Sect.~\ref{a1}), a scale toroidal magnetic field-strength $B_0=0.44$ T (see Sect.~\ref{a2}), a net toroidal plasma current $I_\phi = 753$ kA, a safety-factor at the 95\% flux-surface $q_{95} = 11.0$, and a poloidal beta $\beta_p=0.61$. 
 
 \subsection{Plasma Profiles}
-Figure~\ref{fig2} shows the safety-factor, electron number density, electron temperature, impurity ion number density, and impurity ion toroidal angular velocity profiles in NSTX discharge 127317 at $t=400$ ms. The majority ions are deuterium, and the impurities are assumed to
-be fully-stripped carbon ions. Note that the discharge is subject to rotation braking due to an applied $n=3$ RMP, which accounts for the lower than usual toroidal rotation. Because there is no
+Figure~\ref{fig2} shows the experimental safety-factor, electron number density, electron temperature, impurity ion number density, and impurity ion toroidal angular velocity profiles in NSTX discharge 127317 at $t=400$ ms. The majority ions are deuterium, and the impurities are assumed to
+be fully-stripped carbon ions. Note that the discharge is subject to rotation braking due to an applied $n=3$ RMP, which accounts for its slighty lower than usual toroidal rotation (see Fig.~\ref{fig13}). Because there is no
 poloidal impurity ion rotation data for this discharge, the ${\bf E}\times {\bf B}$ rotation profile is deduced from the
 toroidal  impurity ion rotation data using neoclassical theory. (See Sect.~\ref{srotation}.) 
 
@@ -70,28 +75,175 @@ $\langle n_n\rangle(r_{100})= 1.0\times 10^{16}\,{\rm m}^{-3}$, and $l_n=1.3\tim
 Note that neutrals do not really play a role in the physics of NTMs, which are resonant in the plasma core, and are
 only included in the calculation because they need to be specified in the EPEC model. 
 
-\subsection{NTM Stability}
+\subsection{$n=1$ Natural Frequencies}
+Figure~\ref{fig3} shows the linear natural frequencies [i.e., the $\varpi_{e\,k}$ defined in Eq.~(\ref{elin})] of all of the
+$n=1$ tearing modes resonant within discharge 127317. There are 18 such modes, with poloidal mode numbers
+lying in the range $m=2$ to $m=19$. As is usual in a tokamak discharge with co-injected neutral beam heating, the tearing modes resonant in the pedestal have large positive natural frequencies (which implies  that they would rotate in
+the electron diamagnetic direction were they naturally unstable), and the tearing modes resonant in the core have large negative natural frequencies (which implies  that they would rotate in
+the ion diamagnetic direction  were they naturally unstable).\cite{rftor3}. Possibly because of the rotation braking, there is a wide region lying between the pedestal and the core where the natural frequencies hover close to zero. Moreover,
+the natural frequency curve (i.e., the curve that interpolates the natural frequencies) crosses zero (i.e., switches direction) about half way between the magnetic axis and the last closed magnetic
+flux-surface (LCFS). In a conventional aspect-ratio tokamak plasma, the zero-crossing is at the top of the pedestal.\cite{rftor} The observation that 
+the zero-crossing of the $n=1$ natural frequency curve  in NSTX does not take place at the top of the
+pedestal (see also Fig.~\ref{fig13}) may help to explain why RMPs were unable to suppress ELMs in this device.\cite{nstx} (Admittedly, the
+ELM suppression experiments were performed with an $n=3$ RMP, but the location of the zero-crossing for the
+$n=3$ curce is identical to that for the $n=1$ curve.) It should be noted that the observation that  natural frequency curve 
+of tearing modes, resonant within H-mode plasmas in conventional aspect-ratio tokamaks heated by co-injected neutral beams, invariably passes through zero close to the 
+top of the pedestal is an important ingredient in recent theories of how RMP-induced ELM suppression works.
+\cite{rftor,rftor1,rftor2,rftor3, hu}
+
+\subsection{$n=1$ NTM Stability}
+Only two of the $n=1$ tearing modes resonant in discharge 127317 are meta-stable to NTMs. These modes are resonant in the middle of the plasma, close to the zero-crossing of the natural frequency curve. The unstable modes are the $m=3$, with a natural
+frequency of 2.1 krad/s, and the $m=4$, with a natural frequency of 10.6 krad/s. Figure~\ref{fig4} shows the
+right-hand sides (RHSs) of the modified Rutherford island width evolution equations for the $m=3$ and $m=4$ modes as functions of island
+width. [In fact, what is plotted is $E_{kk} + f_k$. See Eqs.~(\ref{dispersion}) and (\ref{fdef}). $E_{kk}$ is the (negative)
+classical tearing stability index, which is only calculated approximately for low-$m$ modes by EPEC. $f_k$ specifies the
+destabilizing effect of the perturbed bootstrap current, the stabilizing effect of magnetic field-line curvature, the
+stabilizing effect of the ion polarization current, and the stabilizing effect of island saturation. All of these effects are calculated accurately by EPEC.] As expected for a meta-stable NTM, both RHS curves shown in Fig.~\ref{fig4} are negative for small and large island widths, and positive for intermediate island widths. The smaller zero-crossing of the RHS curve indicates the width of the seed island chain 
+that must be induced at the resonant surface in order to trigger the NTM. The larger zero-crossing indicates the
+saturated width of the NTM. It should be noted that the RHS curves for all the other $m=1$ modes resonant in discharge 127317
+are negative for all island widths (which precludes an NTM). 
+
+\subsection{$n=1$ RMP}
+For the sake of definiteness and convenience, the $n=1$ transient rotating RMP that is used to (theoretically) trigger $n=1$ NTMs in discharge 127317 is generated  by pulsing a rotating $n=1$ current in the RMP coils installed on NSTX. (To be more
+exact, the ideal response of the plasma to the currents flowing in the RMP coils is calculated by the GPEC code,\cite{gpec} and
+this information is used as the basis for the EPEC calculation. See Sect.~\ref{tear}.)
+An RMP produced in this manner is supposed to represent the type of rotating, multi-harmonic RMP that would be generated by a
+sawtooth crash or an ELM. 
+For this reason, we do not take into account the shielding effect of eddy currents induced in the vacuum vessel (because the real RMPs that trigger NTMs are generated inside the plasma, and are not subject to shielding). 
+
+\subsection{Triggering of $n=1$ NTMs}
+Figure~\ref{fig5} shows the $n=1$ island widths versus time in discharge 127317, as calculated by the EPEC code, 
+in response to an $n=1$ current pulse of amplitude 0.055 kA, duration 5 ms, and frequency 0 krad/s applied to the
+RMP coils. It can be seen that an NTM is not triggered (because all the island widths eventually decay to zero after the pulse is
+applied). 
+
+Figure~\ref{fig6} shows the $n=1$ island widths versus time in discharge 127317 
+in response to an $n=1$ current pulse of amplitude 0.057 kA, duration 5 ms, and frequency 0 krad/s applied to the
+RMP coils. It can be seen that the $m=3$ NTM is triggered. In other words, the $m=3$ island width grows and
+saturates at large amplitude. Note that most of the growth occurs long after the application of the RMP, indicating
+that something other than the RMP (i.e., the perturbed bootstrap current) is responsible for driving the growth. Because all of the
+$n=1$ tearing modes resonant in the plasma are coupled together, the growth of the $m=3$ NTM drives small
+island chains at the $m=3$ and $m=4$ resonant surfaces. However, these are not NTMs. 
+
+Figure~\ref{fig7} shows the natural frequency and phase velocityof the $m=3$ NTM triggered in the previous figure  versus time. Note that the plasma is subject to a small-amplitude, static, background RMP in order to ensure 
+that the various modes in the calculation have reproducible initial phases. Prior to the application of the transient
+RMP, there is a very small stationary magnetic island chain driven at the $m=3$ resonant surface. The fact that the
+phase velocity and natural frequency of the mode do not match  indicates that the plasma at the
+resonant surface is capable of freely flowing through the locked island chain (because of its very small width). As soon as the transient RMP is applied to the plasma, a seed island chain is driven at the resonant surface. This island chain is
+sufficiently wide that it is dragged by the plasma at the resonant surface, causing it to rotate in the direction of its 
+natural frequency. The rotation is braked by the RMP, which means that the phase velocity of the seed island chain does not
+match its natural frequency. 
+The fact that the natural frequency barely changes during the application of the transient RMP
+indicates that the amplitude of the RMP is nowhere near large enough to halt the plasma rotation at the resonant surface. As soon as the transient RMP disappears, the seed island chain is no longer braked by the RMP, and
+consequently accelerates until it is rotating at its natural frequency. As the seed island chain grows, and becomes a fully fledged NTM, its natural frequency changes because it switches from that characteristic of a linear layer (in this case, small and positive) to that characteristic of a nonlinear magnetic island chain (in this case, large and negative). (See Sect.~\ref{snat}.) However, this switch takes place long after the triggering of the NTM, which suggests that it is
+the linear, rather than the nonlinear, natural frequency that plays a role in NTM triggering. 
+
+\subsection{Pulse Duration Scan}
+Figure~\ref{fig8} shows the critical $n=1$ RMP current  pulse amplitude required to trigger an $m=3$ NTM in discharge 127317 as a
+function of the pulse duration for various different pulse frequencies. 
+
+The figure was generated as follows.
+For a given pulse duration and frequency, an RMP pulse of a certain amplitude was applied to the plasma, and the plasma response was simulated for 200 ms using the EPEC code, after which a determination was made as to whether or not an NTM had
+been triggered. A bisection search was made in the
+pulse amplitude in order to determine the critical amplitude needed to trigger the NTM. In general, it required about 10
+EPEC simulations to determine the critical amplitude. Because there are about 800 points in each curve plotted in the figure, and there are 5 curves, it follows that the production of the figure required about 40,000 EPEC simulations (which means that
+a total of about  8000 seconds of plasma dynamics was simulated). Obviously, this would be impossible using a
+conventional MHD code. However, it is perfectly feasible using an asymptotic matching code. 
+
+Let us concentrate, first,  on the dark-blue curve, which corresponds to zero-frequency current pulses. One might expect that the critical pulse amplitude required to trigger an NTM would decrease monotonically with pulse duration, because a
+longer pulse would generate a wider seed island chain. In fact, this is not the case, and the pulse amplitude curve exhibits oscillations. The key to understanding this unexpected behavior is the fact that the seed island chain is not locked to the RMP pulse, but is instead forced to rotate with respect to the pulse by the plasma rotation at the
+resonant surface. (See Fig.~\ref{fig7}.) This means that after a time sufficient for the seed island chain to perform half a rotation with
+respect to the pulse, the seed island width attains a maximum value (because, assuming that it was initially
+in phase with the pulse,  it is now in phase quadrature). Hence, the critical pulse amplitude attains a
+minimum value. A longer pulse can make the seed island width smaller, but not larger. Thus, the minimum pulse
+amplitudes (which are all the same) correspond to pulse durations that allow the seed island chain to execute 1/2, 3/2, 5/2, et cetera rotations
+with respect to the pulse. The time needed for the seed island chain to execute a full rotation with respect to the pulse is
+inversely proportional to the difference between the pulse frequency and the linear natural frequency at the resonant surface. Thus, when the pulse frequency matches the linear natural frequency (light blue curve) the rotation time is infinite, and
+the critical pulse amplitude exhibits the expected monotonic decrease with pulse duration. On the other hand, when there is a
+large frequency mismatch (green curve) the oscillations in the critical pulse amplitude become both more frequent and
+more violent. 
+
+Note that at very short pulse durations, the critical pulse amplitude needed to trigger an NTM becomes independent
+of the pulse frequency. However, it is clear from the figure that very short duration pulses are relatively inefficient at 
+triggering NTMs. (In fact,  in the
+ short pulse duration limit, the critical pulse amplitude scales as the inverse  of the pulse duration.) 
+ 
+\subsection{Pulse Frequency Scan}
+Figure~\ref{fig9} shows the critical $n=1$ RMP current  pulse amplitude required to trigger an $m=3$ NTM in discharge 127317 as a
+function of the pulse frequency for a pulse duration of 20 ms. The generation of this figure required about 20,000 EPEC
+simulations.  As might be expected, the critical pulse amplitude exhibits a minimum value (which is not quite zero) when
+the pulse frequency matches the linear natural frequency of the $m=3$ tearing mode. The critical pulse amplitude
+increases in a roughly linear fashion, with superimposed oscillations of increasing amplitude, as the size of the frequency mismatch increases. The critical pulse amplitude  exhibits a secondary minimum when the pulse frequency matches the
+linear natural frequency of the $m=4$ tearing mode. This is a synergistic effect by which the pulse simultaneously trigger 
+both an $m=3$ and an $m=4$ NTM. This process is illustrated in Fig.~\ref{fig10}, which shows what happens when
+a pulse whose frequency closely matches the
+linear natural frequency of the $m=4$ tearing mode is applied to the plasma. It can be seen that an $m=4$
+NTM is almost immediately triggered, closely followed by an $m=3$ NTM. Both NTMs grow to large amplitudes, and
+clearly drive smaller island chains at other resonant surfaces in the plasma. It should be noted that the pulse amplitudes
+in Figs.~\ref{fig5} and \ref{fig10} are the same; it is only the pulse frequencies that are different. Thus,  a
+comparison of the two figures reveals that merely changing the pulse frequency can cause the completely benign plasma response
+shown in Fig.~\ref{fig5} to convert into the catastrophic response shown in Fig.~\ref{fig10}. 
 
 \section{NSTX Discharge 139057}
+
 \subsection{Introduction}
-The second discharge  studied in this paper is 139057, which was one of the discharges used in an investigation of blob dynamics in NSTX.\cite{nstx1} Discharge 139057 is an H-mode discharge, characterized by a single magnetic null boundary shape,  6 MW of neutral
+The second NSTX discharge  studied in this paper is 139057, which was one of the discharges used in an investigation of blob dynamics in NSTX.\cite{nstx1} Discharge 139057 is an H-mode plasma, characterized by a single magnetic null boundary shape,  6 MW of neutral
 beam heating power, and  lithium coating of the walls. 
 
 \subsection{Magnetic Equilibrium}
-Figure~\ref{fig11} shows the magnetic equilibrium of NSTX discharge 139057 at $t=557$ ms. This equilibrium is characterized by a scale major radius
+Figure~\ref{fig11} shows the experimental magnetic equilibrium of NSTX discharge 139057 at $t=557$ ms. This equilibrium is characterized by a scale major radius
 $R_0=0.85$ m, a scale toroidal magnetic field-strength $B_0=0.54$ T, a net toroidal plasma current $I_\phi = 907$ kA, a safety-factor at the 95\% flux-surface $q_{95} = 9.5$, and a poloidal beta $\beta_p=0.57$. 
 
 \subsection{Plasma Profiles}
-Figure~\ref{fig12} shows the safety-factor, electron number density, electron temperature, impurity ion number density, and impurity ion toroidal angular velocity profiles in NSTX discharge 139057 at $t=557$ ms. As before, the majority ions are deuterium, and the impurities are assumed to
-be fully-stripped carbon ions. Note that the discharge is not subject to rotation braking due to an applied $n=3$ RMP, which accounts for the higher toroidal rotation than that in discharge 127317. As before, the ${\bf E}\times {\bf B}$ rotation profile is deduced from the
+Figure~\ref{fig12} shows the experimental safety-factor, electron number density, electron temperature, impurity ion number density, and impurity ion toroidal angular velocity profiles in NSTX discharge 139057 at $t=557$ ms. As before, the majority ions are deuterium, and the impurities are assumed to
+be fully-stripped carbon ions. Note that the discharge is not subject to rotation braking due to an applied $n=3$ RMP, which accounts for the slightly higher toroidal rotation than that present in discharge 127317 (see Fig.~\ref{fig2}). As before, the ${\bf E}\times {\bf B}$ rotation profile is deduced from the
 toroidal  impurity ion rotation data using neoclassical theory. 
 
 The diffusivity and neutral profiles in discharge 139057 are assumed to be the same as those adopted in the study of
 discharge 127317. 
 
-\subsection{NTM Stability}
+\subsection{$n=1$ Natural Frequencies}
+Figure~\ref{fig13} shows the linear natural frequencies of all of the
+$n=1$ tearing modes resonant within discharge 139057. There are 14 such modes, with poloidal mode numbers
+lying in the range $m=2$ to $m=15$. As is usual, the natural frequencies are negative in the pedestal and
+positive in the plasma core. There is more shear in the natural frequency curve than is evident in Fig.~\ref{fig3}, because
+discharge 139059 was not subject to rotation braking. Note that the  natural
+frequency curve again passes though zero in the middle of the plasma, rather than at the top of the pedestal.
+
+\subsection{$n=1$ NTM Stability}
+Five of the $n=1$ tearing modes resonant in discharge 139057 are meta-stable to NTMs. As before, these modes are resonant in the middle of the plasma, close to the zero-crossing of the natural frequency curve. The unstable modes are the $m=3$, with a natural
+frequency of -19.9 krad/s,  the $m=4$, with a natural frequency of 2.5 krad/s,  the $m=5$, a with natural
+frequency of 13.7 krad/s,  the $m=6$, with a natural frequency of 19.2 krad/s, and the $m=7$, with a natural
+frequency of 23.0 krad/s.
+ Figure~\ref{fig14} shows the
+right-hand sides of the modified Rutherford island width evolution equations for the $m=3$, 4, 5, 6, and 7 modes as functions of island
+width. It can be seen that the most unstable mode is the $m=4$, and that the $m=7$ mode is only barely unstable
+(because its RHS barely crosses zero). 
+
+\subsection{$n=1$ RMP}
+As before, the $n=1$ transient rotating RMP that is used to (theoretically) trigger $n=1$ NTMs in discharge 139057 is generated  by pulsing a rotating $n=1$ current in the RMP coils installed on NSTX. 
+
+\subsection{Pulse Frequency Scan}
+Figure~\ref{fig15} shows the critical $n=1$ RMP current  pulse amplitude required to trigger an $m=4$ NTM in discharge 139057 as a
+function of the pulse frequency for a pulse duration of 20 ms. The critical pulse amplitude exhibits a minimum value (which is not quite zero) when
+the pulse frequency matches the linear)natural frequency of the $m=4$ tearing mode. The critical pulse amplitude
+also exhibits  second minima when the pulse frequency matches the
+linear natural frequencies of the $m=5$ and the $m=6$ tearing modes. Again, this is a synergistic effect by which the pulse simultaneously 
+triggers both an $m=4$ and either an $m=5$ or an $m=5$ and an $m=6$ NTM. There is no secondary minimum
+when the pulse frequency matches the linear natural frequency of the $m=7$ tearing mode because the
+$m=7$ NTM is comparatively feeble. There is no minimum
+when the pulse frequency matches the linear natural frequency of the $m=3$ tearing mode because the
+$m=3$ NTM can be triggered independently of the $m=4$ NTM (i.e., there is no synergistic effect). 
 
 \section{Summary and Conclusions}
+The EPEC asymptotic matching code has been used to investigate the triggering of $n=1$ NTMs by a
+pulsed, rotating, $n=1$ RMP  in
+two NSTX discharges. Although the two discharges are significantly different (the first is double-null, the second is single-null;
+the first is subject to $n=3$ rotation braking, the second is not; the first has no lithium coating on the wall, the
+second does), the results of the two sets of simulations are quite similar. The critical $n=1$ RMP  amplitude required to
+trigger an $n=1$ NTM is minimized when the RMP rotation frequency matches the linear natural frequency of an $n=1$ tearing mode, resonant within the plasma, that is meta-stable to an NTM. However, if there is a frequency mismatch then the seed magnetic island chain driven at the relevant resonant surface is forced to rotate with respect to the RMP pulse, because the RMP amplitude is nowhere near sufficient to lock the island chain to the RMP. 
+This rotation causes the critical RMP amplitude required to trigger an NTM to oscillate as the RMP duration is varied. The critical amplitude is
+minimized when the RMP duration is such that  seed island chain executes a half-integer number of rotations with respect to the RMP. All of the minima have the same value. 
 
 \section*{Acknowledgements}
 The author would also
@@ -219,7 +371,7 @@ $s(r) = d\ln q/d\ln r$,
 $A_k = -(r\,q\,\hat{J}_\phi'/s)_{r_k}$, and 
 $B_k = -(r^{\,2}\,q\,\hat{J}_\phi''/s)_{r_k}$. 
 
-\subsection{Neoclassical Physics}\label{appb}
+\subsection{Neoclassical Model}\label{appb}
 \subsubsection{Plasma Species}\label{a3}
 The plasma is assumed to consist of three (charged) species; namely,  electrons ($e$), majority ions ($i$), and impurity ions
 ($I$).  The charges of the  three species are $e_e=-e$, $e_i= e$, and $e_I=Z_I\,e$, respectively, where
@@ -452,7 +604,7 @@ $S(r) = \tau_R/\tau_H$,
 $P_M(r) = \tau_R/\tau_M$,
 $P_E(r) = \tau_R/\tau_E$,
 $D(r)= (5/3)\,S^{\,1/3}\,(\rho_s/r)$,
-$Q_E(r)= S^{\,1/3}\,n\,\omega_E\,\tau_H$, 
+$Q_E(r)= S^{\,1/3}\,n\,\omega_E\,\tau_H$, and 
 $Q_{e,i}(r)= -S^{\,1/3}\,n\,\omega_{\ast\,e,i}\,\tau_H$. 
 Here, $\chi_e(r)$, $D_\perp(r)$, and $\chi_\phi(r)$ are the perpendicular electron energy, particle,
 and toroidal momentum diffusivity profiles, respectively. 
@@ -539,7 +691,7 @@ where
 \hat{\delta}_k &= \frac{\delta_{\rm linear}(r_k)}{R_0\,\epsilon_{100}\,\hat{r}_k},\\[0.5ex]
 {\cal S}_k&=\frac{\tau_R(r_k)}{\tau_A},\\[0.5ex]
 \tau_A &= \left[\frac{\mu_0\,\rho(0)\,r_{100}^{\,2}}{B_0^{\,2}}\right]^{1/2},\\[0.5ex]
-f_k &=f_{b\,k}+f_{c\,k} + f_{p\,k} + f_{s\,k}.
+f_k &=f_{b\,k}+f_{c\,k} + f_{p\,k} + f_{s\,k}.\label{fdef}
 \end{align}
 Here, ${\cal I} = 0.8227$, $\epsilon_{100}=r_{100}/R_0$, $\hat{r}=r/r_{100}$, $\hat{r}_k=r_k/r_{100}$, and $\hat{t}=t/\tau_A$. 
 
@@ -712,15 +864,20 @@ J.~Manickam, J.E.~Menard,
 T.H.~Osborne, J.-K.~Park, S.~Paul, P.B.~Snyder, S.A.~Sabbagh, E.A.~Unterberg, and the NSTX team, 
 Nucl.\ Fusion {\bf 50}, 034012 (2010). 
 \bibitem{barnett} C.F.~Barnett, {\em Atomic Data for Fusion} (Oak Ridge National Laboratory, TN, 1990). Vol.~1, p.~ORNL-6086. 
+\bibitem{hu} Q.M.~Hu, R.~Nazikian, B.A.~Grierson, N.C.~Logan, J.-K.~Park, C.~Paz-Solden, and Q.~Yu, Phys.\
+Plasmas {\bf 26}, 120702 (2019). 
+\bibitem{gpec} J.-K.~Park, and N.C.~Logan, Phys.\ Plasmas {\bf 24}, 032505 (2017).
+
 \bibitem{nstx1} S.J.~Zweben,   J.R.~Myra,  A.~Diallo,   D.A.~Russell,   F.~Scotti,   and D.P.~Stotler, Phys.\ Plasmas
 {\bf 26}, 072502 (2019). 
 
+
 \bibitem{omfit} O.~Meneghini, S.P.~Smith, L.L.~Lao, O.~Izacard, Q.~Ren, J.M.~Park, J.~Candy, {\em et al.}, Nucl.\ Fusion {\bf 55}, 083008 (2015). 
-\bibitem{gpec} J.-K.~Park, and N.C.~Logan, Phys.\ Plasmas {\bf 24}, 032505 (2017).
+
 \bibitem{ggj} A.H.~Glasser, J.M.~Greene, and J.L.~Johnson, Phys.\ Fluids {\bf 18}, 875 (1975).
 \bibitem{mon} P.~Monier-Garbet, K.H.~Burrell, F.L.~Hinton, J.~Kim, X.~Garbet, and R.J.~Groebner, Nucl.\ Fusion {\bf 37}, 403 (1997).
 
-\bibitem{cole} A.~Cole and R.~Fitzpatrick, Phys.\ Plasmas {\bf 13}, 032503 (2006).
+\bibitem{cole} A.~Cole, and R.~Fitzpatrick, Phys.\ Plasmas {\bf 13}, 032503 (2006).
 \bibitem{cole1} R.~Fitzpatrick, Phys.\ Plasmas {\bf 29}, 032507 (2022). 
 \bibitem{brag} S.I.~Braginskii. In {\em Reviews of Plasma Physics}. Vol.~I, 205. Consultants Bureau (New York, NY, 1965).
 \bibitem{rfx} R.~Fitzpatrick, Phys.\ Plasmas {\bf 23},052506 (2016).
@@ -749,7 +906,7 @@ unstable to NTMs.}\label{fig3}
 
 \begin{figure}
 \centerline{\includegraphics[height=6in]{Fig4.eps}}
-\caption{Right-hand sides of modified Rutherford equations for $m=3/n=1$ and $m=4/n=1$ tearing modes in NSTX discharge 127317 at $t=400$\, ms.}\label{fig4}
+\caption{Right-hand sides of the modified Rutherford equations for the $m=3/n=1$ and $m=4/n=1$ tearing modes in NSTX discharge 127317 at $t=400$\, ms.}\label{fig4}
 \end{figure}
 
 \begin{figure}
@@ -764,7 +921,7 @@ unstable to NTMs.}\label{fig3}
 
 \begin{figure}
 \centerline{\includegraphics[height=5in]{Fig7.eps}}
-\caption{Calculated phase velocity ($\dot{\varphi}$) and natural frequency ($\varpi$) of $m=3/n=1$ mode versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.057$ kA, duration 5 ms, and frequency 0 krad/s applied to the RMP coils.}\label{fig7}
+\caption{Calculated phase velocity ($\dot{\varphi}$) and natural frequency ($\varpi$) of the  $m=3/n=1$ tearing mode versus time in NSTX discharge 127317 in response to an $n=1$ current pulse of amplitude $0.057$ kA, duration 5 ms, and frequency 0 krad/s applied to the RMP coils.}\label{fig7}
 \end{figure}
 
 \begin{figure}
@@ -802,7 +959,7 @@ unstable to NTMs.}\label{fig13}
 
 \begin{figure}
 \centerline{\includegraphics[height=6in]{Fig14.eps}}
-\caption{Right-hand sides of modified Rutherford equations for $m=3/n=1$, $4/1$, $5/1$, $6/1$, and $7/1$ tearing modes in NSTX discharge 139057 at $t=557$\, ms.}\label{fig14}
+\caption{Right-hand sides of the modified Rutherford equations for the $m=3/n=1$, $4/1$, $5/1$, $6/1$, and $7/1$ tearing modes in NSTX discharge 139057 at $t=557$\, ms.}\label{fig14}
 \end{figure}
 
 \begin{figure}
